@@ -1,4 +1,6 @@
-// Imports the shadcn sidebar content
+"use client"
+
+import { usePathname } from "next/navigation"
 import { 
     Sidebar, 
     SidebarContent, 
@@ -7,13 +9,17 @@ import {
     SidebarHeader, 
     SidebarMenu, 
     SidebarMenuButton, 
-    SidebarMenuItem 
+    SidebarMenuItem,
+    SidebarFooter
 } from "@/components/ui/sidebar"
+import { Home, BriefcaseBusiness, User, Contact, Github, Linkedin } from "lucide-react"
+import { cn } from "@/lib/utils"
 
-// Imports the icons needed for the sidebar
-import { Home, BriefcaseBusiness, User, Contact } from "lucide-react"
-
-// Items to be displayed in the sidebar
+/**
+ * PortfolioSidebar Component
+ * Features dynamic active-state styling to provide navigational context,
+ * consistent with the primary accent and scale-transition design language.
+ */
 const items = [
     { title: "Home", url: "/", icon: Home },
     { title: "About", url: "/about", icon: User },
@@ -21,36 +27,75 @@ const items = [
     { title: "Contact", url: "/contact", icon: Contact },
 ]
 
-// Exports the sidebar
-export function PortfolioSidebar() {
+export function PortfolioSidebar({ className }: { className?: string }) {
+    const pathname = usePathname()
+
     return (
-        /* Sidebar container */
-        <Sidebar variant="floating">
-            <SidebarHeader className="border-b border-sidebar-border p-4 font-semibold tracking-tight">
-                Kieran Pritchard
+        <Sidebar 
+            variant="floating" 
+            className={cn("border-r border-border/50", className)}
+        >
+            {/* Brand Section */}
+            <SidebarHeader className="p-6">
+                <div className="flex flex-col gap-2">
+                    <span className="text-xl font-bold tracking-tight text-foreground">
+                        Kieran Pritchard
+                    </span>
+                    <div className="h-1 w-8 bg-primary rounded-full" />
+                </div>
             </SidebarHeader>
-            {/* Sidebar content containee */}
-            <SidebarContent>
-                {/* Groups the sidebar container together */}
+
+            <SidebarContent className="px-2">
                 <SidebarGroup>
                     <SidebarGroupContent>
-                        {/* Maps the menu to the items map */}
-                        <SidebarMenu>
-                        {items.map((item) => (
-                            <SidebarMenuItem key={item.title}>
-                                {/* Creates sidebar menu button for each itme */}
-                                <SidebarMenuButton asChild>
-                                    <a href={item.url}>
-                                    <item.icon />
-                                    <span>{item.title}</span>
-                                    </a>
-                                </SidebarMenuButton>
-                            </SidebarMenuItem>
-                        ))}
+                        <SidebarMenu className="gap-1">
+                            {items.map((item) => {
+                                const isActive = pathname === item.url
+                                
+                                return (
+                                    <SidebarMenuItem key={item.title}>
+                                        <SidebarMenuButton 
+                                            asChild 
+                                            isActive={isActive}
+                                            className={cn(
+                                                "group relative transition-all duration-300",
+                                                isActive 
+                                                    ? "bg-primary/10 text-primary hover:bg-primary/15" 
+                                                    : "hover:bg-muted"
+                                            )}
+                                        >
+                                            <a href={item.url} className="flex items-center gap-3 px-3 py-2">
+                                                {/* Active Indicator Bar */}
+                                                {isActive && (
+                                                    <div className="absolute left-0 h-4 w-1 bg-primary rounded-r-full" />
+                                                )}
+                                                
+                                                <item.icon className={cn(
+                                                    "size-5 transition-transform duration-300 group-hover:scale-110",
+                                                    isActive ? "text-primary" : "text-muted-foreground group-hover:text-primary"
+                                                )} />
+                                                
+                                                <span className={cn(
+                                                    "font-medium tracking-tight",
+                                                    isActive ? "text-primary" : "text-muted-foreground group-hover:text-foreground"
+                                                )}>
+                                                    {item.title}
+                                                </span>
+                                            </a>
+                                        </SidebarMenuButton>
+                                    </SidebarMenuItem>
+                                )
+                            })}
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
+
+            <SidebarFooter className="p-4 border-t border-border/40">
+                <div className="flex items-center justify-around py-2">
+                    
+                </div>
+            </SidebarFooter>
         </Sidebar>
     )
 }
