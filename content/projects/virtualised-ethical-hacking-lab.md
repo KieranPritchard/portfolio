@@ -15,21 +15,17 @@ coverImage: /projects/cover-placeholder.svg
 coverAlt: "Abstract cover treatment for the ethical hacking lab project"
 ---
 
-## Overview
+## Background
 
-This lab was built to practise offensive security techniques in a controlled setting: network discovery, traffic analysis, and structured reporting—without putting production systems at risk.
+I created this setup because I wanted to build a Kali Linux lab to practice and experiment with tools on platforms like TryHackMe. At the time, I didn’t have any way to access these platforms, so I decided to assess my needs. I settled on using virtual machines, which allowed me to boot up a lab environment whenever needed without purchasing additional hardware. This approach lets me use the lab on demand without affecting other parts of my host machine.
 
-## What I shipped
+## Ubuntu Set-Up
 
-- **Isolated subnets** with predictable addressing so exercises are repeatable.
-- **Snapshot-first workflow** so every session can be reset cleanly after malware handling or misconfiguration.
-- **Documented playbooks** for scanning, evidence capture, and remediation notes.
+My first goal was to get everything running on my MacBook using Ubuntu. VirtualBox installed without any issues, and I set it up in Expert Mode based on what I had learned in college. I downloaded an Ubuntu Server ISO image and loaded it into VirtualBox. However, it opened into the UEFI console. I began troubleshooting—first by searching online for fixes, and then by asking ChatGPT for help. Eventually, I realized I had downloaded the wrong image for my host machine's architecture. After installing the correct version, I created a user account and installed Guest Additions to enable internet access, which I tested by watching My Chemical Romance music videos on YouTube.
 
-## In-article media
+## Setting up kali linux
 
-Markdown images resolve through a custom renderer. Local assets under `public/` work with `next/image` optimisations.
-
-![Diagram-style placeholder used inside the case study body](/projects/article-placeholder.svg)
+I first downloaded a compatible Kali Linux image for my MacBook. I then loaded it into VirtualBox and allocated system resources to the virtual machine. After booting it up, I created a user account, installed Guest Additions, and made sure everything worked correctly. Finally, I installed any missing tools and customized the OS to my preferences.
 
 ## Outcomes
 
