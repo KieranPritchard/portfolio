@@ -15,9 +15,13 @@ export default function Intro({className,}: Readonly<{ className?: string}>) {
             {/* Text container */}
             <div className="flex flex-col gap-4">
                 {/* Heading */}
-                <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-foreground">
-                    Kieran Pritchard
-                </h1>
+                <div className="space-y-2">
+                    <h1 className="text-4xl font-bold tracking-tight sm:text-6xl text-foreground">
+                        Kieran Pritchard
+                    </h1>
+                    {/* Primary color accent line for visual branding */}
+                    <div className="h-1 w-20 bg-primary rounded-full" />
+                </div>
                 {/* text */}
                 <p className="text-lg text-muted-foreground leading-relaxed">
                     I am a developer focused on building functional, beautiful interfaces. 
