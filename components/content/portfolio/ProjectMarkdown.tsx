@@ -2,6 +2,14 @@ import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
 import Image from "next/image"
 import Link from "next/link"
+import {
+  Table,
+  TableBody,
+  TableCell,
+  TableHead,
+  TableHeader,
+  TableRow,
+} from "@/components/ui/table"
 
 function estimateReadingMinutes(markdown: string) {
   const words = markdown.trim().split(/\s+/).filter(Boolean).length
@@ -60,6 +68,26 @@ export function ProjectMarkdown({ content }: Readonly<{ content: string }>) {
             >
               {children}
             </blockquote>
+          ),
+          table: ({ children, ...props }) => (
+            <div className="my-6 w-full overflow-y-auto">
+              <Table {...props}>{children}</Table>
+            </div>
+          ),
+          thead: ({ children, ...props }) => (
+            <TableHeader {...props}>{children}</TableHeader>
+          ),
+          tbody: ({ children, ...props }) => (
+            <TableBody {...props}>{children}</TableBody>
+          ),
+          tr: ({ children, ...props }) => (
+            <TableRow {...props}>{children}</TableRow>
+          ),
+          th: ({ children, ...props }) => (
+            <TableHead {...props}>{children}</TableHead>
+          ),
+          td: ({ children, ...props }) => (
+            <TableCell {...props}>{children}</TableCell>
           ),
           a: ({ href, children, ...props }) => {
             const external = href?.startsWith("http")

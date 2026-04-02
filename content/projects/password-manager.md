@@ -1,0 +1,58 @@
+---
+title: "Python Password Manager"
+slug: password-manager
+category: automation
+description: "A security-focused Python application utilizing Object-Oriented Programming and the cryptography library to demonstrate secure CRUD operations and persistent storage."
+tags:
+  - Python
+  - OOP
+  - Cryptography
+  - Cybersecurity
+link: "#"
+github: "https://github.com/KieranPritchard/Password-Manager/tree/main"
+date: "2025-12-23"
+coverImage: /projects/header-images/project-header-images/password-manager-header.webp
+coverAlt: "Password Manager project interface"
+---
+
+### Disclaimer
+
+This project was recently updated to take advantage of OOP (Object Orientated Programming). Alongside this, I updated comments and certain flows so it would be more focused around being a demonstration. My changes are detailed in a new file with the old code being in another for comparison reasons. 
+
+### Objective:
+
+To create a Cyber-Security based project, with a theme of password security and handling. I also wanted to pursue a project that uses CRUD (Create, Read, Update, Delete), to build skills with programming persistent storage. I later reprogrammed this to take advantage of Object Orientated Programming (OOP)
+
+### Technology and Tools Used:
+
+* **Language:** Python.
+* **Framework/Library:** Cryptography.
+* **Tools:** VS Code.
+
+### Challenges Faced:
+
+Firstly, there was a problem when converting the user input into hashes. this was fixed by changing '.update()' to the librarys '.digest()' function. Then finally I had a problem with the 'edit_credentials()' and 'delete_credentials()' luckily however, I had managed to come to the solution that is used in the program.
+
+### Outcome:
+
+Successfully created another cyber security project, using cyber security based external libraries and password security knowledge. Also managed to implement CRUD methodologies into a project.
+
+## How to Use the Project
+
+1. **Clone The Repository:**
+* Download the project to your local device from github.
+* You can access it here: [https://github.com/KieranPritchard/Password-Manager/tree/main](https://github.com/KieranPritchard/Password-Manager/tree/main)
+2. **Set-up The Key:**
+* run the script to generate an encryption key, named 'key.key'. 
+* This automatically saves the file to the specified path.
+* Please ensure the key is stored securely, as not only does it allow encryption to take place. its essential to making the program work.
+3. **Login:**
+* When you are prompted, enter the username and password. 
+* The default values are hashed values in the code, you may modify these hashes if desired.
+4. **Using The Password Manager:**
+* After you have successfully logged in. You may access the following features:
+* **Adding a new credentials:** This allows you to input and save new credentials for various accounts.
+* **Viewing saved credentialls:** This decrypts and views stored passwords.
+5. **Running The Code**
+* Navigate to the directory storing the project. Then use this command: python 'Password_Manager.py'.
+* Follow the onscreen prompts for login and accesssing features.
