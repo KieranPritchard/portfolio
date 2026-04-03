@@ -11,24 +11,24 @@ tags:
 link: "#"
 github: "https://github.com/KieranPritchard/Script-Vault"
 date: "2025-03-05"
-coverImage: /projects/header-images/project-header-images/script-vault-header.webp
+coverImage: /projects/script-vault/script-vault.webp
 coverAlt: "Script-Vault repository header"
 ---
 
-## 📌 Overview
+## Overview
 
 The **Script Vault** is an evolving repository where I store useful scripts across various programming languages. This project serves two main purposes:
 1.  **Efficiency:** Automating repetitive tasks to save time and reduce manual errors.
 2.  **Skill Development:** Refining my scripting abilities and exploring new libraries and frameworks.
 
-## 🚀 Features
+## Features
 
 * **Task Automation:** Custom scripts to handle boring, repetitive workflows.
 * **Centralized Knowledge:** A single source of truth for all my utility code.
 * **Multi-language Support:** Exploring solutions in Python, Bash, JavaScript, and more.
 * **Continuous Improvement:** Code is regularly refactored for better performance and readability.
 
-## 📂 Vault Contents
+## Vault Contents
 
 | Category | Description | Language |
 | :--- | :--- | :--- |
@@ -39,13 +39,13 @@ The **Script Vault** is an evolving repository where I store useful scripts acro
 
 > *Note: Click on the folder names in the repository above to explore the specific code.*
 
-## 🛠️ Technologies and Tools
+## Technologies and Tools
 
 * **Languages:** Various (Python, Bash, PowerShell, JavaScript)
 * **Libraries:** (List specific ones here as you add them, e.g., `requests`, `pandas`, `os`)
 * **Dev Environment:** VS Code, Git, Terminal
 
-## ⚙️ Getting Started
+## Getting Started
 
 To use any of these scripts locally, clone the repository:
 

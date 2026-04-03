@@ -11,7 +11,7 @@ tags:
 link: "https://kieranpritchard.github.io/CTF-Showcase/#/"
 github: "https://github.com/KieranPritchard/CTF-Showcase"
 date: "2026-01-30"
-coverImage: /projects/header-images/project-header-images/ctf-write-up-thumbnail.webp
+coverImage: /projects/ctf-showcase/ctf-showcase.webp
 coverAlt: "CTF Write-Up Showcase project header"
 ---
 

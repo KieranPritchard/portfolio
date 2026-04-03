@@ -2,29 +2,69 @@
 title: "Christmas UNO"
 slug: christmas-uno
 category: web
-description: "A full-stack festive game built during a 5-day hackathon. Developed core game logic and responsive UI components."
+description: "UNO - Festive Edition reimagines the classic UNO card game with holiday-themed cards and new special holiday action cards. Enjoy the familiar core gameplay with a fun Christmas twist!"
 tags:
-  - React
-  - Node.js
-  - Tailwind CSS
+  - HTML
+  - CSS
+  - JavaScript
   - Git
-link: "#"
-github: "#"
-date: "2024-12-18"
-coverImage: /projects/cover-placeholder.svg
+link: "https://kieranpritchard.github.io/BPC-Hack-The-Halls-2025/"
+github: "https://github.com/KieranPritchard/BPC-Hack-The-Halls-2025"
+date: "2025-12-18"
+coverImage: /projects/christmas-uno/christmas-uno.webp
 coverAlt: "Festive UNO project cover"
 ---
 
-## Overview
+## About the Game
+UNO - Festive Edition reimagines the classic UNO card game with holiday-themed cards and new special holiday action cards. Enjoy the familiar core gameplay with a fun Christmas twist!
 
-A short, high-energy hackathon project focused on **shipping a playable loop** fast: lobby, turns, and a UI that felt fun on mobile.
+## Demo
+To play, open `index.html` in your browser. For best results, use a local server.
 
-## Highlights
+## Card Types
 
-- Responsive card layout and accessible button targets  
-- Game rules encoded as small, testable functions  
-- Lightweight API boundaries between client state and server validation  
+### Standard Cards
+- **Number cards (0–9)** in four colours: 🔴 red, 🟢 green, 🔵 blue, 🟡 yellow.
 
-## Reflection
+### Action Cards
+- **Skip:** Next player misses a turn.
+- **Reverse:** Reverses play order. In 2-player games, acts as a skip.
+- **Draw Two:** Next player draws 2 cards and misses a turn.
+- **Wild Card:** Change the current colour.
+- **Wild Draw +4:** Change the colour and make the next player draw 4 cards.
 
-The best payoff was keeping the scope honest: one solid mode beats three half-built ones.
+### Special Holiday Action Cards
+- **Snowball Card:** The next player has some cards hidden and cannot see what they are.
+- **Wild Gift Card:** Choose a card from your hand to give to another player, then pick a colour.
+
+## Features
+- Play against a computer
+- Sounds and music (see `SFX/` and `soundtrack/`)
+- Special holiday action cards
+
+## How to Play
+1. Each player is dealt 7 cards.
+2. Match cards by colour, number, or symbol.
+3. Play action cards to gain an advantage.
+4. First player to discard all cards wins!
+
+## Assets & Sounds
+- **Cards:** `cards/`
+- **Sound Effects:** `SFX/`
+- **Music:** `soundtrack/`
+
+---
+
+## Installation & Running
+1. Clone or download this repository.
+2. Find and open `index.html` in your browser.
+3. Enjoy the game!
+
+---
+
+## Credits
+- Game development and code: [Kieran](https://github.com/KieranPritchard)
+- Card designs: James & Elliot
+- Sound and Music: [Arvid](https://github.com/Arvid-HU)
+
+_Created for the BPC Hack The Halls 2025 Christmas Hackathon._
