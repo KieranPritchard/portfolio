@@ -1,5 +1,6 @@
 "use client"
 
+import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
@@ -24,7 +25,7 @@ export function ProjectArticleHeader({
   className,
 }: Readonly<{ project: ProjectSummary; className?: string }>) {
   // Animation variants for text elements
-  const textVariants = {
+  const textVariants: Variants = {
     hidden: { opacity: 0, y: 10 },
     visible: (custom: number) => ({
       opacity: 1,
@@ -113,7 +114,7 @@ export function ProjectArticleHeader({
           animate={{ opacity: 1, y: 0, scale: 1 }}
           transition={{ delay: 0.6, duration: 0.7, ease: "circOut" }}
         >
-          <div className="relative aspect-[21/9] w-full sm:aspect-[2.4/1]">
+          <div className="relative aspect-21/9 w-full sm:aspect-[2.4/1]">
             <Image
               src={project.coverImage}
               alt={project.coverAlt ?? ""}

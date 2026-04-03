@@ -1,5 +1,6 @@
 "use client"
 
+import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
@@ -24,7 +25,7 @@ function estimateReadingMinutes(markdown: string) {
  * Standard animation variants for markdown elements.
  * Elements slide up 30px and fade in.
  */
-const markdownItemVariants = {
+const markdownItemVariants: Variants = {
   hidden: { opacity: 0, y: 30 },
   visible: { 
     opacity: 1, 

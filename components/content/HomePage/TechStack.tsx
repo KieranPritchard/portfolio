@@ -39,8 +39,8 @@ export default function TechStack({ className }: { className?: string }) {
                 {/* This wrapper is the key to preventing sidebar layout breakage */}
                 <div className="relative w-full overflow-hidden">
                     {/* Fading gradient masks for a smooth "fade in/out" look */}
-                    <div className="absolute inset-y-0 left-0 w-12 z-10 bg-gradient-to-r from-background to-transparent" />
-                    <div className="absolute inset-y-0 right-0 w-12 z-10 bg-gradient-to-l from-background to-transparent" />
+                    <div className="absolute inset-y-0 left-0 w-12 z-10 bg-linear-to-r from-background to-transparent" />
+                    <div className="absolute inset-y-0 right-0 w-12 z-10 bg-linear-to-l from-background to-transparent" />
 
                     <motion.div 
                         className="flex w-max gap-8 py-2"

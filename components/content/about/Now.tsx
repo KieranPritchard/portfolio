@@ -1,5 +1,6 @@
 "use client"
 
+import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import {
     Card,
@@ -14,7 +15,7 @@ import { Rocket, BookOpen, Coffee, Calendar } from "lucide-react"
 export default function NowSection({ className }: Readonly<{ className?: string }>) {
     const lastUpdated = "April 2026"
 
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -22,7 +23,7 @@ export default function NowSection({ className }: Readonly<{ className?: string 
         }
     }
 
-    const cardVariants = {
+    const cardVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: { 
             opacity: 1, 

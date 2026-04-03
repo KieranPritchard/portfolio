@@ -114,7 +114,7 @@ export default function ContactForm({ toEmail }: Readonly<{ toEmail: string }>) 
             placeholder="Tell me about your project..."
             required
             rows={7}
-            className="min-h-[180px] w-full resize-none rounded-2xl border border-border/50 bg-muted/20 px-3 py-2 text-base outline-none transition-all focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 placeholder:text-muted-foreground"
+            className="min-h-45 w-full resize-none rounded-2xl border border-border/50 bg-muted/20 px-3 py-2 text-base outline-none transition-all focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 placeholder:text-muted-foreground"
           />
         </div>
 

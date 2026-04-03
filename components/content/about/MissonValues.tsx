@@ -1,5 +1,6 @@
 "use client"
 
+import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import {
     Card,
@@ -30,7 +31,7 @@ export default function MissionValues({ className }: Readonly<{ className?: stri
     ]
 
     // Animation variants for the grid
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -40,7 +41,7 @@ export default function MissionValues({ className }: Readonly<{ className?: stri
         },
     }
 
-    const cardVariants = {
+    const cardVariants: Variants = {
         hidden: { opacity: 0, scale: 0.95, y: 20 },
         visible: { 
             opacity: 1, 

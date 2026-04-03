@@ -1,10 +1,13 @@
 "use client"
 
+import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Award, ExternalLink } from "lucide-react"
 
+// Component for my certifications
 export default function Certifications({ className }: Readonly<{ className?: string }>) {
+    // Stores my certs as a JSON object
     const certs = [
         {
             title: "Miro essentials",
@@ -93,26 +96,27 @@ export default function Certifications({ className }: Readonly<{ className?: str
     ]
 
     // Animation variants for the grid items
-    const containerVariants = {
-        hidden: { opacity: 0 },
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 }, // Sets to invisible
         visible: {
-            opacity: 1,
+            opacity: 1, // Sets to visisable
             transition: {
                 staggerChildren: 0.1, // Subtle stagger for a large list
             },
         },
     }
 
-    const cardVariants = {
-        hidden: { opacity: 0, y: 20 },
+    const cardVariants: Variants = {
+        hidden: { opacity: 0, y: 20 }, // Sets to hidden and slightly off center
         visible: { 
-            opacity: 1, 
-            y: 0, 
+            opacity: 1, // Sets to visible
+            y: 0, // Sets to normal coordinates
             transition: { duration: 0.5, ease: "easeOut" } 
         },
     }
 
     return (
+        /* Certifications section */
         <section 
             id="certifications"
             className={cn(
@@ -128,9 +132,11 @@ export default function Certifications({ className }: Readonly<{ className?: str
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
+                {/* Header */}
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
                     Certifications
                 </h2>
+                {/* Divider */}
                 <motion.div 
                     className="h-1 bg-primary rounded-full" 
                     initial={{ width: 0 }}
@@ -148,6 +154,7 @@ export default function Certifications({ className }: Readonly<{ className?: str
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
             >
+                {/* Maps the certificates to the page */}
                 {certs.map((cert, index) => (
                     <motion.div 
                         key={index}

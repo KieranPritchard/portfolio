@@ -1,5 +1,6 @@
 "use client"
 
+import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import {
     Card,
@@ -19,7 +20,7 @@ const skillsData = {
 
 export default function Skills({ className }: Readonly<{ className?: string }>) {
     // Parent grid animation
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -28,7 +29,7 @@ export default function Skills({ className }: Readonly<{ className?: string }>) 
     }
 
     // Individual card entrance
-    const cardVariants = {
+    const cardVariants: Variants = {
         hidden: { opacity: 0, y: 20 },
         visible: { 
             opacity: 1, 
@@ -38,7 +39,7 @@ export default function Skills({ className }: Readonly<{ className?: string }>) 
     }
 
     // Badge "pop" animation
-    const badgeVariants = {
+    const badgeVariants: Variants = {
         hidden: { opacity: 0, scale: 0.8 },
         visible: { 
             opacity: 1, 

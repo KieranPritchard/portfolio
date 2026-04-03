@@ -1,5 +1,6 @@
 "use client"
 
+import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import { DownloadButton } from "@/components/Buttons/DownloadButton"
 import { LinkButton } from "@/components/Buttons/LinkButton"
@@ -7,10 +8,11 @@ import { cn } from "@/lib/utils"
 
 export default function AboutMe({ className }: Readonly<{ className?: string }>) {
     // Parent container variant to coordinate children
-    const containerVariants = {
-        hidden: { opacity: 0 },
+    const containerVariants : Variants = {
+        hidden: { opacity: 0 }, // Sets the hidden opacity to none
         visible: {
-            opacity: 1,
+            opacity: 1, // When visible to opacity to zero
+            // Staggers the children components
             transition: {
                 staggerChildren: 0.2,
                 delayChildren: 0.1,
@@ -19,16 +21,17 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
     }
 
     // Slide-in effect for the text elements
-    const textVariants = {
-        hidden: { opacity: 0, x: 20 },
+    const textVariants : Variants = {
+        hidden: { opacity: 0, x: 20 }, // Sets the hidden opacity to none
         visible: { 
-            opacity: 1, 
-            x: 0, 
-            transition: { duration: 0.6, ease: "easeOut" } 
+            opacity: 1, // Sets the opacity to visible
+            x: 0, // Sets the x value to zero
+            transition: { duration: 0.6, ease: "easeOut" } // Sets up the ease out animation
         },
     }
 
     return (
+        /* Contains the about section */
         <section 
             id="about"
             className={cn(
@@ -39,12 +42,13 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
             {/* Animated Image Container */}
             <motion.div 
                 className="relative aspect-square max-w-md mx-auto md:mx-0 overflow-hidden rounded-2xl bg-muted shadow-xl"
-                initial={{ opacity: 0, x: -50 }}
-                whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.8, ease: "circOut" }}
-                whileHover={{ scale: 1.02 }}
+                initial={{ opacity: 0, x: -50 /* Sets up the inital value */}}
+                whileInView={{ opacity: 1, x: 0 /* Sets up the values for while in view */}}
+                viewport={{ once: true /* Sets up the view port values */}}
+                transition={{ duration: 0.8, ease: "circOut" /* Sets up the transition method */}}
+                whileHover={{ scale: 1.02 /* Changes the scale on hover  */}}
             >
+                {/* Displays the image */}
                 <img 
                     src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
                     alt="Kieran Pritchard Profile" 
@@ -62,9 +66,11 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
             >
                 {/* Header Section */}
                 <motion.div className="space-y-2" variants={textVariants}>
+                    {/* Displays the header  */}
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
                         About Me
                     </h2>
+                    {/* Displays the divider */}
                     <motion.div 
                         className="h-1 bg-primary rounded-full" 
                         initial={{ width: 0 }}
@@ -77,7 +83,8 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
                 <motion.div 
                     className="space-y-4 text-lg text-muted-foreground leading-relaxed"
                     variants={textVariants}
-                >
+                >   
+                    {/* Displays the paragraphs */}
                     <p>
                         Hello! I am Kieran, a passionate developer based in the UK. I specialize in 
                         building robust web applications using Next.js, TypeScript, and Tailwind CSS.
@@ -94,7 +101,9 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
                     className="flex flex-wrap items-center gap-4 pt-4" 
                     variants={textVariants}
                 >
+                    {/* Link button for projects */}
                     <LinkButton text="View My Work" link="/projects" />
+                    {/* Download button */}
                     <DownloadButton 
                         text="Download Resume" 
                         link="/resume.pdf" 

@@ -1,5 +1,6 @@
 "use client"
 
+import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import { DownloadButton } from "@/components/Buttons/DownloadButton"
 import { LinkButton } from "@/components/Buttons/LinkButton"
@@ -7,7 +8,7 @@ import { cn } from "@/lib/utils"
 
 export default function Intro({ className }: Readonly<{ className?: string }>) {
     // Staggered entrance variants
-    const containerVariants = {
+    const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
@@ -18,7 +19,7 @@ export default function Intro({ className }: Readonly<{ className?: string }>) {
         },
     }
 
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, y: 15 },
         visible: { 
             opacity: 1, 
@@ -28,8 +29,9 @@ export default function Intro({ className }: Readonly<{ className?: string }>) {
     }
 
     return (
-        /* Using flex-1 and w-full ensures the component fills the available 
-           space left by the SidebarInset or Sidebar provider.
+        /* 
+            Using flex-1 and w-full ensures the component fills the available 
+            space left by the SidebarInset or Sidebar provider.
         */
         <section 
             className={cn(
@@ -61,7 +63,7 @@ export default function Intro({ className }: Readonly<{ className?: string }>) {
                     </motion.div>
 
                     <motion.p 
-                        className="max-w-[600px] text-lg leading-relaxed text-muted-foreground md:text-xl"
+                        className="max-w-150 text-lg leading-relaxed text-muted-foreground md:text-xl"
                         variants={itemVariants}
                     >
                         I am a developer focused on building functional, beautiful interfaces. 
@@ -90,7 +92,7 @@ export default function Intro({ className }: Readonly<{ className?: string }>) {
                     viewport={{ once: true }}
                     transition={{ duration: 0.6, ease: "circOut" }}
                 >
-                    <div className="relative aspect-square w-full max-w-[400px] sm:max-w-[500px]">
+                    <div className="relative aspect-square w-full max-w-100 sm:max-w-125">
                         <img 
                             src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
                             alt="Kieran Pritchard" 

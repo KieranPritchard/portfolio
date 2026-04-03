@@ -1,5 +1,6 @@
 "use client"
 
+import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import { Mail, Phone } from "lucide-react"
 import { IconBrandLinkedin, IconBrandX } from "@tabler/icons-react"
@@ -13,7 +14,7 @@ export default function Contact({ className }: Readonly<{ className?: string }>)
   const xUrl = "https://x.com/OverF10w_0x"
 
   // Parent container variant for staggered children
-  const containerVariants = {
+  const containerVariants: Variants = {
     hidden: { opacity: 0 },
     visible: {
       opacity: 1,
@@ -25,7 +26,7 @@ export default function Contact({ className }: Readonly<{ className?: string }>)
   }
 
   // Individual item entrance variants
-  const itemVariants = {
+  const itemVariants: Variants = {
     hidden: { opacity: 0, y: 15 },
     visible: { 
       opacity: 1, 
@@ -35,7 +36,7 @@ export default function Contact({ className }: Readonly<{ className?: string }>)
   }
 
   // Variants for the interactive contact links block
-  const contactBlockVariants = {
+  const contactBlockVariants: Variants = {
     hidden: { opacity: 0, scale: 0.95 },
     visible: { 
       opacity: 1, 

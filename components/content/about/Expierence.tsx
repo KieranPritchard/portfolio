@@ -1,5 +1,6 @@
 "use client"
 
+import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Briefcase, GraduationCap, Calendar } from "lucide-react"
@@ -8,7 +9,7 @@ const timelineData = [
     {
         title: "T-Level: Digital Software Development",
         organization: "Bournemouth & Poole College",
-        date: "Sept 2025 – Present",
+        date: "Sept 2025 - Present",
         type: "education",
         details: [
             "Focus: Software Programming, Security & Testing, Emerging Technologies, Legislation, Data.",
@@ -18,7 +19,7 @@ const timelineData = [
     {
         title: "IT Support Assistant (Work Placement)",
         organization: "Bournemouth & Poole College",
-        date: "Jan 2026 – Present",
+        date: "Jan 2026 - Present",
         type: "work",
         details: [
             "Hardware Maintenance: Performing hardware diagnostics and repairs, including dismantling and reassembling desktop hardware.",
@@ -29,7 +30,7 @@ const timelineData = [
     {
         title: "Web & Social Media Project Member",
         organization: "Worksity (Industry Live Project)",
-        date: "Jun 2025 – Jul 2025",
+        date: "Jun 2025 - Jul 2025",
         type: "work",
         details: [
             "Web Development: Collaborated to design and deploy a responsive website for a local minibus firm.",
@@ -40,7 +41,7 @@ const timelineData = [
     {
         title: "BTEC First in Digital",
         organization: "Bournemouth & Poole College",
-        date: "Sept 2024 – Jun 2025",
+        date: "Sept 2024 - Jun 2025",
         type: "education",
         details: [
             "Achieved Distinction grades across core modules including Web Development and Networking.",
@@ -49,18 +50,19 @@ const timelineData = [
     }
 ]
 
+// Expierence timeline 
 export default function ExperienceTimeline({ className }: Readonly<{ className?: string }>) {
     // Animation variants for the container
-    const containerVariants = {
-        hidden: { opacity: 0 },
+    const containerVariants: Variants = {
+        hidden: { opacity: 0 }, // Makes the container invisible
         visible: {
-            opacity: 1,
+            opacity: 1, // Sets the container visible
             transition: { staggerChildren: 0.3 }
         }
     }
 
     // Animation variants for each timeline item
-    const itemVariants = {
+    const itemVariants: Variants = {
         hidden: { opacity: 0, x: -20 },
         visible: { 
             opacity: 1, 
