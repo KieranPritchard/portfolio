@@ -3,10 +3,10 @@ import { IconBrandLinkedin, IconBrandX } from "@tabler/icons-react"
 import ContactForm from "@/components/content/contact/ContactForm"
 
 export default function Contact() {
-  const toEmail = "kieran.pritchard@example.com"
-  const phoneNumber = "+1 (555) 000-0000"
-  const linkedinUrl = "https://linkedin.com/in/kieranpritchard"
-  const xUrl = "https://x.com/kieranpritchard"
+  const toEmail = "KieranPritchard06@gmail.com"
+  const phoneNumber = "+44 07763 534145"
+  const linkedinUrl = "https://www.linkedin.com/in/kieran-pritchard/"
+  const xUrl = "https://x.com/OverF10w_0x"
 
   return (
     <section className="mx-auto w-full max-w-7xl px-4 py-20 md:px-6 lg:px-8">

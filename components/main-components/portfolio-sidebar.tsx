@@ -12,7 +12,7 @@ import {
     SidebarMenuItem,
     SidebarFooter
 } from "@/components/ui/sidebar"
-import { Home, BriefcaseBusiness, User, Contact, Github, Linkedin } from "lucide-react"
+import { Home, BriefcaseBusiness, User, Contact } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 /**
