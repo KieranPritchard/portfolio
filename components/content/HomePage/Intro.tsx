@@ -55,7 +55,7 @@ export default function Intro({ className }: Readonly<{ className?: string }>) {
                         <motion.div 
                             className="h-1.5 w-20 bg-primary rounded-full" 
                             initial={{ width: 0 }}
-                            whileInView={{ width: 48 }}
+                            whileInView={{ width: 80 }}
                             transition={{ delay: 0.6, duration: 0.8 }}
                         />
                     </motion.div>

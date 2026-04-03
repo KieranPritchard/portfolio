@@ -1,8 +1,11 @@
 "use client"
 
 import { useState } from "react"
+import { motion, AnimatePresence } from "framer-motion"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
+import { cn } from "@/lib/utils"
+import { CheckCircle2, Copy } from "lucide-react"
 
 export default function ContactForm({ toEmail }: Readonly<{ toEmail: string }>) {
   const [name, setName] = useState("")
@@ -13,13 +16,18 @@ export default function ContactForm({ toEmail }: Readonly<{ toEmail: string }>) 
   const [manualBody, setManualBody] = useState<string | null>(null)
 
   return (
-    <div className="rounded-2xl border bg-card p-6 md:p-8">
+    <motion.div 
+      initial={{ opacity: 0, scale: 0.95 }}
+      whileInView={{ opacity: 1, scale: 1 }}
+      viewport={{ once: true }}
+      className="rounded-2xl border border-border/50 bg-card p-6 md:p-8 shadow-xl shadow-primary/5"
+    >
       <h3 className="font-heading text-xl font-semibold tracking-tight text-foreground">
         Copy message to clipboard
       </h3>
       <p className="mt-2 text-sm text-muted-foreground">
         Fill out the form and I’ll format your message for you. Paste it into an email to{" "}
-        <span className="font-medium text-foreground">{toEmail}</span>.
+        <span className="font-medium text-primary">{toEmail}</span>.
       </p>
 
       <form
@@ -59,14 +67,13 @@ export default function ContactForm({ toEmail }: Readonly<{ toEmail: string }>) 
             return
           }
 
-          // Fallback for browsers without clipboard access
           setStatus("Clipboard unavailable. Copy the message from the box below.")
           setManualBody(body)
           finish()
         }}
       >
         <div className="space-y-1.5">
-          <label className="text-sm font-medium" htmlFor="contact-name">
+          <label className="text-sm font-medium text-foreground/80" htmlFor="contact-name">
             Name
           </label>
           <Input
@@ -76,11 +83,12 @@ export default function ContactForm({ toEmail }: Readonly<{ toEmail: string }>) 
             placeholder="Your name"
             autoComplete="name"
             required
+            className="rounded-xl border-border/50 bg-muted/20 focus-visible:ring-primary/20"
           />
         </div>
 
         <div className="space-y-1.5">
-          <label className="text-sm font-medium" htmlFor="contact-email">
+          <label className="text-sm font-medium text-foreground/80" htmlFor="contact-email">
             Email
           </label>
           <Input
@@ -91,11 +99,12 @@ export default function ContactForm({ toEmail }: Readonly<{ toEmail: string }>) 
             placeholder="you@example.com"
             autoComplete="email"
             required
+            className="rounded-xl border-border/50 bg-muted/20 focus-visible:ring-primary/20"
           />
         </div>
 
         <div className="space-y-1.5">
-          <label className="text-sm font-medium" htmlFor="contact-message">
+          <label className="text-sm font-medium text-foreground/80" htmlFor="contact-message">
             Message
           </label>
           <textarea
@@ -105,35 +114,65 @@ export default function ContactForm({ toEmail }: Readonly<{ toEmail: string }>) 
             placeholder="Tell me about your project..."
             required
             rows={7}
-            className="min-h-[180px] w-full resize-none rounded-3xl border border-transparent bg-input/50 px-3 py-2 text-base outline-none transition-[color,box-shadow,background-color] focus-visible:border-ring focus-visible:ring-3 focus-visible:ring-ring/30 placeholder:text-muted-foreground disabled:pointer-events-none disabled:cursor-not-allowed disabled:opacity-50"
+            className="min-h-[180px] w-full resize-none rounded-2xl border border-border/50 bg-muted/20 px-3 py-2 text-base outline-none transition-all focus-visible:border-primary focus-visible:ring-2 focus-visible:ring-primary/20 placeholder:text-muted-foreground"
           />
         </div>
 
         <div className="pt-2">
-          <Button type="submit" disabled={isSubmitting} className="w-full">
-            {isSubmitting ? "Copying..." : "Copy message"}
+          <Button 
+            type="submit" 
+            disabled={isSubmitting} 
+            className="w-full rounded-xl font-bold py-6 group transition-all"
+          >
+            {isSubmitting ? (
+              <motion.span 
+                initial={{ opacity: 0 }} 
+                animate={{ opacity: 1 }} 
+                className="flex items-center gap-2"
+              >
+                Formatting...
+              </motion.span>
+            ) : (
+              <span className="flex items-center gap-2">
+                <Copy className="h-4 w-4 group-hover:scale-110 transition-transform" />
+                Copy message
+              </span>
+            )}
           </Button>
         </div>
       </form>
 
-      {status ? (
-        <p className="mt-4 text-sm text-muted-foreground" role="status" aria-live="polite">
-          {status}
-        </p>
-      ) : null}
+      <AnimatePresence>
+        {status && (
+          <motion.div 
+            initial={{ opacity: 0, height: 0, y: 10 }}
+            animate={{ opacity: 1, height: "auto", y: 0 }}
+            exit={{ opacity: 0, height: 0 }}
+            className="mt-4 flex items-center gap-2 text-sm text-primary font-medium"
+            role="status"
+            aria-live="polite"
+          >
+            <CheckCircle2 className="h-4 w-4" />
+            {status}
+          </motion.div>
+        )}
 
-      {manualBody ? (
-        <div className="mt-4 space-y-2 rounded-2xl border bg-muted/20 p-4">
-          <p className="text-sm font-medium">Manual copy</p>
-          <textarea
-            value={manualBody}
-            readOnly
-            rows={8}
-            className="w-full resize-none rounded-3xl border border-transparent bg-input/50 px-3 py-2 text-sm outline-none"
-          />
-        </div>
-      ) : null}
-    </div>
+        {manualBody && (
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            animate={{ opacity: 1, scale: 1 }}
+            className="mt-6 space-y-2 rounded-2xl border border-primary/20 bg-primary/5 p-4"
+          >
+            <p className="text-xs font-bold uppercase tracking-wider text-primary">Manual copy</p>
+            <textarea
+              value={manualBody}
+              readOnly
+              rows={6}
+              className="w-full resize-none rounded-xl border-none bg-background/50 px-3 py-2 text-sm outline-none font-mono"
+            />
+          </motion.div>
+        )}
+      </AnimatePresence>
+    </motion.div>
   )
 }
-
