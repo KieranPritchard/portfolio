@@ -11,7 +11,7 @@ tags:
 link: "https://kieranpritchard.github.io/BPC-Hack-The-Halls-2025/"
 github: "https://github.com/KieranPritchard/BPC-Hack-The-Halls-2025"
 date: "2025-12-18"
-coverImage: /projects/christmas-uno/christmas-uno.webp
+coverImage: "projects/christmas-uno/christmas-uno.webp"
 coverAlt: "Festive UNO project cover"
 ---
 
