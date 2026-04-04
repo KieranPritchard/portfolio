@@ -18,7 +18,7 @@ import type { ProjectSummary } from "@/types/project"
 import { ArrowRight, Code, Shield, Zap } from "lucide-react"
 
 export default function ProjectsGrid({ className, projects }: Readonly<{ className?: string; projects: ProjectSummary[] }>) {
-    const [filter, setFilter] = useState("all")
+    const [filter, setFilter] = useState("all") // Stores the state used for the filterig
 
     const filteredProjects =
         filter === "all" ? projects : projects.filter((project) => project.category === filter)
