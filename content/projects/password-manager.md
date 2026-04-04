@@ -11,7 +11,7 @@ tags:
 link: "#"
 github: "https://github.com/KieranPritchard/Password-Manager/tree/main"
 date: "2025-12-23"
-coverImage: "https://github.com/KieranPritchard/kieranpritchard.github.io/blob/main/public/projects/password-manager/password-manager.webp"
+coverImage: "https://raw.githubusercontent.com/KieranPritchard/kieranpritchard.github.io/refs/heads/main/public/projects/password-manager/password-manager.webp"
 coverAlt: "Password Manager project interface"
 ---
 

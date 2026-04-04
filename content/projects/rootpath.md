@@ -11,7 +11,7 @@ tags:
 link: "https://kieranpritchard.github.io/RootPath/"
 github: "https://github.com/KieranPritchard/RootPath"
 date: "2026-02-06"
-coverImage: "https://github.com/KieranPritchard/kieranpritchard.github.io/blob/main/public/projects/rootpath/rootpath.webp"
+coverImage: "https://raw.githubusercontent.com/KieranPritchard/kieranpritchard.github.io/refs/heads/main/public/projects/rootpath/rootpath.webp"
 coverAlt: "RootPath project header"
 ---
 

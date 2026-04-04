@@ -11,7 +11,7 @@ tags:
 link: "#"
 github: "https://github.com/KieranPritchard/Script-Vault"
 date: "2025-03-05"
-coverImage: "https://github.com/KieranPritchard/kieranpritchard.github.io/blob/main/public/projects/script-vault/script-vault.webp"
+coverImage: "https://raw.githubusercontent.com/KieranPritchard/kieranpritchard.github.io/refs/heads/main/public/projects/script-vault/script-vault.webp"
 coverAlt: "Script-Vault repository header"
 ---
 
