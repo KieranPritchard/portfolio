@@ -3,13 +3,7 @@
 import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
-import type { ProjectSummary } from "@/types/project"
-import { ArrowRight, Code, Shield, Zap, ExternalLink } from "lucide-react"
-import Link from "next/link"
-import Image from "next/image"
-import { Badge } from "@/components/ui/badge"
-import { Card, CardContent } from "@/components/ui/card"
-import { LinkButton } from "@/components/Buttons/LinkButton"
+import TerminalLab from "./TerminalLab"
 
 export default function InteractiveLabs({ className }: { className?: string }) {
 
@@ -45,7 +39,7 @@ export default function InteractiveLabs({ className }: { className?: string }) {
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
             >
-                
+                <TerminalLab />
             </motion.div>
         </section>
     )
