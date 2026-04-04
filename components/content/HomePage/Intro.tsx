@@ -39,7 +39,7 @@ export default function Intro({ className }: Readonly<{ className?: string }>) {
                 className
             )}
         >   
-            <div className="py-12 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2">
+            <div className="sm:py-12 mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 md:grid-cols-2">
                 
                 {/* Text container: min-w-0 prevents grid blowout during sidebar transitions */}
                 <motion.div 
