@@ -76,11 +76,11 @@ export default function Intro({ className }: Readonly<{ className?: string }>) {
                     >
                         <LinkButton text="Learn More" link="/portfolio" />
                         <DownloadButton 
-                            text="Download C.V" 
-                            link="/resume.pdf" 
-                            fileName="Kieran_Pritchard_CV.pdf" 
+                            text="Download Resume" 
+                            link="/kieran_pritchard_cv.pdf" 
+                            fileName="kieran_pritchard_cv.pdf" 
                             kind="secondary" 
-                        />
+                        />  
                     </motion.div>
                 </motion.div>
 
@@ -94,7 +94,7 @@ export default function Intro({ className }: Readonly<{ className?: string }>) {
                 >
                     <div className="relative aspect-square w-full max-w-100 sm:max-w-125">
                         <img 
-                            src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
+                            src="kieran-pritchard.jpg" 
                             alt="Kieran Pritchard" 
                             className="h-full w-full rounded-full object-cover ring-8 ring-muted/20 transition-all duration-500 hover:ring-primary/20"
                         />

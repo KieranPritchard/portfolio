@@ -175,7 +175,6 @@ export default function TerminalLab({ className }: { className?: string }) {
                                         onChange={(e) => setInputValue(e.target.value)}
                                         onKeyDown={handleCommand}
                                         className="flex-1 bg-transparent border-none outline-none text-emerald-400 caret-primary"
-                                        autoFocus
                                         spellCheck={false}
                                         autoComplete="off"
                                     />

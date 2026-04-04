@@ -145,7 +145,7 @@ export default function Contact({ className }: Readonly<{ className?: string }>)
                   target="_blank" 
                   rel="noopener noreferrer"
                 >
-                  Follow @kieranpritchard
+                  Follow Me
                 </a>
               </div>
             </div>

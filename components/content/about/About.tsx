@@ -50,7 +50,7 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
             >
                 {/* Displays the image */}
                 <img 
-                    src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=1000&auto=format&fit=crop" 
+                    src="kieran-pritchard.jpg" 
                     alt="Kieran Pritchard Profile" 
                     className="h-full w-full object-cover transition-transform duration-700 hover:scale-110"
                 />
@@ -101,12 +101,12 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
                     variants={textVariants}
                 >
                     {/* Link button for projects */}
-                    <LinkButton text="View My Work" link="/projects" />
+                    <LinkButton text="View My Work" link="/portfolio" />
                     {/* Download button */}
                     <DownloadButton 
                         text="Download Resume" 
-                        link="/resume.pdf" 
-                        fileName="Kieran_Pritchard_CV.pdf" 
+                        link="/kieran_pritchard_cv.pdf" 
+                        fileName="kieran_pritchard_cv.pdf" 
                         kind="outline" 
                     />
                 </motion.div>
