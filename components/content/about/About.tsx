@@ -87,11 +87,11 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
                     {/* Displays the paragraphs */}
                     <p>
                         I am a high-achieving Digital Software Development student at Bournemouth & Poole College with a dedicated focus on ethical hacking and secure system architecture. 
-                        I specialize in building robust, defense-oriented applications while utilizing my role as a student representative to drive collaborative excellence and positive change within the technical community.
+                        I specialize in building robust, defense-oriented applications while utilising my role as a student representative to drive collaborative excellence and positive change within the technical community.
                     </p>
                     <p>
                         With a strong foundation in modern programming and proactive problem-solving, I strive to create digital experiences that are not only high-performing but also fundamentally secure against emerging threats. 
-                        I am committed to applying my organizational skills and technical expertise to gain hands-on industry experience and build a resilient, long-term career in cybersecurity.
+                        I am committed to applying my organisational skills and technical expertise to gain hands-on industry experience and build a resilient, long-term career in cybersecurity.
                     </p>
                 </motion.div>
 

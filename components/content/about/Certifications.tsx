@@ -10,6 +10,11 @@ export default function Certifications({ className }: Readonly<{ className?: str
     // Stores my certs as a JSON object
     const certs = [
         {
+            title: "Networking Basics",
+            issuer: "Cisco",
+            date: "2026",
+            link: "https://www.credly.com/badges/2043f345-bf54-41de-9814-4af729f2ae1a/linked_in_profile",
+        },{
             title: "Miro essentials",
             issuer: "Miro",
             date: "2025",
