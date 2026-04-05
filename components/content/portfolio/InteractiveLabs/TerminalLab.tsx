@@ -4,7 +4,7 @@ import { useState, useRef, useEffect } from "react"
 import { motion } from "framer-motion"
 import { Card, CardHeader, CardContent } from "@/components/ui/card"
 import { cn } from "@/lib/utils"
-import { Terminal, Shield, Zap } from "lucide-react"
+import { Terminal, Shield, Zap, X, Minus, Plus} from "lucide-react"
 
 /**
  * TerminalLine Type: Defines the structure for command history.
@@ -115,10 +115,16 @@ export default function TerminalLab({ className }: { className?: string }) {
                 <Card className="group overflow-hidden border-border/50 bg-card/40 transition-all duration-300 hover:border-primary/30 shadow-2xl">
                     {/* Window Controls: Simulates an OS window header */}
                     <CardHeader className="border-b border-border/50 bg-muted/20 py-3 flex flex-row items-center justify-between">
-                        <div className="flex gap-1.5">
-                            <div className="h-3 w-3 rounded-full bg-destructive/50" />
-                            <div className="h-3 w-3 rounded-full bg-yellow-500/50" />
-                            <div className="h-3 w-3 rounded-full bg-emerald-500/50" />
+                        <div className="flex gap-1.5 group/controls">
+                            <div className="group flex h-3 w-3 items-center justify-center rounded-full bg-destructive/80 transition-colors">
+                                <X className="h-2 w-2 text-black/50 opacity-0 group-hover/controls:opacity-100" />
+                            </div>
+                            <div className="group flex h-3 w-3 items-center justify-center rounded-full bg-yellow-500/80 transition-colors">
+                                <Minus className="h-2 w-2 text-black/50 opacity-0 group-hover/controls:opacity-100" />
+                            </div>
+                            <div className="group flex h-3 w-3 items-center justify-center rounded-full bg-emerald-500/80 transition-colors">
+                                <Plus className="h-2 w-2 text-black/50 opacity-0 group-hover/controls:opacity-100" />
+                            </div>
                         </div>
                         <div className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-widest text-muted-foreground">
                             <Shield className="h-3 w-3" />
