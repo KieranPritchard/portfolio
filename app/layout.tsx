@@ -7,6 +7,7 @@ import "./globals.css"
 import { ThemeProvider } from "@/components/theme-provider"
 import { cn } from "@/lib/utils"
 import { Metadata } from 'next'
+import Footer from "@/components/main-components/Footer"
 
 export const metadata: Metadata = {
   title: {
@@ -53,6 +54,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
                 <div className="flex flex-1 flex-col gap-4 p-4 md:p-8">
                   {children}
                 </div>
+                <Footer />
               </main>
             </SidebarProvider>
           </TooltipProvider>
