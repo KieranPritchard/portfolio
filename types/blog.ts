@@ -12,3 +12,11 @@ export type BlogFrontmatter = {
     coverImage?: string
     coverAlt: string
 }
+
+// Exports the project summary
+export type BlogSummary = BlogFrontmatter
+
+// Exports the document
+export type BlogDoc = BlogFrontmatter & {
+    content: string
+}
