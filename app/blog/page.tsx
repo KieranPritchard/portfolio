@@ -2,6 +2,7 @@ import AboutMe from "@/components/content/blog/AboutMe"
 import ContentContainer from "@/components/content/ContentContainer"
 import { getAllBlogs } from "@/lib/blogs"
 import { Metadata } from 'next'
+import TrendingTopics from "../../components/content/blog/TrendingTopics"
 
 export const metadata: Metadata = {
     title: 'Blog',
@@ -16,6 +17,9 @@ export default async function Page() {
         <>
             <ContentContainer>
                 <AboutMe />
+            </ContentContainer>
+            <ContentContainer>
+                <TrendingTopics />
             </ContentContainer>
         </>
     )
