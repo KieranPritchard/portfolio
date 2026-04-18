@@ -12,7 +12,7 @@ import {
     SidebarMenuItem,
     SidebarFooter
 } from "@/components/ui/sidebar"
-import { Home, BriefcaseBusiness, User, Contact } from "lucide-react"
+import { Home, BriefcaseBusiness, User, Newspaper, Contact } from "lucide-react"
 import { cn } from "@/lib/utils"
 
 /**
@@ -25,6 +25,7 @@ import { cn } from "@/lib/utils"
 const items = [
     { title: "Home", url: "/", icon: Home },
     { title: "About", url: "/about", icon: User },
+    { title: "Blog", url: "/blog", icon: Newspaper },
     { title: "Portfolio", url: "/portfolio", icon: BriefcaseBusiness },
     { title: "Contact", url: "/contact", icon: Contact },
 ]
