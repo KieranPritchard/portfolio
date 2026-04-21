@@ -10,7 +10,14 @@ const contentDir = path.join(process.cwd(), "content/blogs")
 // Function to check if there is a blog category
 function isBlogCategory(value:unknown): value is BlogCategory {
     // Returns the correct value
-    return value === "developement" || value === "security" || value === "ai" || value === "review"
+    return (
+        value === "development" ||
+        value === "developement" ||
+        value === "web" ||
+        value === "security" ||
+        value === "ai" ||
+        value === "review"
+    )
 }
 
 // Function to normalise frontmatter

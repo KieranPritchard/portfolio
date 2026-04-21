@@ -1,5 +1,11 @@
 // Blog cateogory type
-export type BlogCategory = "developement" | "security" | "ai" | "review"
+export type BlogCategory =
+  | "development"
+  | "developement"
+  | "web"
+  | "security"
+  | "ai"
+  | "review"
 
 // Type for the blog frontmatter
 export type BlogFrontmatter = {
