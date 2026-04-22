@@ -12,15 +12,15 @@ export default function WhoAmI() {
             <CardContent className="flex flex-col items-center space-y-4">
                 {/* Avatar and profile image */}
                 <Avatar className="w-24 h-24 border-2">
-                    <AvatarImage src="/your-profile-pic.jpg" alt="Your Name" />
+                    <AvatarImage src="/kieran-pritchard.jpg" alt="Kieran Pritchard" />
                 {/* Fallback image */}
-                <AvatarFallback>JD</AvatarFallback>
+                <AvatarFallback>KP</AvatarFallback>
                 </Avatar>
                 {/* Text */}
                 <div className="text-center">
-                    <h3 className="text-lg font-bold">Your Name</h3>
-                        <p className="text-sm text-muted-foreground mt-2 leading-relaxed">
-                            I am a software engineer and writer passionate about building scalable web applications and sharing insights on modern tech stacks.
+                    <h3 className="text-lg font-bold text-left">Kieran Pritchard</h3>
+                        <p className="text-sm text-left text-muted-foreground mt-2 leading-relaxed">
+                            I am a high-achieving Digital Software Development student at Bournemouth & Poole College with a dedicated focus on ethical hacking and secure system architecture.
                         </p>
                 </div>
                 {/* Social Icons */}

@@ -20,10 +20,10 @@ interface Topic {
 export default function TrendingTopics({ 
     className, 
     topics = [
-        { name: "Next.js", icon: <Hash />, count: "1.2k" },
-        { name: "Framer Motion", icon: <Sparkles />, count: "840" },
-        { name: "TypeScript", icon: <TrendingUp />, count: "2.1k" },
-        { name: "Security", icon: <Flame />, count: "950" },
+        { name: "Reviews", icon: <Hash />},
+        { name: "Tips & Tricks", icon: <Sparkles />,},
+        { name: "Dev Diarys", icon: <TrendingUp />,},
+        { name: "Ethical Hacking", icon: <Flame />},
     ] 
 }: Readonly<{ className?: string; topics?: Topic[] }>) {
     

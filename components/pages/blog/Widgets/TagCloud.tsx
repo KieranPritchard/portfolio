@@ -43,7 +43,7 @@ export default function TagCloud({ posts }: { posts: BlogSummary[] }) {
 
     return (
         <Card className="w-full md:max-w-xs sticky top-8">
-            <CardContent className="flex flex-col items-center space-y-4">
+            <CardContent className="flex flex-col items-start space-y-4">
                 <div className="text-center">
                     <h3 className="text-lg font-bold">Tags</h3>
                     <div className="flex flex-wrap gap-2 justify-center mt-2">
