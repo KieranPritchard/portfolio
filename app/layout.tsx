@@ -43,7 +43,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             <SidebarProvider>
               <PortfolioSidebar />
               <main className="relative flex min-h-screen flex-col w-full">
-                <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center justify-between bg-background/80 backdrop-blur px-4 border-b">
+                <header className="sticky top-0 z-10 flex h-16 shrink-0 items-center justify-between px-4">
                   <div className="flex items-center gap-2">
                     <SidebarTrigger className="-ml-1" />
                   </div>
