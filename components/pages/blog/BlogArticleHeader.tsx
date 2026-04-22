@@ -122,14 +122,14 @@ export function BlogArticleHeader({
                 animate={{ opacity: 1, y: 0, scale: 1 }}
                 transition={{ delay: 0.6, duration: 0.7, ease: "circOut" }}
                 >
-                <div className="relative aspect-21/9 w-full sm:aspect-[2.4/1]">
+                <div className="relative aspect-video w-full">
                     <Image
-                    src={blog.coverImage}
-                    alt={blog.coverAlt ?? ""}
-                    fill
-                    className="object-cover"
-                    sizes="(max-width: 1024px) 100vw, 1200px"
-                    priority
+                        src={blog.coverImage}
+                        alt={blog.coverAlt ?? ""}
+                        fill
+                        className="object-cover"
+                        sizes="(max-width: 1024px) 100vw, 1200px"
+                        priority
                     />
                 </div>
                 </motion.figure>

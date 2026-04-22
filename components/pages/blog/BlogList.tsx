@@ -68,7 +68,7 @@ export default function BlogList({ className, posts }: { className?: string; pos
                                         <h3 className="text-xl font-bold transition-colors group-hover/title:text-primary md:text-2xl">{post.title}</h3>
                                     </Link>
                                     <p className="mt-3 text-sm leading-relaxed text-muted-foreground line-clamp-2">{post.description}</p>
-                                    <div className="mt-6 flex items-center">
+                                    <div className="mt-3 flex items-center">
                                         <Link href={`/blog/${post.slug}`} className="inline-flex items-center gap-2 text-sm font-bold text-foreground transition-all hover:gap-3 hover:text-primary">
                                             Read article <ArrowRight className="h-4 w-4" />
                                         </Link>
