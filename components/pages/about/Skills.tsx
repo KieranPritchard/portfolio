@@ -80,7 +80,7 @@ export default function Skills({ className }: Readonly<{ className?: string }>) 
 
                 {/* Development Card: Focuses on programming languages and frameworks */}
                 <motion.div variants={cardVariants} whileHover={{ y: -5 }}>
-                    <Card className="h-full flex flex-col transition-colors hover:border-primary/50 hover:bg-muted/30">
+                    <Card className="h-full">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2 text-xl">
                                 <Code2 className="h-5 w-5 text-primary" />
@@ -103,7 +103,7 @@ export default function Skills({ className }: Readonly<{ className?: string }>) 
 
                 {/* Security Card: Highlights cybersecurity tools and operating systems */}
                 <motion.div variants={cardVariants} whileHover={{ y: -5 }}>
-                    <Card className="h-full flex flex-col transition-colors hover:border-primary/50 hover:bg-muted/30">
+                    <Card className="h-full">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2 text-xl">
                                 <ShieldCheck className="h-5 w-5 text-primary" />
@@ -126,7 +126,7 @@ export default function Skills({ className }: Readonly<{ className?: string }>) 
 
                 {/* Infrastructure/Tools Card: Covers automation, devtools, and environment management */}
                 <motion.div variants={cardVariants} whileHover={{ y: -5 }}>
-                    <Card className="h-full flex flex-col transition-colors hover:border-primary/50 hover:bg-muted/30">
+                    <Card className="h-full">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2 text-xl">
                                 <Terminal className="h-5 w-5 text-primary" />

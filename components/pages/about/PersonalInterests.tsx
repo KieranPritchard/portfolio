@@ -85,7 +85,7 @@ export default function PersonalInterests({ className }: Readonly<{ className?: 
 
                 {/* Music & Collections Card: Highlights audio preferences and physical media habits */}
                 <motion.div variants={itemVariants} whileHover={{ y: -5 }}>
-                    <Card className="h-full flex flex-col transition-colors hover:border-primary/50 hover:bg-muted/30">
+                    <Card className="h-full">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2 text-xl">
                                 <Music className="h-5 w-5 text-primary" />
@@ -130,7 +130,7 @@ export default function PersonalInterests({ className }: Readonly<{ className?: 
 
                 {/* Hobbies & Technical Interests Card: Details TV media and active lifestyle pursuits */}
                 <motion.div variants={itemVariants} whileHover={{ y: -5 }}>
-                    <Card className="h-full flex flex-col transition-colors hover:border-primary/50 hover:bg-muted/30">
+                    <Card className="h-full">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2 text-xl">
                                 <Gamepad2 className="h-5 w-5 text-primary" />

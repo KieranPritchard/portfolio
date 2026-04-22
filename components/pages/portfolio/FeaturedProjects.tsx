@@ -70,7 +70,7 @@ export default function FeaturedProjectsList({ className, projects }: { classNam
                 {featured.map((project) => (
                 /* Individual project card wrapper with slide-up animation */
                 <motion.div key={project.slug} variants={cardVariants}>
-                    <Card className="group overflow-hidden border-border/50 bg-card/40 transition-all duration-500 hover:border-primary/40 hover:bg-card hover:shadow-2xl hover:shadow-primary/5">
+                    <Card className="group">
                         <CardContent className="p-0">
                             <div className="flex flex-col md:flex-row">
                             

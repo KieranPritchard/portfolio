@@ -82,15 +82,11 @@ export default function NowSection({ className }: Readonly<{ className?: string 
                             </Badge>
                         </motion.div>
                     </div>
-                    <p className="text-lg text-muted-foreground max-w-3xl">
-                        This is a &quot;now&quot; page—a quick snapshot of my current projects, 
-                        learning goals, and life focus.
-                    </p>
                 </motion.div>
 
                 {/* Focus: Professional/Coding - Includes a bounce animation on icon hover */}
                 <motion.div variants={cardVariants} whileHover={{ y: -5 }}>
-                    <Card className="h-full flex flex-col transition-colors hover:border-primary/50 hover:bg-muted/30">
+                    <Card className="h-full">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2 text-xl group">
                                 <Rocket className="h-5 w-5 text-primary group-hover:animate-bounce" />
@@ -107,7 +103,7 @@ export default function NowSection({ className }: Readonly<{ className?: string 
 
                 {/* Focus: Learning - Features a rotation animation on icon hover */}
                 <motion.div variants={cardVariants} whileHover={{ y: -5 }}>
-                    <Card className="h-full flex flex-col transition-colors hover:border-primary/50 hover:bg-muted/30">
+                    <Card className="h-full">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2 text-xl group">
                                 <BookOpen className="h-5 w-5 text-primary group-hover:rotate-12 transition-transform" />
@@ -123,7 +119,7 @@ export default function NowSection({ className }: Readonly<{ className?: string 
 
                 {/* Focus: Personal/Lifestyle - Features a scale animation on icon hover */}
                 <motion.div variants={cardVariants} whileHover={{ y: -5 }}>
-                    <Card className="h-full flex flex-col transition-colors hover:border-primary/50 hover:bg-muted/30">
+                    <Card className="h-full">
                         <CardHeader>
                             <CardTitle className="flex items-center gap-2 text-xl group">
                                 <Coffee className="h-5 w-5 text-primary group-hover:scale-110 transition-transform" />

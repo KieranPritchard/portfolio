@@ -96,11 +96,8 @@ export default function About({ className }: Readonly<{ className?: string }>) {
                     </p>
                 </motion.div>
 
-                {/* Seperator to separate plans */}
-                <Separator/>
-
                 <motion.div variants={itemVariants} whileHover={{ y: -5 }}>
-                    <Card className="h-full flex flex-col transition-colors hover:border-primary/50 hover:bg-muted/30">
+                    <Card className="h-full">
                         {/* 2x2 grid to provide information about me */}
                         <CardContent className="space-y-6">
                             <div className="grid grid-cols-2 gap-4">
@@ -119,7 +116,7 @@ export default function About({ className }: Readonly<{ className?: string }>) {
                                     </div>
                                 </motion.div>
                             </div>
-                            <div className="grid grid-cols-2 gap-4 pt-4 border-t border-border">
+                            <div className="grid grid-cols-2 gap-4">
                                 <motion.div className="space-y-1" whileHover={{ scale: 1.05 }}>
                                     {/* Age section part */}
                                     <div className="flex items-center gap-2 text-sm font-medium">

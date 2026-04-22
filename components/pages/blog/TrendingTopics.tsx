@@ -64,7 +64,7 @@ export default function TrendingTopics({
                             transition={{ delay: index * 0.1, duration: 0.4 }}
                         >
                             {/* Card with hover states and group-hover logic */}
-                            <Card className="group flex h-full flex-col items-center justify-center border-border/50 bg-card/60 p-6 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5 cursor-pointer">
+                            <Card className="group flex h-full flex-col items-center justify-center p-6 cursor-pointer">
                                 {/* Icon container with transition effects */}
                                 <div className="mb-1 p-6 rounded-xl bg-primary/10 text-primary transition-colors group-hover:bg-primary group-hover:text-primary-foreground">
                                     {topic.icon || <Hash className="h-6 w-6" />}

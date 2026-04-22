@@ -112,7 +112,7 @@ export default function TerminalLab({ className }: { className?: string }) {
                 </div>
 
                 {/* Main Terminal Window: Styled with a dark aesthetic and emerald text for a "Hacker" vibe */}
-                <Card className="group overflow-hidden border-border/50 bg-card/40 transition-all duration-300 hover:border-primary/30 shadow-2xl">
+                <Card className="group shadow-2xl">
                     {/* Window Controls: Simulates an OS window header */}
                     <CardHeader className="border-b border-border/50 bg-muted/20 py-3 flex flex-row items-center justify-between">
                         <div className="flex gap-1.5 group/controls">

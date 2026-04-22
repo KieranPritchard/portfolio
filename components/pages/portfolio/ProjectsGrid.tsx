@@ -85,7 +85,7 @@ export default function ProjectsGrid({ className, projects }: Readonly<{ classNa
                             transition={{ duration: 0.4, ease: "easeOut" }}
                         >
                             <Card
-                                className="group flex h-full flex-col overflow-hidden border-border/50 bg-card/40 transition-all duration-300 hover:border-primary/50 hover:shadow-xl hover:shadow-primary/5"
+                                className="group flex h-full flex-col"
                             >
                                 <CardHeader className="space-y-1">
                                     <div className="mb-2 flex items-center justify-between">

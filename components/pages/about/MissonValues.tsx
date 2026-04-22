@@ -97,7 +97,7 @@ export default function MissionValues({ className }: Readonly<{ className?: stri
                         variants={cardVariants}
                         whileHover={{ y: -5 }} // Subtle lift on hover for better interactivity
                     >
-                        <Card className="h-full flex flex-col transition-colors hover:border-primary/50 hover:bg-muted/30">
+                        <Card className="h-full">
                             <CardHeader>
                                 <CardTitle className="flex items-center gap-3 text-xl group">
                                     {/* Icon Animation: Rotates and scales when the user hovers over the icon specifically */}

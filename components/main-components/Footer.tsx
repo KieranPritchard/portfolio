@@ -38,7 +38,7 @@ export default function Footer({ className }: Readonly<{ className?: string }>) 
     }
 
     return (
-        <footer className={cn("w-full border-t bg-background pt-16 pb-8", className)}>
+        <footer className={cn("w-full bg-background pt-16 pb-8", className)}>
             <motion.div 
                 className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8"
                 variants={containerVariants}
