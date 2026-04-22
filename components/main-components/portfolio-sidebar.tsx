@@ -37,7 +37,7 @@ export function PortfolioSidebar({ className }: { className?: string }) {
         /* Creates a floating sidebar */
         <Sidebar 
             variant="floating" 
-            className={cn("border-r border-border/50", className)}
+            className={cn(className)}
         >
             {/* Brand Section */}
             <SidebarHeader className="p-6">
@@ -102,13 +102,6 @@ export function PortfolioSidebar({ className }: { className?: string }) {
                     </SidebarGroupContent>
                 </SidebarGroup>
             </SidebarContent>
-            
-            {/* Stores the footer of the page */}
-            <SidebarFooter className="p-4 border-t border-border/40">
-                <div className="flex items-center justify-around py-2">
-                    
-                </div>
-            </SidebarFooter>
         </Sidebar>
     )
 }
