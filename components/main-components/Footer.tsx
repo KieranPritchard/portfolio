@@ -6,7 +6,8 @@ import { motion, Variants } from "framer-motion"
 import { Separator } from "@/components/ui/separator"
 import { Button } from "@/components/ui/button"
 import { Mail} from "lucide-react"
-import { IconBrandLinkedin, IconBrandGithub } from "@tabler/icons-react"
+import { IconBrandLinkedin } from "@tabler/icons-react"
+import { SiGithub } from "@icons-pack/react-simple-icons"
 
 /**
  * Footer Component: A responsive, animated site footer that maintains design consistency
@@ -65,7 +66,7 @@ export default function Footer({ className }: Readonly<{ className?: string }>) 
                             Navigation
                         </h3>
                         <nav className="flex flex-col gap-2">
-                            {["About", "Portfolio", "Contact"].map((item) => (
+                            {["About", "Blog", "Portfolio", "Contact"].map((item) => (
                                 <Link 
                                     key={item}
                                     href={`/${item.toLowerCase().replace(" ", "-")}`} 
@@ -84,12 +85,12 @@ export default function Footer({ className }: Readonly<{ className?: string }>) 
                         </h3>
                         <div className="flex gap-3">
                             {[
-                                { icon: IconBrandGithub, href: "https://github.com/KieranPritchard" },
+                                { icon: SiGithub, href: "https://github.com/KieranPritchard" },
                                 { icon: IconBrandLinkedin, href: "https://www.linkedin.com/in/kieran-pritchard/" },
                                 { icon: Mail, href: "mailto:KieranPritchard06@gmail.com" }
                             ].map((social, index) => (
                                 <motion.div key={index} whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }}>
-                                    <Button variant="outline" size="icon" className="rounded-xl border-border hover:border-primary/50 hover:bg-muted/30" asChild>
+                                    <Button variant="outline" size="icon" className="rounded-full border-border hover:border-primary/50 hover:bg-muted/30" asChild>
                                         <Link href={social.href} target="_blank">
                                             <social.icon className="h-4 w-4 text-foreground" />
                                         </Link>
