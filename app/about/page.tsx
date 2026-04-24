@@ -21,7 +21,7 @@ export default function Page() {
         <AboutMe/>
       </ContentContainer>
       <ContentContainer>
-        <MissionValues />
+        <ExperienceTimeline />
       </ContentContainer>
       <ContentContainer>
         <Skills />
@@ -34,9 +34,6 @@ export default function Page() {
       </ContentContainer>
       <ContentContainer>
         <NowSection />
-      </ContentContainer>
-      <ContentContainer>
-        <ExperienceTimeline />
       </ContentContainer>
     </>
   )
