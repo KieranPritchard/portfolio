@@ -28,7 +28,7 @@ export default function WhatIDo({ className }: Readonly<{ className?: string }>)
             title: "IT Support",
             description: "Experienced in providing technical assistance within professional IT environments, ensuring seamless support for team members.",
             icon: HandHelping,
-            tags: []
+            tags: ["Networking", "Hardware", "Support"]
         }
     ]
 
@@ -99,7 +99,7 @@ export default function WhatIDo({ className }: Readonly<{ className?: string }>)
                     <motion.div 
                         key={index} 
                         variants={cardVariants}
-                        className="group relative flex items-center gap-6 rounded-xl border p-6 transition-all duration-300 hover:border-primary/30" // Added items-center
+                        className="group relative flex items-center gap-6 bg-muted/20 rounded-xl border p-6 transition-all duration-300 hover:border-primary" // Added items-center
                     >
                         {/* Numbering */}
                         <div className="absolute top-6 right-6 font-mono text-sm">
@@ -129,7 +129,7 @@ export default function WhatIDo({ className }: Readonly<{ className?: string }>)
                                         {item.tags.map((tag, tagIndex) => (
                                             <span 
                                                 key={tagIndex} 
-                                                className="rounded-full border px-3 py-1 text-[10px] font-medium uppercase tracking-wider transition-colors"
+                                                className="border px-3 py-1 text-[10px] font-medium uppercase tracking-wider transition-colors rounded-lg"
                                             >
                                                 #{tag}
                                             </span>
