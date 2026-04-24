@@ -1,5 +1,4 @@
 import ContentContainer from "@/components/pages/ContentContainer";
-import About from "@/components/pages/HomePage/About";
 import Intro from "@/components/pages/HomePage/Intro";
 import TechStack from "@/components/pages/HomePage/TechStack";
 import WhatIDo from "@/components/pages/HomePage/WhatIDo";
@@ -18,9 +17,6 @@ export default function Page() {
       </ContentContainer>
       <ContentContainer>
         <WhatIDo />
-      </ContentContainer>
-      <ContentContainer>
-        <About />
       </ContentContainer>
       <ContentContainer>
         <FeaturedProjectsList projects={projects}/>

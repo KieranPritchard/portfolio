@@ -89,7 +89,7 @@ export default function Intro({ className, projects }: Readonly<{ className?: st
                         variants={itemVariants}
                     >
                         <motion.p
-                            className="flex-row"
+                            className="flex-row font-mono"
                         >
                             <strong className="text-foreground">{projects.length}+</strong><br />
                             
