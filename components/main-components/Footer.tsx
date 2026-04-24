@@ -4,37 +4,51 @@ import { cn } from "@/lib/utils"
 import Link from "next/link"
 import { motion, Variants } from "framer-motion"
 import { Separator } from "@/components/ui/separator"
-import { Button } from "@/components/ui/button"
-import { Mail} from "lucide-react"
-import { IconBrandLinkedin } from "@tabler/icons-react"
-import { SiGithub } from "@icons-pack/react-simple-icons"
 
-/**
- * Footer Component: A responsive, animated site footer that maintains design consistency
- * with the About section using Framer Motion staggered animations and themed UI components.
- */
+// Stores the pages
+const PAGES = [
+    { name: "Home", href: "/" },
+    { name: "About", href: "/about" },
+    { name: "Portfolio", href: "/portfolio" },
+    { name: "Blog", href: "/blog" },
+    { name: "Contact", href: "/contact" },
+]
+
+// Stores the content for elsewhere
+const ELSEWHERE = [
+    { name: "GitHub", href: "https://github.com/KieranPritchard" },
+    { name: "Email", href: "mailto:KieranPritchard06@gmail.com" },
+    { name: "LinkedIn", href: "https://www.linkedin.com/in/kieran-pritchard/" },
+    { name: "CV (PDF)", href: "/kieran_pritchard_cv.pdf" },
+]
+
+// Stores teh status
+const STATUS = [
+    "Available for work",
+    "Open to CTFs",
+    "Coffee: hot",
+]
+
 export default function Footer({ className }: Readonly<{ className?: string }>) {
+    // Stores the current year
     const currentYear = new Date().getFullYear()
 
-    // Parent container variant: Staggers the appearance of the footer columns
+    // Stores the animations for the container
     const containerVariants: Variants = {
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: {
-                staggerChildren: 0.15,
-                delayChildren: 0.1,
-            },
+            transition: { staggerChildren: 0.1 },
         },
     }
 
-    // Slide-up animation for footer columns and elements
+    // Stores the items aniamtions
     const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
+        hidden: { opacity: 0, y: 10 },
         visible: { 
             opacity: 1, 
             y: 0, 
-            transition: { duration: 0.5, ease: "easeOut" } 
+            transition: { duration: 0.4, ease: "easeOut" } 
         },
     }
 
@@ -47,85 +61,58 @@ export default function Footer({ className }: Readonly<{ className?: string }>) 
                 whileInView="visible"
                 viewport={{ once: true }}
             >
-                {/* Main Content Grid */}
-                <div className="grid grid-cols-1 gap-12 md:grid-cols-3">
-                    
-                    {/* Brand Section: Consistent with the About section's primary accent style */}
+                <div className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4 mb-16">
+                    {/* Stores the header */}
                     <motion.div className="flex flex-col gap-4" variants={itemVariants}>
-                        <Link href="/" className="text-2xl font-bold tracking-tight text-foreground">
-                            Kieran Pritchard
-                        </Link>
-                        <p className="max-w-xs text-sm text-muted-foreground leading-relaxed">
-                            Building secure software and solving complex problems through ethical hacking and modern development.
+                        <h3 className="text-lg font-bold text-foreground">Kieran Pritchard</h3>
+                        <p className="text-sm text-muted-foreground leading-relaxed max-w-xs">
+                            Ethical hacker and software developer based in Bournemouth, studying at Bournemouth & Poole College.
                         </p>
                     </motion.div>
 
-                    {/* Navigation: Quick links with hover transitions */}
+                    {/* Displays the pages */}
                     <motion.div className="flex flex-col gap-4" variants={itemVariants}>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-                            Navigation
-                        </h3>
+                        <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">PAGES</h4>
                         <nav className="flex flex-col gap-2">
-                            {["About", "Blog", "Portfolio", "Contact"].map((item) => (
-                                <Link 
-                                    key={item}
-                                    href={`/${item.toLowerCase().replace(" ", "-")}`} 
-                                    className="text-sm text-muted-foreground hover:text-primary transition-colors w-fit"
-                                >
-                                    {item}
+                            {PAGES.map((link) => (
+                                <Link key={link.name} href={link.href} className="text-sm text-foreground hover:text-primary transition-colors w-fit">
+                                    {link.name}
                                 </Link>
                             ))}
                         </nav>
                     </motion.div>
-
-                    {/* Social Section: Interactive buttons with hover scaling */}
+                    
+                    {/* Displays the offsight links */}
                     <motion.div className="flex flex-col gap-4" variants={itemVariants}>
-                        <h3 className="text-sm font-semibold uppercase tracking-wider text-foreground">
-                            Connect
-                        </h3>
-                        <div className="flex gap-3">
-                            {[
-                                { icon: SiGithub, href: "https://github.com/KieranPritchard" },
-                                { icon: IconBrandLinkedin, href: "https://www.linkedin.com/in/kieran-pritchard/" },
-                                { icon: Mail, href: "mailto:KieranPritchard06@gmail.com" }
-                            ].map((social, index) => (
-                                <motion.div key={index} whileHover={{ scale: 1.1, y: -2 }} whileTap={{ scale: 0.95 }}>
-                                    <Button variant="outline" size="icon" className="rounded-full border-border hover:border-primary/50 hover:bg-muted/30" asChild>
-                                        <Link href={social.href} target="_blank">
-                                            <social.icon className="h-4 w-4 text-foreground" />
-                                        </Link>
-                                    </Button>
-                                </motion.div>
+                        <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">ELSEWHERE</h4>
+                        <nav className="flex flex-col gap-2">
+                            {ELSEWHERE.map((link) => (
+                                <Link key={link.name} href={link.href} className="text-sm text-foreground hover:text-primary transition-colors w-fit">
+                                    {link.name}
+                                </Link>
+                            ))}
+                        </nav>
+                    </motion.div>
+                    
+                    {/* Displays the other things */}
+                    <motion.div className="flex flex-col gap-4" variants={itemVariants}>
+                        <h4 className="text-xs font-bold text-muted-foreground uppercase tracking-wider">STATUS</h4>
+                        <div className="flex flex-col gap-2">
+                            {STATUS.map((status) => (
+                                <span key={status} className="text-sm text-foreground">{status}</span>
                             ))}
                         </div>
                     </motion.div>
                 </div>
 
-                {/* Animated horizontal divider */}
-                <motion.div
-                    initial={{ width: 0, opacity: 0 }}
-                    whileInView={{ width: "100%", opacity: 1 }}
-                    transition={{ duration: 0.8, delay: 0.4 }}
-                >
-                    <Separator className="my-8" />
-                </motion.div>
+                <Separator className="my-8 bg-border/50" />
 
-                {/* Bottom Metadata: Copyright and Stack details */}
                 <motion.div 
-                    className="flex flex-col items-center justify-between gap-4 md:flex-row"
+                    className="flex flex-col items-center justify-between gap-4 md:flex-row text-xs text-muted-foreground"
                     variants={itemVariants}
                 >
-                    <p className="text-sm text-muted-foreground">
-                        © {currentYear} <span className="font-medium text-foreground">Kieran Pritchard</span>. All rights reserved.
-                    </p>
-                    <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                        <span>Built with</span>
-                        <span className="text-foreground font-medium">Next.js</span>
-                        <span className="h-1 w-1 rounded-full bg-primary" />
-                        <span className="text-foreground font-medium">Tailwind</span>
-                        <span className="h-1 w-1 rounded-full bg-primary" />
-                        <span className="text-foreground font-medium">Shadcn UI</span>
-                    </div>
+                    <p>© {currentYear} • Built with NextJS + Tailwinds + Shadcn</p>
+                    <p>Bournemouth & Poole College</p>
                 </motion.div>
             </motion.div>
         </footer>
