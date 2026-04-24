@@ -80,24 +80,24 @@ export default function ThingsIBuilt({ className, projects }: { className?: stri
                             <CardContent className="p-6 flex flex-col grow">
                                 {/* Category Badge */}
                                 <div className="mb-3">
-                                    <span className="text-[10px] font-mono uppercase tracking-widest text-blue-400">
+                                    <span className="text-[10px] font-mono uppercase tracking-widest text-primary">
                                         {project.category}
                                     </span>
                                 </div>
 
                                 {/* Title & Description */}
                                 <h3 className="text-xl font-bold text-white mb-2">{project.title}</h3>
-                                <p className="text-sm text-zinc-400 leading-relaxed mb-6 grow line-clamp-3">
+                                <p className="text-sm text-muted-foreground leading-relaxed mb-6 grow line-clamp-3">
                                     {project.description}
                                 </p>
 
                                 {/* Footer Metadata */}
-                                <div className="mt-auto flex items-center justify-between text-xs text-zinc-500">
+                                <div className="mt-auto flex items-center justify-between text-xs text-muted-foreground">
                                     <span>{new Date(project.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
                                     <Link 
                                         href={`/portfolio/${project.slug}`}
                                         target="_blank"
-                                        className="flex items-center gap-1 hover:text-white transition-colors"
+                                        className="flex items-center gap-1 hover:text-foreground transition-colors"
                                     >
                                         <ExternalLink className="h-3 w-3" />
                                         Link
