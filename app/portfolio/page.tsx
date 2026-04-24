@@ -16,12 +16,6 @@ export default async function Page() {
     return (
         <>
             <ContentContainer>
-                <FeaturedProjects projects={projects} />
-            </ContentContainer>
-            <ContentContainer>
-                <InteractiveLabs />
-            </ContentContainer>
-            <ContentContainer>
                 <ProjectsGrid projects={projects} />
             </ContentContainer>
         </>
