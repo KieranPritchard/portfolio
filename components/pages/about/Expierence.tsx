@@ -1,52 +1,46 @@
 "use client"
 
-import { Variants } from "framer-motion"
-import { motion } from "framer-motion"
+import { Variants, motion } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { Briefcase, GraduationCap, Calendar } from "lucide-react"
 
 /**
- * Data-driven timeline entries. 
- * Categorized by 'education' or 'work' to determine the leading icon.
+ * Data-driven timeline entries.
+ * Stores the professional and academic history details.
  */
 const timelineData = [
     {
         title: "T-Level: Digital Software Development",
         organization: "Bournemouth & Poole College",
-        date: "Sept 2025 - Present",
-        type: "education",
+        date: "Sept 2025 — Present",
         details: [
             "Focus: Software Programming, Security & Testing, Emerging Technologies, Legislation, Data.",
-            "Elected Student Representative: Acted as a liaison between 15+ students and faculty to implement curriculum feedback."
+            "Elected Student Representative: Acted as a liaison between 15+ students and faculty."
         ]
     },
     {
         title: "IT Support Assistant (Work Placement)",
         organization: "Bournemouth & Poole College",
-        date: "Jan 2026 - Present",
-        type: "work",
+        date: "Jan 2026 — Present",
         details: [
-            "Hardware Maintenance: Performing hardware diagnostics and repairs, including dismantling and reassembling desktop hardware.",
-            "System Deployment: Configuring and imaging new laptops for enterprise deployment, ensuring security protocols meet standards.",
-            "Process Automation: Utilizing Microsoft Power Automate to design and build automated workflows."
+            "Hardware Maintenance: Performing hardware diagnostics and repairs.",
+            "System Deployment: Configuring and imaging new laptops for enterprise deployment.",
+            "Process Automation: Utilizing Microsoft Power Automate to build workflows."
         ]
     },
     {
         title: "Web & Social Media Project Member",
         organization: "Worksity (Industry Live Project)",
-        date: "Jun 2025 - Jul 2025",
-        type: "work",
+        date: "Jun 2025 — Jul 2025",
         details: [
-            "Web Development: Collaborated to design and deploy a responsive website for a local minibus firm.",
-            "Graphic Design: Developed reusable social media assets using Canva and Photoshop.",
-            "Team Leadership: Led and organized the project team, recognized with the 'Best Overall Project' award."
+            "Web Development: Collaborated to design and deploy a responsive website.",
+            "Graphic Design: Developed reusable assets using Canva and Photoshop.",
+            "Team Leadership: Led the project team, awarded 'Best Overall Project'."
         ]
     },
     {
         title: "BTEC First in Digital",
         organization: "Bournemouth & Poole College",
-        date: "Sept 2024 - Jun 2025",
-        type: "education",
+        date: "Sept 2024 — Jun 2025",
         details: [
             "Achieved Distinction grades across core modules including Web Development and Networking.",
             "Developed a foundational understanding of digital impact and IT systems."
@@ -55,8 +49,8 @@ const timelineData = [
 ]
 
 /**
- * ExperienceTimeline component: Renders a vertical path of professional and academic milestones.
- * Features a scroll-triggered line draw animation and staggered card entry.
+ * ExperienceTimeline component: Renders a structured list of milestones.
+ * Features staggered entrance animations and clean, readable typography.
  */
 export default function ExperienceTimeline({ className }: Readonly<{ className?: string }>) {
     // Animation variants for the container to orchestrate staggered children
@@ -64,115 +58,77 @@ export default function ExperienceTimeline({ className }: Readonly<{ className?:
         hidden: { opacity: 0 },
         visible: {
             opacity: 1,
-            transition: { staggerChildren: 0.3 }
-        }
+            transition: { staggerChildren: 0.15 },
+        },
     }
 
-    // Animation variants for each timeline item card
+    // Animation variants for each timeline item row
     const itemVariants: Variants = {
-        hidden: { opacity: 0, x: -20 },
+        hidden: { opacity: 0, y: 10 },
         visible: { 
             opacity: 1, 
-            x: 0, 
+            y: 0, 
             transition: { duration: 0.5, ease: "easeOut" } 
-        }
+        },
     }
 
     return (
-        <section className={cn("mx-auto w-full max-w-7xl px-4 py-12 md:px-6 lg:px-8 overflow-hidden", className)}>
-            {/* Section Header with animated title and reveal underline */}
+        <section className={cn("mx-auto w-full max-w-7xl px-4 py-16 md:px-6 lg:px-8", className)}>
+            {/* Section Header: Title and decorative accent */}
             <motion.div 
-                className="space-y-2 mb-12"
-                initial={{ opacity: 0, y: -10 }}
-                whileInView={{ opacity: 1, y: 0 }}
+                className="mb-16 space-y-2"
+                initial={{ opacity: 0 }}
+                whileInView={{ opacity: 1 }}
                 viewport={{ once: true }}
             >
+                <p className="text-xs font-mono uppercase tracking-widest text-primary">
+                    - Experience
+                </p>
                 <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
-                    Experience & Education
+                    Where I've been.
                 </h2>
-                <motion.div 
-                    className="h-1 bg-primary rounded-full" 
-                    initial={{ width: 0 }}
-                    whileInView={{ width: 80 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.3, duration: 0.8 }}
-                />
+                <div className="h-1 w-20 bg-primary rounded-full mt-4" />
             </motion.div>
 
-            {/* Timeline Wrapper: Contains the relative positioning for the vertical line */}
-            <div className="relative">
-                {/* Vertical Line Animation: Uses origin-top and scaleY to "draw" the line downward on scroll */}
-                <motion.div 
-                    className="absolute left-5 top-0 bottom-0 w-0.5 bg-border origin-top"
-                    initial={{ scaleY: 0 }}
-                    whileInView={{ scaleY: 1 }}
-                    viewport={{ once: true }}
-                    transition={{ duration: 1.5, ease: "easeInOut" }}
-                />
+            {/* List entries: Mapped from timelineData */}
+            <motion.div 
+                className="flex flex-col gap-12"
+                variants={containerVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true }}
+            >
+                {timelineData.map((item, index) => (
+                    <motion.div 
+                        key={index} 
+                        className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-4 border-b border-border/50"
+                        variants={itemVariants}
+                    >
+                        {/* Date Column: Monospaced for alignment */}
+                        <div className="text-sm font-mono text-muted-foreground pt-1">
+                            {item.date}
+                        </div>
 
-                <motion.div 
-                    className="space-y-8"
-                    variants={containerVariants}
-                    initial="hidden"
-                    whileInView="visible"
-                    viewport={{ once: true, margin: "-50px" }}
-                >
-                    {timelineData.map((item, index) => (
-                        <motion.div 
-                            key={index} 
-                            variants={itemVariants}
-                            className="relative flex items-start gap-8 group"
-                        >
-                            {/* Timeline Icon: Switches between Briefcase and GraduationCap based on entry type */}
-                            <motion.div 
-                                className="relative flex items-center justify-center w-10 h-10 rounded-full border border-border bg-background shadow shrink-0 z-10 group-hover:border-primary transition-colors duration-300"
-                                whileHover={{ scale: 1.1 }}
-                            >
-                                {item.type === "work" ? (
-                                    <Briefcase className="h-5 w-5 text-primary" />
-                                ) : (
-                                    <GraduationCap className="h-5 w-5 text-primary" />
-                                )}
-                            </motion.div>
-
-                            {/* Content Card: Individual entry details with hover lift effect */}
-                            <div className="flex-1 pb-8 min-w-0">
-                                <motion.div 
-                                    className="p-5 rounded-xl border bg-card text-card-foreground shadow-sm transition-all hover:shadow-md hover:border-primary/30"
-                                    whileHover={{ y: -2 }}
-                                >
-                                    {/* Card Header: Project title and date badge */}
-                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                                        <h3 className="font-bold text-lg tracking-tight truncate group-hover:text-primary transition-colors">
-                                            {item.title}
-                                        </h3>
-                                        <time className="flex items-center gap-1.5 text-[10px] sm:text-xs font-semibold text-muted-foreground bg-muted/50 px-3 py-1 rounded-full w-fit shrink-0">
-                                            <Calendar className="h-3.5 w-3.5" />
-                                            {item.date}
-                                        </time>
-                                    </div>
-
-                                    {/* Organization Label: Primary-colored indicator for college or workplace */}
-                                    <div className="text-sm font-bold text-primary/90 mb-4 flex items-center gap-2">
-                                        <span className="w-1.5 h-1.5 rounded-full bg-primary/40" />
-                                        {item.organization}
-                                    </div>
-
-                                    {/* CV Bullet Points: Rendered from the details array */}
-                                    <ul className="space-y-2 text-sm text-muted-foreground list-none">
-                                        {item.details.map((detail, idx) => (
-                                            <li key={idx} className="flex gap-2">
-                                                <span className="text-primary mt-1.5 h-1.5 w-1.5 rounded-full bg-primary shrink-0" />
-                                                <span className="leading-relaxed">{detail}</span>
-                                            </li>
-                                        ))}
-                                    </ul>
-                                </motion.div>
-                            </div>
-                        </motion.div>
-                    ))}
-                </motion.div>
-            </div>
+                        {/* Content Column: Details organized with separators */}
+                        <div className="space-y-3 pb-8">
+                            <span className="text-xs font-bold text-primary uppercase tracking-wider">
+                                {item.organization}
+                            </span>
+                            <h3 className="text-xl font-bold text-foreground">
+                                {item.title}
+                            </h3>
+                            <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed max-w-2xl">
+                                {item.details.map((detail, i) => (
+                                    <li key={i} className="flex gap-2">
+                                        <span>•</span>
+                                        {detail}
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                    </motion.div>
+                ))}
+            </motion.div>
         </section>
     )
 }
