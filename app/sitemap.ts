@@ -13,7 +13,7 @@ import { getAllProjects } from '@/lib/projects'
  */
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     /** The base URL of the deployed website. */
-    const baseUrl = 'https://kieranpritchard.github.io'
+    const baseUrl = 'https://www.kpritchard.co.uk'
 
     /**
      * Define static routes with their respective priorities and change frequencies.
