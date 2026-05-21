@@ -3,7 +3,7 @@ import { promises as fs } from "fs"
 import path from "path"
 
 // Function to read in and parse the data
-async function parseAndReadFile(){
+async function getAllCerts(){
     // Stores the content directory
     const contentPath:string = path.join(process.cwd(), "content/main/certs.json")
 
