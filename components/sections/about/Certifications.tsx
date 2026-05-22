@@ -3,6 +3,7 @@
 import { Variants, motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { ExternalLink, Award } from "lucide-react"
+import { getAllCerts } from "@/lib/certifications"
 
 /**
  * Certifications Component
@@ -12,100 +13,11 @@ import { ExternalLink, Award } from "lucide-react"
  * 
  * @param className - Optional CSS class name for the section container.
  */
-export default function Certifications({ className }: Readonly<{ className?: string }>) {
+export default async function Certifications({ className }: Readonly<{ className?: string }>) {
     /**
      * Data set for earned certifications.
      */
-    const certs = [
-        {
-            title: "Python Essentials 1",
-            issuer: "Cisco",
-            date: "2026",
-            link: "https://www.credly.com/badges/ffada7e7-645f-467c-a034-dfe28ae22c86/public_url",
-        },{
-            title: "Networking Basics",
-            issuer: "Cisco",
-            date: "2026",
-            link: "https://www.credly.com/badges/2043f345-bf54-41de-9814-4af729f2ae1a/linked_in_profile",
-        },{
-            title: "Miro essentials",
-            issuer: "Miro",
-            date: "2025",
-            link: "https://www.credly.com/badges/b3b65929-44a0-4f26-8693-063afbb36d97/linked_in_profile",
-        },
-        {
-            title: "Junior Cybersecurity Analyst Career Path",
-            issuer: "Cisco",
-            date: "2025",
-            link: "https://www.credly.com/badges/911b0c2b-6962-44a5-b37d-2f0dc5a30419/linked_in_profile",
-        },
-        {
-            title: "Operating Systems Basics",
-            issuer: "Cisco",
-            date: "2025",
-            link: "https://www.credly.com/badges/72195a5c-7dc9-4ebd-8e31-c360290dac7e/linked_in_profile",
-        },
-        {
-            title: "Computer Hardware Basics",
-            issuer: "Cisco",
-            date: "2025",
-            link: "https://www.credly.com/badges/f594a8f1-43fc-4693-b9c1-e066814332ae/linked_in_profile",
-        },
-        {
-            title: "AWS Educate Getting Started with Networking",
-            issuer: "Amazon Web Services (AWS)",
-            date: "2025",
-            link: "https://www.credly.com/badges/7217d462-4138-48ca-85f7-bae69500444c/linked_in_profile",
-        },
-        {
-            title: "AWS Educate Getting Started with Compute",
-            issuer: "Amazon Web Services (AWS)",
-            date: "2025",
-            link: "https://www.credly.com/badges/a7580ec0-a90b-4206-b3fc-8b77b7bce671/linked_in_profile",
-        },
-        {
-            title: "AWS Educate Getting Started with Storage",
-            issuer: "Amazon Web Services (AWS)",
-            date: "2025",
-            link: "https://www.credly.com/badges/b5507684-1b68-4c9f-8bbd-3120ea65651c/linked_in_profile",
-        },
-        {
-            title: "AWS Educate Introduction to Cloud 101",
-            issuer: "Amazon Web Services (AWS)",
-            date: "2025",
-            link: "https://www.credly.com/badges/f91a4dbc-8835-41fb-81fb-a74d33304ae2/linked_in_profile",
-        },
-        {
-            title: "Introduction to JavaScript",
-            issuer: "Sololearn",
-            date: "2024",
-            link: "https://www.sololearn.com/en/certificates/CC-TMBKLXCV",
-        },
-        {
-            title: "Introduction to cyber security stay safe online",
-            issuer: "The Open University",
-            date: "2024",
-            link: "https://www.open.edu/openlearn/badges/badge.php?hash=02c3faa491713ae91ba2c6e2d345e93d4224af23",
-        },
-        {
-            title: "Introduction to C++",
-            issuer: "Sololearn",
-            date: "2024",
-            link: "https://www.sololearn.com/en/certificates/CC-36D2Z1ZB",
-        },
-        {
-            title: "Introduction to CSS",
-            issuer: "Sololearn",
-            date: "2024",
-            link: "https://www.sololearn.com/en/certificates/CC-RL7RDSPS",
-        },
-        {
-            title: "Introduction to HTML",
-            issuer: "Sololearn",
-            date: "2023",
-            link: "https://www.sololearn.com/en/certificates/CC-TMBKLXCV",
-        },
-    ]
+    const certs = await getAllCerts()
 
     /**
      * Grid variants for staggering entrance of certification cards.

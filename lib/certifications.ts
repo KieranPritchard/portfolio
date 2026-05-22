@@ -3,7 +3,7 @@ import { promises as fs } from "fs"
 import path from "path"
 
 // Function to read in and parse the data
-async function getAllCerts(){
+export async function getAllCerts(){
     // Stores the content directory
     const contentPath:string = path.join(process.cwd(), "content/main/certs.json")
 
@@ -11,7 +11,7 @@ async function getAllCerts(){
     const file:any = await fs.readFile(contentPath, "utf-8")
 
     // Parses the data from the file
-    const data:JSON = JSON.parse(file)
+    const data = JSON.parse(file)
 
-    return data
+    return Array.isArray(data) ? data : Object.values(data)
 }
