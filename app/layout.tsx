@@ -3,7 +3,7 @@ import { SidebarProvider, SidebarTrigger, SidebarInset } from "@/components/ui/s
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { PortfolioSidebar } from "@/components/layouts/Sidebar"
 import { Geist_Mono, Roboto, Noto_Sans } from "next/font/google"
-import "./globals.css"
+import "../app/globals.css"
 import { ThemeProvider } from "@/components/providers/ThemeProvider"
 import { MotionProvider } from "@/components/providers/MotionProvider"
 import { AnimationWrapper } from "@/components/providers/AnimationWrapper"
@@ -11,6 +11,7 @@ import { cn } from "@/lib/utils"
 import { Metadata } from 'next'
 import Footer from "@/components/layouts/Footer"
 import { FaviconHandler } from "@/components/handler/FaviconHandler"
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 /**
  * Global Metadata Configuration
@@ -74,6 +75,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
             </ThemeProvider>
           </AnimationWrapper>
         </MotionProvider>
+        <SpeedInsights />
       </body>
     </html>
   )
