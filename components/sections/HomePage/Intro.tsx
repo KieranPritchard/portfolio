@@ -87,7 +87,7 @@ export default function Intro({ className, projects }: Readonly<{ className?: st
                     >
                         <LinkButton text="Learn More" link="/portfolio" />
                         <DownloadButton 
-                            text="Download Resume" 
+                            text="Download C.V" 
                             link="/kieran_pritchard_cv.pdf" 
                             fileName="kieran_pritchard_cv.pdf" 
                             kind="secondary" 
