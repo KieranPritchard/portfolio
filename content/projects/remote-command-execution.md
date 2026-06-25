@@ -8,6 +8,7 @@ tags:
   - Networking
   - Socket Programming
 github: "https://github.com/KieranPritchard/Remote-Command-Execution"
+link: "#"
 date: "2025-07-06"
 coverImage: "/projects/remote-command-execution/remote-command-execution.jpg"
 coverAlt: "Remote Command Execution project header"
