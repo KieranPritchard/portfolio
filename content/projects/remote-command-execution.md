@@ -9,7 +9,7 @@ tags:
   - Socket Programming
 github: "https://github.com/KieranPritchard/Remote-Command-Execution"
 date: "2025-07-06"
-coverImage: "/remote-command-execution/remote-command-execution.jpg"
+coverImage: "/projects/remote-command-execution/remote-command-execution.jpg"
 coverAlt: "Remote Command Execution project header"
 ---
 
