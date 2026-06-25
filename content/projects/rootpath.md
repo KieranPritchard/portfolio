@@ -8,7 +8,7 @@ tags:
   - Tailwind CSS
   - UI/UX Design
   - GitHub Pages
-link: "https://kieranpritchard.github.io/RootPath/"
+link: "https://rootpath.kpritchard.co.uk/"
 github: "https://github.com/KieranPritchard/RootPath"
 date: "2026-02-06"
 coverImage: "https://raw.githubusercontent.com/KieranPritchard/kieranpritchard.github.io/refs/heads/main/public/projects/rootpath/rootpath.webp"
