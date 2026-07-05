@@ -139,7 +139,7 @@ export default function ProjectsGrid({ className, projects }: Readonly<{ classNa
                                         </div>
                                     </CardContent>
                                     <CardFooter className="pt-4 border-t border-border/50">
-                                        <Link href={`/portfolio/${project.slug}`} className="text-xs font-bold hover:underline">View Project</Link>
+                                        <Link href={`/projects/${project.slug}`} className="text-xs font-bold hover:underline">View Project</Link>
                                     </CardFooter>
                                 </Card>
                             )}
@@ -159,7 +159,7 @@ export default function ProjectsGrid({ className, projects }: Readonly<{ classNa
                                         </div>
                                         <h3 className="text-xl font-bold">{project.title}</h3>
                                         <p className="text-sm text-muted-foreground">{project.description}</p>
-                                        <Link href={`/portfolio/${project.slug}`} className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
+                                        <Link href={`/projects/${project.slug}`} className="inline-flex items-center gap-2 text-sm font-bold text-primary hover:underline">
                                             Read full case study <ArrowRight className="h-3 w-3" />
                                         </Link>
                                     </div>
@@ -179,7 +179,7 @@ export default function ProjectsGrid({ className, projects }: Readonly<{ classNa
                                     <div className="flex items-center gap-8 text-right">
                                         <span className="text-xs font-mono uppercase text-muted-foreground w-20">{project.category}</span>
                                         <span className="text-xs font-mono text-muted-foreground w-24">{project.date}</span>
-                                        <Link href={`/portfolio/${project.slug}`} className="text-primary hover:text-primary/80">
+                                        <Link href={`/projects/${project.slug}`} className="text-primary hover:text-primary/80">
                                             <ArrowRight className="h-4 w-4" />
                                         </Link>
                                     </div>

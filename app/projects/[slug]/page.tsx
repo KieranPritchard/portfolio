@@ -57,7 +57,7 @@ export default async function Page({ params }: Readonly<{ params: Promise<{ slug
         className="mb-8"
         items={[
           { label: "Home", href: "/" },
-          { label: "Portfolio", href: "/portfolio" },
+          { label: "Projects", href: "/projects" },
           { label: project.title },
         ]}
       />

@@ -11,7 +11,7 @@ import { Separator } from "@/components/ui/separator"
 const PAGES = [
     { name: "Home", href: "/" },
     { name: "About", href: "/about" },
-    { name: "Portfolio", href: "/portfolio" },
+    { name: "Projects", href: "/projects" },
     { name: "Blog", href: "/blog" },
     { name: "Contact", href: "/contact" },
 ]

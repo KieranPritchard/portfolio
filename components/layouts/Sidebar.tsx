@@ -23,7 +23,7 @@ import { AnimationToggle } from "@/components/main-components/AnimationToggle"
 const items = [
     { title: "Home", url: "/", icon: Home },
     { title: "About", url: "/about", icon: User },
-    { title: "Portfolio", url: "/portfolio", icon: Toolbox },
+    { title: "Projects", url: "/projects", icon: Toolbox },
     { title: "Blog", url: "/blog", icon: NotebookPen },
     { title: "Contact", url: "/contact", icon: Mail },
 ]
