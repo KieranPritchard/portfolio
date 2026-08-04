@@ -1,8 +1,8 @@
 "use client"
 
 import { Mail, MapPin, Clock } from "lucide-react"
-import { IconBrandLinkedin, IconBrandGithub, IconBrandX } from "@tabler/icons-react"
 import ContactForm from "@/components/sections/contact/ContactForm"
+import { siGithub } from "simple-icons"
 
 /**
  * Contact Component
@@ -58,8 +58,8 @@ export default function Contact() {
             <div className="grid grid-cols-2 gap-px bg-muted/20 border-t border-border">
               {[
                 { icon: Mail, label: "Email", href: `mailto:${toEmail}` },
-                { icon: IconBrandGithub, label: "GitHub", href: "https://github.com/KieranPritchard" },
-                { icon: IconBrandLinkedin, label: "LinkedIn", href: "https://www.linkedin.com/in/kieran-pritchard/" },
+                { icon: siGithub, label: "GitHub", href: "https://github.com/KieranPritchard" },
+                { icon: silinke, label: "LinkedIn", href: "https://www.linkedin.com/in/kieran-pritchard/" },
                 { icon: IconBrandX, label: "X", href: "https://x.com/OverF10w_0x" }
               ].map((item, i) => (
                 <a 

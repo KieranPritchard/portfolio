@@ -31,7 +31,8 @@ const skillCategories = [
         skills: [
             { name: "Kali Linux", value: 75 },
             { name: "Wireshark", value: 50 },
-            { name: "Nmap", value: 70 },
+            { name: "Nmap", value: 72 },
+            { name: "Cryptography", value: 65 },
         ]
     },
     {
@@ -39,7 +40,7 @@ const skillCategories = [
         skills: [
             { name: "Git / GitHub", value: 85 },
             { name: "Docker", value: 60 },
-            { name: "Figma", value: 80 },
+            { name: "Docker", value: 60 },
         ]
     }
 ]

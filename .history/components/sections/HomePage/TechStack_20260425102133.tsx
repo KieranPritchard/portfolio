@@ -29,6 +29,7 @@ const SKILLS = [
     { name: "Go", Icon: SiGo},
     { name: "React", Icon: SiReact },
     { name: "Tailwind", Icon: SiTailwindcss },
+    { name: "Bootstrap", Icon: SiBootstrap},
     { name: "Node.js", Icon: SiNodedotjs },
     { name: "GitHub", Icon: SiGithub },
     { name: "Git", Icon: SiGit },

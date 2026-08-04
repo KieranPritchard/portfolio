@@ -1,7 +1,7 @@
 "use client"
 
 import { Mail, MapPin, Clock } from "lucide-react"
-import { IconBrandLinkedin, IconBrandGithub, IconBrandX } from "@tabler/icons-react"
+import { IconBrandLinkedin, IconBrandGithub, IconBrandDiscord, IconBrandX } from "@tabler/icons-react"
 import ContactForm from "@/components/sections/contact/ContactForm"
 
 /**

@@ -9,9 +9,9 @@ import { Separator } from "@/components/ui/separator"
  */
 const METADATA = [
     { label: "Name", value: "Kieran Pritchard" },
-    { label: "Role", value: "Ethical hacker & developer" },
+    { label: "Role", value: "Ethical hacker & dev (student)" },
     { label: "Location", value: "Bournemouth, England" },
-    { label: "Studying", value: "T-Level Digital Software Development" },
+    { label: "Studying", value: "T-Level Digital Software Dev" },
     { label: "Institution", value: "Bournemouth & Poole College" },
     { label: "Email", value: "KieranPritchard06@gmail.com" },
 ]
@@ -96,7 +96,7 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
                 <Separator className="bg-border/50" />
 
                 {/* Narrative Section: Title and Detailed Biography */}
-                <motion.div className="space-y-6" variants={itemVariants}>
+                <motion.div className="space-y-4" variants={itemVariants}>
                     <div className="space-y-2">
                         <span className="text-xs font-mono uppercase tracking-widest text-primary">
                             - About

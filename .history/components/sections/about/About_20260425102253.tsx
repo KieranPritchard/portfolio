@@ -9,11 +9,12 @@ import { Separator } from "@/components/ui/separator"
  */
 const METADATA = [
     { label: "Name", value: "Kieran Pritchard" },
-    { label: "Role", value: "Ethical hacker & developer" },
+    { label: "Role", value: "Ethical hacker & dev (student)" },
     { label: "Location", value: "Bournemouth, England" },
-    { label: "Studying", value: "T-Level Digital Software Development" },
+    { label: "Studying", value: "T-Level Digital Software Dev" },
     { label: "Institution", value: "Bournemouth & Poole College" },
     { label: "Email", value: "KieranPritchard06@gmail.com" },
+    { label: "Status", value: "Available for placement" },
 ]
 
 /**

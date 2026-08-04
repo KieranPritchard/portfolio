@@ -122,7 +122,7 @@ export default function PersonalInterests({ className }: Readonly<{ className?: 
                     <div className="grid grid-cols-2 gap-8 pt-4 border-t border-border/50">
                         <div className="space-y-1">
                             <h4 className="text-sm font-bold text-foreground">Creative</h4>
-                            <p className="text-xs text-muted-foreground">Photography & Building Lego</p>
+                            <p className="text-xs text-muted-foreground">Photography & </p>
                         </div>
                         <div className="space-y-1">
                             <h4 className="text-sm font-bold text-foreground">Active</h4>

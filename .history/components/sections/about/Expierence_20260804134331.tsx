@@ -8,21 +8,13 @@ import { cn } from "@/lib/utils"
  */
 const timelineData = [
     {
-        title: "1st Line IT Support Assistant",
+        title: "IT Support Assistant (T-Level Work Placement"
+
         organization: "Bournemouth & Poole College",
-        date: "July 2026 — September 2026",
+        date: "Sept 2025 — Present",
         details: [
-            "System Deployment: Configuring and imaging new laptops for enterprise deployment while ensuring all software and services meet college standards.",
-            "Helpdesk Ticketing: Closing tickets and requests filed through the college Helpdesk system to ensure prompt resolution.",
-        ]
-    },{
-        title: "IT Support Assistant (T-Level Work Placement)",
-        organization: "Bournemouth & Poole College",
-        date: "Jan 2026 — June 2026",
-        details: [
-            "Hardware Maintenance: Performing hardware diagnostics and repairs, including dismantling and reassembling desktop hardware and peripherals.",
-            "System Deployment: Configuring and imaging new laptops for enterprise deployment, ensuring all software and security protocols meet college standards.",
-            "Process Automation: Utilizing Microsoft Power Automate to design and build automated workflows, improving departmental efficiency.",
+            "Focus: Software Programming, Security & Testing, Emerging Technologies, Legislation, Data.",
+            "Elected Student Representative: Acted as a liaison between 15+ students and faculty."
         ]
     },
     {

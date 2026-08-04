@@ -8,15 +8,7 @@ import { cn } from "@/lib/utils"
  */
 const timelineData = [
     {
-        title: "1st Line IT Support Assistant",
-        organization: "Bournemouth & Poole College",
-        date: "July 2026 — September 2026",
-        details: [
-            "System Deployment: Configuring and imaging new laptops for enterprise deployment while ensuring all software and services meet college standards.",
-            "Helpdesk Ticketing: Closing tickets and requests filed through the college Helpdesk system to ensure prompt resolution.",
-        ]
-    },{
-        title: "IT Support Assistant (T-Level Work Placement)",
+        title: "IT Support Assistant (T-Level Work Placement",
         organization: "Bournemouth & Poole College",
         date: "Jan 2026 — June 2026",
         details: [
