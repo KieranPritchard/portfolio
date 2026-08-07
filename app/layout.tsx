@@ -18,8 +18,38 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
  * Defines the default page titles and descriptions for search engine optimization (SEO).
  */
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.kpritchard.co.uk"),
   title: { default: 'Kieran Pritchard', template: '%s | Kieran Pritchard' },
-  description: 'Software student focused on ethical hacking and secure development.',
+  description: 'Kieran Pritchard is a Software Development student at Bournemouth & Poole College, building full-stack web apps and offensive security tooling. View projects, CTF write-ups, and CV.',
+  keywords: ['Kieran Pritchard', 'software developer Bournemouth', 'junior developer UK', 'ethical hacker', 'T Level software development', 'CTF write-ups'],
+  authors: [{name: 'Kieran Pritchard'}],
+  openGraph: {
+    title: 'Kieran Pritchard | Software Developer & Ethical Hacker',
+    description: 'Software Development student building full-stack apps and offensive security tooling. Projects, CTF write-ups, and CV.',
+    url: 'https://www.kpritchard.co.uk',
+    siteName: 'Kieran Pritchard',
+    images: [
+      {
+        url: '/kieran-pritchard.jpg',
+        width: 1200,
+        height: 630,
+        alt: 'Kieran Pritchard',
+      },
+    ],
+    locale: 'en_GB',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Kieran Pritchard | Software Developer & Ethical Hacker',
+    description: 'Software Development student building full-stack apps and offensive security tooling.',
+    images: ['/kieran-pritchard.jpg'],
+    creator: '@overf10w_0x',
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
 }
 
 /**
