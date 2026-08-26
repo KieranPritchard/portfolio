@@ -3,11 +3,13 @@
 import { Variants, motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
+import React from "react"
+import Image from "next/image"
 
 /**
  * Metadata displayed as a list of labels and values on the About page.
  */
-const METADATA = [
+const METADATA:{label:string, value:string}[] = [
     { label: "Name", value: "Kieran Pritchard" },
     { label: "Role", value: "Ethical hacker & developer" },
     { label: "Location", value: "Bournemouth, England" },
@@ -24,7 +26,7 @@ const METADATA = [
  * 
  * @param className - Optional CSS class name for the section container.
  */
-export default function AboutMe({ className }: Readonly<{ className?: string }>) {
+export default function AboutMe({ className }: Readonly<{ className?: string }>):React.JSX.Element {
     /**
      * Staggered entrance variants for the content column.
      */
@@ -64,7 +66,7 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
                 viewport={{ once: true }}
                 transition={{ duration: 0.6 }}
             >
-                <img 
+                <Image
                     src="kieran-pritchard.jpg" 
                     alt="Kieran Pritchard" 
                     className="h-full w-full object-cover"
@@ -81,7 +83,7 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
             >
                 {/* Metadata List: Key-value pairs for quick information */}
                 <motion.div className="flex flex-col gap-3" variants={itemVariants}>
-                    {METADATA.map((item) => (
+                    {METADATA.map((item:{label:string, value:string}) => (
                         <div key={item.label} className="grid grid-cols-[120px_1fr] gap-4">
                             <span className="text-xs font-bold uppercase tracking-wider text-muted-foreground pt-0.5">
                                 {item.label}

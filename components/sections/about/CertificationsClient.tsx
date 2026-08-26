@@ -4,6 +4,7 @@ import { Variants, motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { ExternalLink, Award } from "lucide-react"
 import { Certification } from "@/types/certification"
+import React from "react"
 
 /**
  * CertificationsClient Component
@@ -19,7 +20,7 @@ export default function CertificationsClient({
 }: Readonly<{
     certs: Certification[]
     className?: string
-}>) {
+}>):React.JSX.Element {
     /**
      * Grid variants for staggering entrance of certification cards.
      */
@@ -68,7 +69,7 @@ export default function CertificationsClient({
                 whileInView="visible"
                 viewport={{ once: true }}
             >
-                {certs.map((cert, index) => (
+                {certs.map((cert:Certification, index:number) => (
                     <motion.div
                         key={index}
                         variants={itemVariants}

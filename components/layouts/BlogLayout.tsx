@@ -1,14 +1,13 @@
-import { cn } from "@/lib/utils"
+import * as React from "react"
 
-export default function BlogPageLayout({ 
-    top, 
-    sidebar, 
-    main 
-}: { 
-    top: React.ReactNode; 
-    sidebar: React.ReactNode; 
-    main: React.ReactNode 
-}) {
+// Defines the types for the blog post layout
+interface BlogPageLayoutProps {
+  top: React.ReactNode
+  sidebar: React.ReactNode,
+  main: React.ReactNode,
+}
+
+export default function BlogPageLayout({ top, sidebar, main }:BlogPageLayoutProps):React.JSX.Element {
     return (
         <div className="mx-auto w-full max-w-6xl px-4 py-16 md:px-6">
             {/* Top section: AboutMe and TrendingTopics at full width */}

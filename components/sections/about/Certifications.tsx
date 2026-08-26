@@ -1,5 +1,6 @@
 import { getAllCerts } from "@/lib/certifications"
 import CertificationsClient from "./CertificationsClient"
+import { Certification } from "../../../types/certification"
 
 /**
  * Certifications Component (Server Component)
@@ -13,7 +14,7 @@ export default async function Certifications({ className }: Readonly<{ className
     /**
      * Data set for earned certifications fetched server-side from JSON file.
      */
-    const certs = await getAllCerts()
+    const certs:Certification[] = await getAllCerts()
 
     return <CertificationsClient certs={certs} className={className} />
 }

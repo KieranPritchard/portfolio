@@ -3,6 +3,7 @@
 import { Variants, motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Rocket, BookOpen, Coffee, Calendar } from "lucide-react"
+import React from "react"
 
 /**
  * NowSection Component
@@ -12,7 +13,7 @@ import { Rocket, BookOpen, Coffee, Calendar } from "lucide-react"
  * 
  * @param className - Optional CSS class name for the section container.
  */
-export default function NowSection({ className }: Readonly<{ className?: string }>) {
+export default function NowSection({ className }: Readonly<{ className?: string }>):React.JSX.Element {
     /**
      * Date of the last update for this section.
      */

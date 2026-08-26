@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button"
 import Link from "next/link"
 import { cn } from "@/lib/utils"
 import { ArrowRight } from "lucide-react"
+import { ForwardedRef, ForwardRefExoticComponent } from "react"
 
 // Define the shape of our props for type safety
 interface LinkButtonProps {
@@ -20,14 +21,11 @@ interface LinkButtonProps {
  * We use forwardRef to expose the underlying DOM element, 
  * which is a requirement for motion() to attach animation listeners.
  */
-const BaseLinkButton = React.forwardRef<HTMLDivElement, LinkButtonProps>(
-    ({ kind = "default", text, link, className }, ref) => {
+const BaseLinkButton:ForwardRefExoticComponent<LinkButtonProps> = React.forwardRef<HTMLDivElement, LinkButtonProps>(
+    ({ kind = "default", text, link, className }:LinkButtonProps, ref:ForwardedRef<HTMLDivElement>):React.JSX.Element => {
         return (
             <div ref={ref} className={cn("inline-block", className)}>
-                {/* asChild forces the Button to pass its styles and behavior to the child (Link).
-                    We nest the Icon inside the Link to ensure the entire area is a single 
-                    accessible interactive element.
-                */}
+                {/* asChild forces the Button to pass its styles and behavior to the child (Link). */}
                 <Button size={"lg"} variant={kind} asChild className="w-full rounded-md">
                     <Link href={link}>
                         {text}
