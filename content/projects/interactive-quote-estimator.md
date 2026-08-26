@@ -8,7 +8,7 @@ tags:
   - Supabase
   - Docker
 link: "#"
-github: "https://github.com/KieranPritchard/CTF-Portfolio"
+github: "https://github.com/KieranPritchard/Interactive-Quote-Estimator"
 date: "2026-08-10"
 coverImage: "public/projects/interactive-quote-estimator/interactive-quote-estimator-2.png"
 coverAlt: "Interactive quote estimator project header"
