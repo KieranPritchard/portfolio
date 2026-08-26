@@ -1,6 +1,6 @@
 ---
 title: "Interactive Quote Estimator"
-slug: ctf-write-up-portfolio
+slug: interactive-quote-estimator
 category: web
 description: "Interactive quote estimator for freelance web projects — get instant pricing, then receive a custom PDF quote by email. Built with Next.js, Supabase & Resend."
 tags:
