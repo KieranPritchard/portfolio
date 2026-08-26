@@ -39,6 +39,7 @@ const skillCategories = [
         skills: [
             { name: "Git / GitHub", value: 85 },
             { name: "Docker", value: 60 },
+            { name: "n8n", value: 60 },
             { name: "Figma", value: 80 },
         ]
     }

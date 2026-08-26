@@ -10,10 +10,11 @@ const timelineData = [
     {
         title: "1st Line IT Support Assistant",
         organization: "Bournemouth & Poole College",
-        date: "July 2026 — September 2026",
+        date: "July 2026 — August 2026",
         details: [
             "System Deployment: Configuring and imaging new laptops for enterprise deployment while ensuring all software and services meet college standards.",
             "Helpdesk Ticketing: Closing tickets and requests filed through the college Helpdesk system to ensure prompt resolution.",
+            "Student Enrolment Prep: Preparing workstations ahead of new student enrolment, ensuring devices were set up and ready for the start of term."
         ]
     },{
         title: "IT Support Assistant (T-Level Work Placement)",
