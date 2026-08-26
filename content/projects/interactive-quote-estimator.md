@@ -10,7 +10,7 @@ tags:
 link: "#"
 github: "https://github.com/KieranPritchard/CTF-Portfolio"
 date: "2026-08-10"
-coverImage: "/projects/ctf-showcase/ctf-showcase.png"
+coverImage: "public/projects/interactive-quote-estimator/interactive-quote-estimator-2.png"
 coverAlt: "Interactive quote estimator project header"
 ---
 
@@ -47,6 +47,8 @@ To build a multi-step quote tool for potential freelance clients, where they can
 ### Outcome
 
 The tool works end to end: a client fills in the form, sees their estimate update live, and on submit the lead is saved, a PDF summary lands in their inbox, and they're redirected to a thank-you page. It gave me practical experience with Server Actions, self-hosting Supabase with Docker Compose, and tying together form state, a database, and an email pipeline into one working flow.
+
+![public/projects/interactive-quote-estimator/interactive-quote-estimator-2.png](public/projects/interactive-quote-estimator/interactive-quote-estimator-2.png)
 
 ## How to Use the Project
 
@@ -120,6 +122,8 @@ The tool works end to end: a client fills in the form, sees their estimate updat
        notes TEXT
    );
    ```
+
+![public/projects/interactive-quote-estimator/interactive-quote-estimator-4.png](public/projects/interactive-quote-estimator/interactive-quote-estimator-4.png)
 
 ## Licenses
 
