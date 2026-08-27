@@ -9,12 +9,12 @@ import * as React from "react"
 /**
  * Navigation links for the portfolio pages.
  */
-const PAGES:{name:string, href:string}[] = [
-    { name: "Home", href: "/" },
-    { name: "About", href: "/about" },
-    { name: "Projects", href: "/projects" },
-    { name: "Blog", href: "/blog" },
-    { name: "Contact", href: "/contact" },
+const PAGES: { name: string; href: string }[] = [
+  { name: "Home", href: "/" },
+  { name: "About", href: "/about" },
+  { name: "Projects", href: "/projects" },
+  { name: "Blog", href: "/blog" },
+  { name: "Contact", href: "/contact" },
 ]
 
 /**
@@ -30,133 +30,135 @@ const ELSEWHERE: { name: string; href: string }[] = [
 /**
  * Personal status indicators displayed in the footer.
  */
-const STATUS:string[] = [
-    "Available for work",
-    "Open to tes, projects",
-    "Coffee: hot",
-    "Music: loud",
+const STATUS: string[] = [
+  "Available for work",
+  "Open to collaboration, projects, and more",
+  "Coffee: hot",
+  "Music: loud",
 ]
 
 /**
  * Footer Component
- * 
+ *
  * Displays site navigation, social links, status updates, and copyright information.
  * Uses Framer Motion for staggered entry animations when scrolled into view.
- * 
+ *
  * @param className - Optional CSS class name for the footer container.
  */
-export default function Footer({ className }: Readonly<{ className?: string }>):React.JSX.Element {
-    const currentYear:number = new Date().getFullYear()
+export default function Footer({
+  className,
+}: Readonly<{ className?: string }>): React.JSX.Element {
+  const currentYear: number = new Date().getFullYear()
 
-    /**
-     * Animation variants for the main footer container to stagger children.
-     */
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.1 },
-        },
-    }
+  /**
+   * Animation variants for the main footer container to stagger children.
+   */
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.1 },
+    },
+  }
 
-    /**
-     * Animation variants for individual footer sections.
-     */
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 10 },
-        visible: { 
-            opacity: 1, 
-            y: 0, 
-            transition: { duration: 0.4, ease: "easeOut" } 
-        },
-    }
+  /**
+   * Animation variants for individual footer sections.
+   */
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.4, ease: "easeOut" },
+    },
+  }
 
-    return (
-      <footer className={cn("w-full bg-background pt-16 pb-8", className)}>
-        <motion.div
-          className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true }}
-        >
-          <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
-            {/* Brand Section: Logo/Name and short bio */}
-            <motion.div className="flex flex-col gap-4" variants={itemVariants}>
-              <h3 className="text-lg font-bold text-foreground">
-                Kieran Pritchard
-              </h3>
-              <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
-                Ethical hacker and software developer based in Bournemouth,
-                studying at Bournemouth & Poole College.
-              </p>
-            </motion.div>
-
-            {/* Internal Navigation Links */}
-            <motion.div className="flex flex-col gap-4" variants={itemVariants}>
-              <h4 className="text-xs font-bold tracking-wider text-muted-foreground uppercase">
-                PAGES
-              </h4>
-              <nav className="flex flex-col gap-2">
-                {PAGES.map(
-                  (link: { name: string; href: string }): React.JSX.Element => (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      className="w-fit text-sm text-foreground transition-colors hover:text-primary"
-                    >
-                      {link.name}
-                    </Link>
-                  )
-                )}
-              </nav>
-            </motion.div>
-
-            {/* External/Social Links */}
-            <motion.div className="flex flex-col gap-4" variants={itemVariants}>
-              <h4 className="text-xs font-bold tracking-wider text-muted-foreground uppercase">
-                ELSEWHERE
-              </h4>
-              <nav className="flex flex-col gap-2">
-                {ELSEWHERE.map(
-                  (link: { name: string; href: string }): React.JSX.Element => (
-                    <Link
-                      key={link.name}
-                      href={link.href}
-                      className="w-fit text-sm text-foreground transition-colors hover:text-primary"
-                    >
-                      {link.name}
-                    </Link>
-                  )
-                )}
-              </nav>
-            </motion.div>
-
-            {/* Status and Fun Indicators */}
-            <motion.div className="flex flex-col gap-4" variants={itemVariants}>
-              <h4 className="text-xs font-bold tracking-wider text-muted-foreground uppercase">
-                STATUS
-              </h4>
-              <div className="flex flex-col gap-2">
-                {STATUS.map((status:string):React.JSX.Element => (
-                  <span key={status} className="text-sm text-foreground">
-                    {status}
-                  </span>
-                ))}
-              </div>
-            </motion.div>
-          </div>
-
-          <Separator className="my-8 bg-border/50" />
-
-          {/* Bottom Bar: Copyright and credits */}
-          <motion.div
-            className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground md:flex-row"
-            variants={itemVariants}
-          >
-            <p>© {currentYear} • Built with NextJS + Tailwinds + Shadcn</p>
+  return (
+    <footer className={cn("w-full bg-background pt-16 pb-8", className)}>
+      <motion.div
+        className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <div className="mb-16 grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-4">
+          {/* Brand Section: Logo/Name and short bio */}
+          <motion.div className="flex flex-col gap-4" variants={itemVariants}>
+            <h3 className="text-lg font-bold text-foreground">
+              Kieran Pritchard
+            </h3>
+            <p className="max-w-xs text-sm leading-relaxed text-muted-foreground">
+              Ethical hacker and software developer based in Bournemouth,
+              studying at Bournemouth & Poole College.
+            </p>
           </motion.div>
+
+          {/* Internal Navigation Links */}
+          <motion.div className="flex flex-col gap-4" variants={itemVariants}>
+            <h4 className="text-xs font-bold tracking-wider text-muted-foreground uppercase">
+              PAGES
+            </h4>
+            <nav className="flex flex-col gap-2">
+              {PAGES.map(
+                (link: { name: string; href: string }): React.JSX.Element => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="w-fit text-sm text-foreground transition-colors hover:text-primary"
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
+            </nav>
+          </motion.div>
+
+          {/* External/Social Links */}
+          <motion.div className="flex flex-col gap-4" variants={itemVariants}>
+            <h4 className="text-xs font-bold tracking-wider text-muted-foreground uppercase">
+              ELSEWHERE
+            </h4>
+            <nav className="flex flex-col gap-2">
+              {ELSEWHERE.map(
+                (link: { name: string; href: string }): React.JSX.Element => (
+                  <Link
+                    key={link.name}
+                    href={link.href}
+                    className="w-fit text-sm text-foreground transition-colors hover:text-primary"
+                  >
+                    {link.name}
+                  </Link>
+                )
+              )}
+            </nav>
+          </motion.div>
+
+          {/* Status and Fun Indicators */}
+          <motion.div className="flex flex-col gap-4" variants={itemVariants}>
+            <h4 className="text-xs font-bold tracking-wider text-muted-foreground uppercase">
+              STATUS
+            </h4>
+            <div className="flex flex-col gap-2">
+              {STATUS.map((status: string): React.JSX.Element => (
+                <span key={status} className="text-sm text-foreground">
+                  {status}
+                </span>
+              ))}
+            </div>
+          </motion.div>
+        </div>
+
+        <Separator className="my-8 bg-border/50" />
+
+        {/* Bottom Bar: Copyright and credits */}
+        <motion.div
+          className="flex flex-col items-center justify-between gap-4 text-xs text-muted-foreground md:flex-row"
+          variants={itemVariants}
+        >
+          <p>© {currentYear} • Built with NextJS + Tailwinds + Shadcn</p>
         </motion.div>
-      </footer>
-    )
+      </motion.div>
+    </footer>
+  )
 }
