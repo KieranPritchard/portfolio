@@ -5,7 +5,12 @@ import { LinkButton } from "@/components/Buttons/LinkButton"
 import { ProjectArticleHeader } from "@/components/sections/portfolio/ProjectArticleHeader"
 import { ProjectBreadcrumbs } from "@/components/sections/portfolio/ProjectBreadcrumbs"
 import { ProjectMarkdown } from "@/components/sections/portfolio/ProjectMarkdown"
-import { getAllProjects, getProjectBySlug, getProjectFileSlugs } from "@/lib/projects"
+import {
+  getAllProjects,
+  getProjectBySlug,
+  getProjectFileSlugs,
+} from "@/lib/projects"
+import { ProjectDoc } from "../../../types/project"
 
 // Function to generate static parameters
 export async function generateStaticParams() {
@@ -14,7 +19,9 @@ export async function generateStaticParams() {
 }
 
 // Generates metadata
-export async function generateMetadata({ params }: Readonly<{ params: Promise<{ slug: string }> }>) {
+export async function generateMetadata({
+  params,
+}: Readonly<{ params: Promise<{ slug: string }> }>) {
   // Stores the slug
   const { slug } = await params
   // Gets the project by the slug
@@ -34,11 +41,13 @@ export async function generateMetadata({ params }: Readonly<{ params: Promise<{ 
 }
 
 // Function for the page
-export default async function Page({ params }: Readonly<{ params: Promise<{ slug: string }> }>) {
+export default async function Page({
+  params,
+}: Readonly<{ params: Promise<{ slug: string }> }>) {
   // Gets the slug
   const { slug } = await params
   // Gets the project
-  const project = getProjectBySlug(slug)
+  const project: ProjectDoc | null = getProjectBySlug(slug)
 
   // Checks if the project is not found
   if (!project) {
@@ -46,11 +55,44 @@ export default async function Page({ params }: Readonly<{ params: Promise<{ slug
     notFound()
   }
 
-  // Gets the related projects 
-  const related = getAllProjects().filter((item) => item.slug !== project.slug).slice(0, 3)
+  // Function to display the correct link buttons
+  const displayLinkButtons = () => {
+    if (project.link === "#") {
+      return (
+        <LinkButton
+          text="Source"
+          link={project.github}
+          kind="outline"
+          className="sm:flex-1"
+        />
+      )
+    } else {
+      return (
+        <>
+          <LinkButton
+            text="Source"
+            link={project.github}
+            kind="outline"
+            className="sm:flex-1"
+          />
+          <LinkButton
+            text="Live demo"
+            link={project.link}
+            kind="default"
+            className="sm:flex-1"
+          />
+        </>
+      )
+    }
+  }
+
+  // Gets the related projects
+  const related = getAllProjects()
+    .filter((item) => item.slug !== project.slug)
+    .slice(0, 3)
   // returns content and summary
   const { content, ...summary } = project
-  
+
   return (
     <ContentContainer className="max-w-3xl pb-20">
       <ProjectBreadcrumbs
@@ -67,8 +109,7 @@ export default async function Page({ params }: Readonly<{ params: Promise<{ slug
       <ProjectMarkdown content={content} />
 
       <div className="mt-16 flex flex-col gap-3 border-t pt-10 sm:flex-row">
-        <LinkButton text="Source" link={project.github} kind="outline" className="sm:flex-1" />
-        <LinkButton text="Live demo" link={project.link} kind="default" className="sm:flex-1" />
+        {displayLinkButtons()}
       </div>
 
       {related.length ? (
@@ -77,7 +118,10 @@ export default async function Page({ params }: Readonly<{ params: Promise<{ slug
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
             {related.map((item) => (
               <li key={item.slug}>
-                <Link className="text-primary hover:underline" href={`/portfolio/${item.slug}`}>
+                <Link
+                  className="text-primary hover:underline"
+                  href={`/portfolio/${item.slug}`}
+                >
                   {item.title}
                 </Link>
               </li>
