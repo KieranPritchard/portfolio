@@ -10,30 +10,35 @@ import {
   getProjectBySlug,
   getProjectFileSlugs,
 } from "@/lib/projects"
-import { ProjectDoc } from "../../../types/project"
+import { ProjectDoc, ProjectFrontmatter } from "../../../types/project"
 
 // Function to generate static parameters
-export async function generateStaticParams() {
+export async function generateStaticParams(): Promise<{ slug: string }[]> {
   // Returns the project file slugs
-  return getProjectFileSlugs().map((slug) => ({ slug }))
+  return getProjectFileSlugs().map((slug: string): { slug: string } => ({
+    slug,
+  }))
 }
 
 // Generates metadata
 export async function generateMetadata({
   params,
-}: Readonly<{ params: Promise<{ slug: string }> }>) {
+}: Readonly<{ params: Promise<{ slug: string }> }>): Promise<{
+  title?: unknown
+  description?: unknown
+}> {
   // Stores the slug
   const { slug } = await params
   // Gets the project by the slug
-  const project = getProjectBySlug(slug)
+  const project: ProjectDoc | null = getProjectBySlug(slug)
 
-  // Checks if the project isnt there
+  // Checks if the project isn't there
   if (!project) {
-    // Returns an empty arrary
+    // Returns an empty array
     return {}
   }
 
-  // Retuns the metadata
+  // Returns the metadata
   return {
     title: `${project.title}`,
     description: project.description,
@@ -87,8 +92,8 @@ export default async function Page({
   }
 
   // Gets the related projects
-  const related = getAllProjects()
-    .filter((item) => item.slug !== project.slug)
+  const related: ProjectFrontmatter[] = getAllProjects()
+    .filter((item: ProjectFrontmatter): boolean => item.slug !== project.slug)
     .slice(0, 3)
   // returns content and summary
   const { content, ...summary } = project
@@ -116,7 +121,7 @@ export default async function Page({
         <aside className="mt-16 rounded-xl border bg-muted/20 p-6">
           <h2 className="font-heading text-lg font-semibold">More projects</h2>
           <ul className="mt-4 space-y-2 text-sm text-muted-foreground">
-            {related.map((item) => (
+            {related.map((item: ProjectFrontmatter) => (
               <li key={item.slug}>
                 <Link
                   className="text-primary hover:underline"
