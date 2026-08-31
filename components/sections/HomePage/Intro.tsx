@@ -94,7 +94,7 @@ export default function Intro({
             className="flex flex-wrap items-center gap-4"
             variants={itemVariants}
           >
-            <LinkButton text="Learn More" link="/projects" />
+            <LinkButton text="Learn More" link="/about" />
             <DownloadButton
               text="Download C.V"
               link="/kieran_pritchard_cv.pdf"
