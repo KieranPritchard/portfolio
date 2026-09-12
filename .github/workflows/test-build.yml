@@ -1,4 +1,4 @@
-name: test-build.yml
+name: Test Build
 on:
   push:
     branches: [main, master]

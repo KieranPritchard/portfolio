@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "eslint",
     "format": "prettier --write \"**/*.{ts,tsx}\"",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "validate:project:frontmatter": "node scripts/validate-project-frontmatter.mjs"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.11.1",
