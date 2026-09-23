@@ -6,7 +6,12 @@ import { cn } from "@/lib/utils"
 /**
  * Data representing professional and academic milestones.
  */
-const timelineData: { title: string; organization: string, date: string, details: string[] }[] = [
+const timelineData: {
+  title: string
+  organization: string
+  date: string
+  details: string[]
+}[] = [
   {
     title: "1st Line IT Support Assistant",
     organization: "Bournemouth & Poole College",
@@ -37,16 +42,6 @@ const timelineData: { title: string; organization: string, date: string, details
     ],
   },
   {
-    title: "IT Support Assistant (Work Placement)",
-    organization: "Bournemouth & Poole College",
-    date: "Jan 2026 — Present",
-    details: [
-      "Hardware Maintenance: Performing hardware diagnostics and repairs.",
-      "System Deployment: Configuring and imaging new laptops for enterprise deployment.",
-      "Process Automation: Utilizing Microsoft Power Automate to build workflows.",
-    ],
-  },
-  {
     title: "Web & Social Media Project Member",
     organization: "Worksity (Industry Live Project)",
     date: "Jun 2025 — Jul 2025",
@@ -69,93 +64,110 @@ const timelineData: { title: string; organization: string, date: string, details
 
 /**
  * ExperienceTimeline Component
- * 
+ *
  * Renders a vertical timeline of professional and educational experience.
  * Features staggered entrance animations and a clean grid layout.
- * 
+ *
  * @param className - Optional CSS class name for the section container.
  */
-export default function ExperienceTimeline({ className }: Readonly<{ className?: string }>) {
-    /**
-     * Parent container variants for orchestrating staggered child animations.
-     */
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.15 },
-        },
-    }
+export default function ExperienceTimeline({
+  className,
+}: Readonly<{ className?: string }>) {
+  /**
+   * Parent container variants for orchestrating staggered child animations.
+   */
+  const containerVariants: Variants = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  }
 
-    /**
-     * Animation variants for individual timeline items.
-     */
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 10 },
-        visible: { 
-            opacity: 1, 
-            y: 0, 
-            transition: { duration: 0.5, ease: "easeOut" } 
-        },
-    }
+  /**
+   * Animation variants for individual timeline items.
+   */
+  const itemVariants: Variants = {
+    hidden: { opacity: 0, y: 10 },
+    visible: {
+      opacity: 1,
+      y: 0,
+      transition: { duration: 0.5, ease: "easeOut" },
+    },
+  }
 
-    return (
-        <section className={cn("mx-auto w-full max-w-7xl px-4 py-16 md:px-6 lg:px-8", className)}>
-            {/* Section Header */}
-            <motion.div 
-                className="mb-16 space-y-2"
-                initial={{ opacity: 0 }}
-                whileInView={{ opacity: 1 }}
-                viewport={{ once: true }}
+  return (
+    <section
+      className={cn(
+        "mx-auto w-full max-w-7xl px-4 py-16 md:px-6 lg:px-8",
+        className
+      )}
+    >
+      {/* Section Header */}
+      <motion.div
+        className="mb-16 space-y-2"
+        initial={{ opacity: 0 }}
+        whileInView={{ opacity: 1 }}
+        viewport={{ once: true }}
+      >
+        <p className="font-mono text-xs tracking-widest text-primary uppercase">
+          - Experience
+        </p>
+        <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+          Where I&apos;ve been.
+        </h2>
+        <div className="mt-4 h-1 w-20 rounded-full bg-primary" />
+      </motion.div>
+
+      {/* Timeline List: Mapped from timelineData */}
+      <motion.div
+        className="flex flex-col gap-12"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        {timelineData.map(
+          (
+            item: {
+              title: string
+              organization: string
+              date: string
+              details: string[]
+            },
+            index: number
+          ) => (
+            <motion.div
+              key={index}
+              className="grid grid-cols-1 gap-4 border-b border-border/50 md:grid-cols-[200px_1fr]"
+              variants={itemVariants}
             >
-                <p className="text-xs font-mono uppercase tracking-widest text-primary">
-                    - Experience
-                </p>
-                <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
-                    Where I&apos;ve been.
-                </h2>
-                <div className="h-1 w-20 bg-primary rounded-full mt-4" />
-            </motion.div>
+              {/* Date Column */}
+              <div className="pt-1 font-mono text-sm text-muted-foreground">
+                {item.date}
+              </div>
 
-            {/* Timeline List: Mapped from timelineData */}
-            <motion.div 
-                className="flex flex-col gap-12"
-                variants={containerVariants}
-                initial="hidden"
-                whileInView="visible"
-                viewport={{ once: true }}
-            >
-                {timelineData.map((item:{ title: string; organization: string, date: string, details: string[] }, index:number) => (
-                    <motion.div 
-                        key={index} 
-                        className="grid grid-cols-1 md:grid-cols-[200px_1fr] gap-4 border-b border-border/50"
-                        variants={itemVariants}
-                    >
-                        {/* Date Column */}
-                        <div className="text-sm font-mono text-muted-foreground pt-1">
-                            {item.date}
-                        </div>
-
-                        {/* Content Column */}
-                        <div className="space-y-3 pb-8">
-                            <span className="text-xs font-bold text-primary uppercase tracking-wider">
-                                {item.organization}
-                            </span>
-                            <h3 className="text-xl font-bold text-foreground">
-                                {item.title}
-                            </h3>
-                            <ul className="space-y-2 text-sm text-muted-foreground leading-relaxed max-w-2xl">
-                                {item.details.map((detail:string, itemIndex:number) => (
-                                    <li key={itemIndex} className="flex gap-2">
-                                        <span className="text-primary">•</span>
-                                        {detail}
-                                    </li>
-                                ))}
-                            </ul>
-                        </div>
-                    </motion.div>
-                ))}
+              {/* Content Column */}
+              <div className="space-y-3 pb-8">
+                <span className="text-xs font-bold tracking-wider text-primary uppercase">
+                  {item.organization}
+                </span>
+                <h3 className="text-xl font-bold text-foreground">
+                  {item.title}
+                </h3>
+                <ul className="max-w-2xl space-y-2 text-sm leading-relaxed text-muted-foreground">
+                  {item.details.map((detail: string, itemIndex: number) => (
+                    <li key={itemIndex} className="flex gap-2">
+                      <span className="text-primary">•</span>
+                      {detail}
+                    </li>
+                  ))}
+                </ul>
+              </div>
             </motion.div>
-        </section>
-    )
+          )
+        )}
+      </motion.div>
+    </section>
+  )
 }
