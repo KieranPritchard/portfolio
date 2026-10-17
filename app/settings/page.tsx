@@ -3,7 +3,7 @@
 import ContentContainer from "../../components/pages/ContentContainer"
 import { Variants, motion } from "framer-motion"
 import React from "react"
-import { Award } from "lucide-react"
+import Theme from "../../components/pages/settings/Theme"
 
 export default function Page() {
   /**
@@ -61,76 +61,8 @@ export default function Page() {
             </motion.div>
           </motion.div>
 
-          {/*System Theme: content container*/}
-          <motion.div
-            className="flex w-full flex-col gap-8"
-            variants={containerVariants}
-            initial="hidden"
-            whileInView="visible"
-            viewport={{ once: true }}
-          >
-            <motion.div
-              variants={itemVariants}
-              className="group flex w-full flex-col justify-between rounded-lg border border-border bg-card p-6"
-            >
-              {/* Section header */}
-              <h2 className={"mb-2 text-lg font-bold text-foreground"}>
-                Theme
-              </h2>
-
-              {/*Flex container for each of the buttons*/}
-              <div className={"flex w-full justify-between gap-4"}>
-                {/*Card*/}
-                <div
-                  className={
-                    "group flex w-full flex-col justify-between rounded-lg border border-border bg-card p-6 transition-colors duration-200 hover:border-primary/50 hover:text-primary"
-                  }
-                >
-                  {/* Decorative Icon Box */}
-                  <div className="inline-flex items-center justify-center p-2.5">
-                    <Award className="h-20 w-20" />
-                  </div>
-
-                  {/*Title*/}
-                  <h3 className="mt-2 text-center text-2xl font-bold text-foreground transition-colors duration-200 group-hover:text-primary">
-                    Dark
-                  </h3>
-                </div>
-                {/*Card*/}
-                <div
-                  className={
-                    "group flex w-full flex-col justify-between rounded-lg border border-border bg-card p-6 transition-colors duration-200 hover:border-primary/50 hover:text-primary"
-                  }
-                >
-                  {/* Decorative Icon Box */}
-                  <div className="inline-flex items-center justify-center p-2.5">
-                    <Award className="h-20 w-20" />
-                  </div>
-
-                  {/*Title*/}
-                  <h3 className="mt-2 text-center text-2xl font-bold text-foreground transition-colors duration-200 group-hover:text-primary">
-                    Dark
-                  </h3>
-                </div>
-                {/*Card*/}
-                <div
-                  className={
-                    "group flex w-full flex-col justify-between rounded-lg border border-border bg-card p-6 transition-colors duration-200 hover:border-primary/50 hover:text-primary"
-                  }
-                >
-                  {/* Decorative Icon Box */}
-                  <div className="inline-flex items-center justify-center p-2.5">
-                    <Award className="h-20 w-20" />
-                  </div>
-
-                  {/*Title*/}
-                  <h3 className="mt-2 text-center text-2xl font-bold text-foreground transition-colors duration-200 group-hover:text-primary">
-                    Dark
-                  </h3>
-                </div>
-              </div>
-            </motion.div>
-          </motion.div>
+          {/* Component for the theme switcher */}
+          <Theme />
         </section>
       </ContentContainer>
     </>
