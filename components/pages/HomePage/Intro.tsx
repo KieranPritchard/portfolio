@@ -9,7 +9,7 @@ import { ProjectSummary } from "@/types/project"
 import Image from "next/image"
 
 // Resources
-import profilePic from "@/public/kieran-pritchard.jpg"
+import profilePic from "../../../public/kieran-pritchard.jpg"
 
 /**
  * Intro Component

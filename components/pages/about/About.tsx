@@ -7,7 +7,7 @@ import React from "react"
 import Image from "next/image"
 
 // Resources
-import profilePic from "@/public/kieran-pritchard.jpg"
+import profilePic from "../../../public/kieran-pritchard.jpg"
 
 /**
  * Metadata displayed as a list of labels and values on the About page.
