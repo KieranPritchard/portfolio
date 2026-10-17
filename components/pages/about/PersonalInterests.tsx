@@ -66,7 +66,7 @@ export default function PersonalInterests({
   }
 
   /**
-   * Fade-in and slide-up variants for individual interest sections.
+   * Fade-in and slide-up variants for individual interest pages.
    */
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 10 },

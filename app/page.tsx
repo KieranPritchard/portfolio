@@ -1,20 +1,20 @@
-import ContentContainer from "@/components/sections/ContentContainer";
-import Intro from "@/components/sections/HomePage/Intro";
-import TechStack from "@/components/sections/HomePage/TechStack";
-import ThingsIBuilt from "@/components/sections/HomePage/ThingsIBuilt";
-import WhatIDo from "@/components/sections/HomePage/WhatIDo";
+import ContentContainer from "@/components/pages/ContentContainer";
+import Intro from "@/components/pages/HomePage/Intro";
+import TechStack from "@/components/pages/HomePage/TechStack";
+import ThingsIBuilt from "@/components/pages/HomePage/ThingsIBuilt";
+import WhatIDo from "@/components/pages/HomePage/WhatIDo";
 import { getAllProjects } from "@/lib/projects";
 
 /**
  * HomePage Component
  * 
  * The main landing page of the portfolio. 
- * Orchestrates multiple sections including the Intro/Hero, Disciplines (What I Do),
+ * Orchestrates multiple pages including the Intro/Hero, Disciplines (What I Do),
  * Featured Projects (Things I Built), and the Tech Stack marquee.
  */
 export default function Page() {
   /**
-   * Fetch all portfolio projects for use in the Intro and ThingsIBuilt sections.
+   * Fetch all portfolio projects for use in the Intro and ThingsIBuilt pages.
    */
   const projects = getAllProjects()
 

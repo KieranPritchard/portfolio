@@ -89,7 +89,7 @@ export default function NowSection({ className }: Readonly<{ className?: string 
                 <div className="h-1 w-20 bg-primary rounded-full mt-4" />
             </motion.div>
 
-            {/* Content Grid: Staggered entry for focus area sections */}
+            {/* Content Grid: Staggered entry for focus area pages */}
             <motion.div 
                 className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
                 variants={containerVariants}

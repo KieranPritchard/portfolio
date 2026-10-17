@@ -62,7 +62,7 @@ export default function Footer({
   }
 
   /**
-   * Animation variants for individual footer sections.
+   * Animation variants for individual footer pages.
    */
   const itemVariants: Variants = {
     hidden: { opacity: 0, y: 10 },

@@ -1,5 +1,5 @@
-import ContentContainer from "@/components/sections/ContentContainer"
-import ProjectsGrid from "@/components/sections/portfolio/ProjectsGrid"
+import ContentContainer from "@/components/pages/ContentContainer"
+import ProjectsGrid from "@/components/pages/portfolio/ProjectsGrid"
 import { getAllProjects } from "@/lib/projects"
 import { Metadata } from 'next'
 

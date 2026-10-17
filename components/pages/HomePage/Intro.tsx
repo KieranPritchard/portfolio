@@ -2,8 +2,8 @@
 
 import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
-import { DownloadButton } from "@/components/Buttons/DownloadButton"
-import { LinkButton } from "@/components/Buttons/LinkButton"
+import { DownloadButton } from "@/components/buttons/DownloadButton"
+import { LinkButton } from "@/components/buttons/LinkButton"
 import { cn } from "@/lib/utils"
 import { ProjectSummary } from "@/types/project"
 import Image from "next/image"
@@ -58,7 +58,7 @@ export default function Intro({
       )}
     >
       <div className="mx-auto grid w-full max-w-7xl grid-cols-1 items-center gap-12 sm:py-12 md:grid-cols-2">
-        {/* Content Section: Title, Bio, and Buttons */}
+        {/* Content Section: Title, Bio, and buttons */}
         <motion.div
           className="order-2 flex min-w-0 flex-col gap-6 md:order-1"
           variants={containerVariants}

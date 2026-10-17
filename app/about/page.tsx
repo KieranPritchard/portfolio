@@ -1,10 +1,10 @@
-import AboutMe from "@/components/sections/about/About";
-import Certifications from "@/components/sections/about/Certifications";
-import ExperienceTimeline from "@/components/sections/about/Expierence";
-import NowSection from "@/components/sections/about/Now";
-import PersonalInterests from "@/components/sections/about/PersonalInterests";
-import Skills from "@/components/sections/about/Skills";
-import ContentContainer from "@/components/sections/ContentContainer";
+import AboutMe from "@/components/pages/about/About";
+import Certifications from "@/components/pages/about/Certifications";
+import ExperienceTimeline from "@/components/pages/about/Expierence";
+import NowSection from "@/components/pages/about/Now";
+import PersonalInterests from "@/components/pages/about/PersonalInterests";
+import Skills from "@/components/pages/about/Skills";
+import ContentContainer from "@/components/pages/ContentContainer";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {

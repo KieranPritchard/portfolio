@@ -1,5 +1,5 @@
-import ContentContainer from "@/components/sections/ContentContainer"
-import Contact from "@/components/sections/contact/Contact"
+import ContentContainer from "@/components/pages/ContentContainer"
+import Contact from "@/components/pages/contact/Contact"
 import { Metadata } from "next"
 
 export const metadata: Metadata = {

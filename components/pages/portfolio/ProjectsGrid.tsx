@@ -64,7 +64,7 @@ export default function ProjectsGrid({ className, projects }: Readonly<{ classNa
                 {/* Control Bar: Filter, Search, and View Toggles */}
                 <div className="rounded-xl border border-border bg-card p-4 space-y-4">
                     <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-                        {/* Category Filter Buttons */}
+                        {/* Category Filter buttons */}
                         <div className="flex flex-wrap items-center gap-2">
                             <span className="text-xs font-mono uppercase tracking-wider text-muted-foreground mr-2">Filter</span>
                             {categories.map((cat) => (

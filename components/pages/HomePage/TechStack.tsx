@@ -62,7 +62,7 @@ export default function TechStack({ className }: { className?: string }) {
             `}</style>
 
             <div className="mx-auto max-w-7xl px-4 md:px-6 lg:px-8">
-                {/* Section Header: Consistent with other home page sections */}
+                {/* Section Header: Consistent with other home page pages */}
                 <motion.div
                     className="mb-12 space-y-2"
                     initial={{ opacity: 0, x: -20 }}

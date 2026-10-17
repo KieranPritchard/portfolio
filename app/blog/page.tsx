@@ -1,12 +1,12 @@
 // app/blog/page.tsx
-import AboutMe from "@/components/sections/blog/AboutMe"
-import TrendingTopics from "@/components/sections/blog/TrendingTopics"
-import BlogList from "@/components/sections/blog/BlogList"
+import AboutMe from "@/components/pages/blog/AboutMe"
+import TrendingTopics from "@/components/pages/blog/TrendingTopics"
+import BlogList from "@/components/pages/blog/BlogList"
 import { Metadata } from 'next'
-import ContentContainer from "@/components/sections/ContentContainer"
+import ContentContainer from "@/components/pages/ContentContainer"
 import type { BlogSummary } from "@/types/blog"
-import  WhoAmI from "@/components/sections/blog/Widgets/WhoAmI"
-import TagCloud from "@/components/sections/blog/Widgets/TagCloud"
+import  WhoAmI from "@/components/pages/blog/Widgets/WhoAmI"
+import TagCloud from "@/components/pages/blog/Widgets/TagCloud"
 import { getAllBlogs } from "@/lib/blogs"
 
 export const metadata: Metadata = {
