@@ -6,6 +6,10 @@ import { DownloadButton } from "@/components/Buttons/DownloadButton"
 import { LinkButton } from "@/components/Buttons/LinkButton"
 import { cn } from "@/lib/utils"
 import { ProjectSummary } from "@/types/project"
+import Image from "next/image"
+
+// Resources
+import profilePic from "@/public/kieran-pritchard.jpg"
 
 /**
  * Intro Component
@@ -135,8 +139,9 @@ export default function Intro({
           transition={{ duration: 0.6, ease: "circOut" }}
         >
           <div className="relative aspect-square w-full max-w-100 sm:max-w-125">
-            <img
-              src="kieran-pritchard.jpg"
+
+            <Image
+              src={profilePic}
               alt="Kieran Pritchard"
               className="h-full w-full rounded-full object-cover ring-8 ring-muted/20 transition-all duration-500 hover:ring-primary/20"
             />
