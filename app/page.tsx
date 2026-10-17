@@ -1,14 +1,14 @@
-import ContentContainer from "@/components/pages/ContentContainer";
-import Intro from "@/components/pages/HomePage/Intro";
-import TechStack from "@/components/pages/HomePage/TechStack";
-import ThingsIBuilt from "@/components/pages/HomePage/ThingsIBuilt";
-import WhatIDo from "@/components/pages/HomePage/WhatIDo";
-import { getAllProjects } from "@/lib/projects";
+import ContentContainer from "@/components/pages/ContentContainer"
+import Intro from "@/components/pages/HomePage/Intro"
+import TechStack from "@/components/pages/HomePage/TechStack"
+import ThingsIBuilt from "@/components/pages/HomePage/ThingsIBuilt"
+import WhatIDo from "@/components/pages/HomePage/WhatIDo"
+import { getAllProjects } from "@/lib/projects"
 
 /**
  * HomePage Component
- * 
- * The main landing page of the portfolio. 
+ *
+ * The main landing page of the portfolio.
  * Orchestrates multiple pages including the Intro/Hero, Disciplines (What I Do),
  * Featured Projects (Things I Built), and the Tech Stack marquee.
  */
@@ -22,7 +22,7 @@ export default function Page() {
     <>
       {/* Intro Section: Hero area with primary call-to-action */}
       <ContentContainer>
-        <Intro projects={projects}/>
+        <Intro projects={projects} />
       </ContentContainer>
 
       {/* Disciplines Section: Highlighting core areas of expertise */}
@@ -42,4 +42,3 @@ export default function Page() {
     </>
   )
 }
-

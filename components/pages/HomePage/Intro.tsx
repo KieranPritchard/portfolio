@@ -139,7 +139,6 @@ export default function Intro({
           transition={{ duration: 0.6, ease: "circOut" }}
         >
           <div className="relative aspect-square w-full max-w-100 sm:max-w-125">
-
             <Image
               src={profilePic}
               alt="Kieran Pritchard"
