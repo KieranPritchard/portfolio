@@ -82,60 +82,84 @@ export default function Theme(): React.JSX.Element {
   }
 
   return (
-    /*System Theme: content container*/
-    <motion.div
-      className="flex w-full flex-col gap-8"
-      variants={containerVariants}
-      initial="hidden"
-      whileInView="visible"
-      viewport={{ once: true }}
-    >
+    <>
+      {/*Page Header: content flexbox*/}
       <motion.div
-        variants={itemVariants}
-        className="flex w-full flex-col justify-between rounded-lg border border-border bg-card p-4 sm:p-6"
+        className="flex flex-col gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
       >
-        {/* Section header */}
-        <h2 className={"mb-2 text-lg font-bold text-foreground"}>Theme</h2>
+        {/* Header for settings page */}
+        <motion.div className={"space-y-6"} variants={itemVariants}>
+          <div className="space-y-2">
+            <span className="font-mono text-xs tracking-widest text-primary uppercase">
+              - Settings
+            </span>
+            <h1 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+              Settings Page
+            </h1>
+            {/* Decorative primary color underline */}
+            <div className="mt-2 h-1 w-12 rounded-full bg-primary" />
+          </div>
+        </motion.div>
+      </motion.div>
+      {/*System Theme: content container*/}
+      <motion.div
+        className="flex w-full flex-col gap-8"
+        variants={containerVariants}
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+      >
+        <motion.div
+          variants={itemVariants}
+          className="flex w-full flex-col justify-between rounded-lg border border-border bg-card p-4 sm:p-6"
+        >
+          {/* Section header */}
+          <h2 className={"mb-2 text-lg font-bold text-foreground"}>Theme</h2>
 
-        {/*Flex container for each of the buttons*/}
-        <div className={"flex w-full justify-between gap-2 sm:gap-4"}>
-          {themeOptions.map((option: ThemeOption) => {
-            // Checks if this option is the selected theme
-            const isActive: boolean = activeTheme === option.value
+          {/*Flex container for each of the buttons*/}
+          <div className={"flex w-full justify-between gap-2 sm:gap-4"}>
+            {themeOptions.map((option: ThemeOption) => {
+              // Checks if this option is the selected theme
+              const isActive: boolean = activeTheme === option.value
 
-            return (
-              /*Card*/
-              <button
-                key={option.value}
-                type="button"
-                aria-pressed={isActive}
-                onClick={() => handleThemeChange(option.value)}
-                className={cn(
-                  "group/option flex w-full min-w-0 cursor-pointer flex-col items-center justify-between rounded-lg border bg-card p-3 transition-colors duration-200 hover:border-primary/50 hover:text-primary sm:p-4 lg:p-6",
-                  isActive
-                    ? "border-primary bg-primary/15 text-primary"
-                    : "border-border"
-                )}
-              >
-                {/* Decorative Icon Box */}
-                <div className="inline-flex w-full items-center justify-center p-1 sm:p-2.5">
-                  <option.icon className="h-10 w-10 sm:h-14 sm:w-14 lg:h-20 lg:w-20" />
-                </div>
-
-                {/*Title*/}
-                <h3
+              return (
+                /*Card*/
+                <button
+                  key={option.value}
+                  type="button"
+                  aria-pressed={isActive}
+                  onClick={() => handleThemeChange(option.value)}
                   className={cn(
-                    "mt-2 text-center text-base font-bold transition-colors duration-200 group-hover/option:text-primary sm:text-xl lg:text-2xl",
-                    isActive ? "text-primary" : "text-foreground"
+                    "group/option flex w-full min-w-0 cursor-pointer flex-col items-center justify-between rounded-lg border bg-card p-3 transition-colors duration-200 hover:border-primary/50 hover:text-primary sm:p-4 lg:p-6",
+                    isActive
+                      ? "border-primary bg-primary/15 text-primary"
+                      : "border-border"
                   )}
                 >
-                  {option.label}
-                </h3>
-              </button>
-            )
-          })}
-        </div>
+                  {/* Decorative Icon Box */}
+                  <div className="inline-flex w-full items-center justify-center p-1 sm:p-2.5">
+                    <option.icon className="h-10 w-10 sm:h-14 sm:w-14 lg:h-20 lg:w-20" />
+                  </div>
+
+                  {/*Title*/}
+                  <h3
+                    className={cn(
+                      "mt-2 text-center text-base font-bold transition-colors duration-200 group-hover/option:text-primary sm:text-xl lg:text-2xl",
+                      isActive ? "text-primary" : "text-foreground"
+                    )}
+                  >
+                    {option.label}
+                  </h3>
+                </button>
+              )
+            })}
+          </div>
+        </motion.div>
       </motion.div>
-    </motion.div>
+    </>
   )
 }
