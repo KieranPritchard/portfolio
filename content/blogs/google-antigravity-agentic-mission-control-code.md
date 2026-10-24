@@ -1,7 +1,7 @@
 ---
 title: "Google Antigravity: The 'Agentic' Mission Control for Code"
 slug: "google-antigravity-agentic-mission-control-code"
-category: "security"
+category: "review"
 description: "Read my review of Google Antigravity, a new agentic development platform that offers massive model flexibility and weekly rate limit resets for power users. This mission control for code lets you pivot between Gemini and Claude to build features fast, making it a compelling alternative to Cursor for those who want to iterate without usage anxiety. Join the debate!"
 tags:
   - Google Antigravity

@@ -22,7 +22,8 @@ function isBlogCategory(value: unknown): value is BlogCategory {
         value === "web" ||
         value === "security" ||
         value === "ai" ||
-        value === "review"
+        value === "review" ||
+        value === "career-plans"
     )
 }
 
