@@ -7,7 +7,7 @@ tags:
   - Projects
   - Cyber Security
 date: "2026-10-24"
-coverImage: "/blogs/what-i-plan-to-build-in-2027.png"
+coverImage: "/blogs/what-i-plan-to-build-in-2027.jpg"
 coverAlt: "What I Plan to Build in 2027 blog cover"
 ---
 
@@ -40,3 +40,6 @@ Detection tools are only useful if someone sees the results. So I want to build 
 I won't try to do everything. I'll start with the attack and detector pairs, because they teach me the most. I'll write up each project when it ships, wins and failures included.
 
 If you're working on something similar, I'd like to hear from you. What would you build first?
+
+## Sources
+  - Post Thumbnail - [https://unsplash.com/photos/hand-checking-off-items-on-a-to-do-list-fXlL5I0IvK0](https://unsplash.com/photos/hand-checking-off-items-on-a-to-do-list-fXlL5I0IvK0)
