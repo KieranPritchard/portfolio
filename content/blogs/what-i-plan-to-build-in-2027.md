@@ -6,7 +6,6 @@ description: "The tools I want to build in 2027, from attack tools and the detec
 tags:
   - Projects
   - Cyber Security
-  - 2027
 date: "2026-10-24"
 coverImage: "/blogs/what-i-plan-to-build-in-2027.png"
 coverAlt: "What I Plan to Build in 2027 blog cover"
@@ -20,11 +19,11 @@ My actual plan for next year beyond this, I won't make public until a later date
 
 ## Build the attack, then catch it
 
-Firstly, I want to write a few offensive tools, lab-only and only for when I'm authorised to use them, and then build the detectors that should catch them. One I'm working on now is a banner grabbing tool written in Go called Porttrait. It aims to simplify how I use Netcat by automating parts of the workflow and making it easier to use. Another is GhostGate, which lets me stage a payload directory and set up a listener for data exfiltration.
+Firstly, I want to write a few offensive tools, lab-only and only for when I'm authorised to use them, and then build the detectors that should catch them. One I'm working on now is a banner grabbing tool written in Go called Porttrait. It aims to simplify how I use Netcat by automating parts of the workflow and making it easier to use. Another is GhostGate, which lets me stage a payload directory and set up a listener for data exfiltration. The latter I have been using in the CTF challenges I have completed recently and it works very well
 
-Secondly, I have a few ideas for what I can do with Python in a networking capacity. The first is an ARP poisoning tool. Then I'd build an ARP spoofing detector to see if it spots my own attack. I could use that detector in the real world too, on a homelab, on a server, or at a company if my employer wants to use it. In Go, I want to build a C2 beacon simulator, then a DNS exfiltration detector with a scoring model, tested against the simulated traffic.
+Secondly, I have a few ideas for what I can do with Python in a network security capacity. The first is an ARP poisoning tool. Then I'd build an ARP spoofing detector to see if it spots my own attack. I could use that detector in the real world too, on a homelab, on a server, or at a company if a future employer wants to use it; I'm open for alot possiblities involving the things I create. In Go, I want to build a C2 beacon simulator, then a DNS exfiltration detector with a scoring model, tested against the simulated traffic.
 
-I keep seeing the idea in my feeds that you don't really know a detector works until you've tried to beat it. That's the mentality I'll bring to my projects in the new year.
+I keep seeing the idea in my feeds that you don't really know a detector works until you've tried to beat it. That's the mentality I'll bring to my projects in the new year. Although, I am going to frame that a bit differently (mainly, because it sounds like a LinkedIn post)
 
 ## Get properly good at C
 
@@ -34,7 +33,7 @@ Some of the things I have planned: a program that reads `/proc/net/tcp` to see w
 
 ## Wire it all together
 
-Detection tools are only useful if someone sees the results. So I want to build the layer on top: dashboards in PHP and in React, a live alert feed over WebSockets, and n8n workflows that dedupe alerts, run scheduled recon, and only tell me about what's new.
+Detection tools are only useful if someone sees the results. So I want to build the layer on top: dashboards in PHP and in React. Some of the ideas I have had includes: a live alert feed over WebSockets, and n8n workflows that dedupe alerts, run scheduled recon, and only tell me about what's new.
 
 ## How I'll do it
 
