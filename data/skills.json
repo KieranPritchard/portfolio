@@ -3,7 +3,8 @@
     "title": "Languages",
     "skills": [
       { "name": "Python", "value": 90 },
-      { "name": "JavaScript / TS", "value": 80 },
+      { "name": "JavaScript / TypeScript", "value": 80 },
+      { "name": "PHP", "value": 80 },
       { "name": "Go", "value": 65 },
       { "name": "HTML / CSS", "value": 90 }
     ]
@@ -11,8 +12,8 @@
   {
     "title": "Frameworks",
     "skills": [
-      { "name": "React", "value": 75 },
-      { "name": "Next", "value": 75 },
+      { "name": "React/Next.js", "value": 75 },
+      { "name": "Laravel", "value": 75 },
       { "name": "Tailwind CSS", "value": 85 },
       { "name": "Node.js", "value": 70 }
     ]
@@ -22,7 +23,9 @@
     "skills": [
       { "name": "Kali Linux", "value": 75 },
       { "name": "Wireshark", "value": 50 },
-      { "name": "Nmap", "value": 70 }
+      { "name": "Nmap", "value": 70 },
+      { "name": "Metasploit", "value": 50 },
+      { "name": "Burp Suite", "value": 60 }
     ]
   },
   {
@@ -30,8 +33,25 @@
     "skills": [
       { "name": "Git / GitHub", "value": 85 },
       { "name": "Docker", "value": 60 },
-      { "name": "n8n", "value": 60 },
-      { "name": "Figma", "value": 80 }
+      { "name": "Figma", "value": 80 },
+      { "name": "DataGrip", "value": 80 },
+      { "name": "MongoDB Compass", "value": 80 }
+    ]
+  },
+  {
+    "title": "Automation",
+    "skills": [
+      { "name": "Power Automate", "value": 75 },
+      { "name": "n8n", "value": 75 },
+      { "name": "bash", "value": 60 }
+    ]
+  },
+  {
+    "title": "Databases",
+    "skills": [
+      { "name": "MySQL", "value": 75 },
+      { "name": "MongoDB", "value": 75 },
+      { "name": "PostgreSQL", "value": 70 }
     ]
   }
 ]
