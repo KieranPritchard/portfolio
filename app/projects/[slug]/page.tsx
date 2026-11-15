@@ -12,6 +12,7 @@ import {
 } from "@/lib/projects"
 import type { Metadata } from "next"
 import type { ProjectDoc, ProjectFrontmatter } from "../../../types/project"
+import { createPageMetadata } from "@/lib/page-metadata"
 
 // Function to generate static parameters
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
@@ -37,32 +38,15 @@ export async function generateMetadata({
   }
 
   // Returns the metadata
-  return {
+  return createPageMetadata({
     title: project.title,
     description: project.description,
-    alternates: {
-      canonical: `/projects/${project.slug}`,
-    },
-    openGraph: {
-      title: project.title,
-      description: project.description,
-      url: `/projects/${project.slug}`,
-      siteName: "Kieran Pritchard",
-      images: [
-        {
-          url: project.coverImage ?? "/kieran-pritchard.jpg",
-          width: 1200,
-          height: 630,
-          alt: project.coverAlt ?? project.title,
-        },
-      ],
-      locale: "en_GB",
-      type: "article",
-      publishedTime: project.date,
-      authors: ["Kieran Pritchard"],
-      tags: project.tags,
-    },
-  }
+    path: `/projects/${project.slug}`,
+    section: "PROJECT",
+    type: "article",
+    publishedTime: project.date,
+    tags: project.tags,
+  })
 }
 
 // Function for the page

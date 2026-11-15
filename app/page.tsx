@@ -3,34 +3,18 @@ import TechStack from "@/components/pages/home/TechStack"
 import ThingsIBuilt from "@/components/pages/home/ThingsIBuilt"
 import WhatIDo from "@/components/pages/home/WhatIDo"
 import { getAllProjects } from "@/lib/projects"
-import type { Metadata } from "next"
+import { createPageMetadata } from "@/lib/page-metadata"
 
-const description =
-  "Kieran Pritchard is a software development student and ethical hacker building secure web apps, cybersecurity tools, and automation."
-
-export const metadata: Metadata = {
+export const metadata = {
+  ...createPageMetadata({
+    title: "Kieran Pritchard | Software Developer & Ethical Hacker",
+    description:
+      "Kieran Pritchard is a software development student and ethical hacker building secure web apps, cybersecurity tools, and automation.",
+    path: "/",
+    section: "PORTFOLIO",
+  }),
   title: {
     absolute: "Kieran Pritchard | Software Developer & Ethical Hacker",
-  },
-  description,
-  alternates: {
-    canonical: "/",
-  },
-  openGraph: {
-    title: "Kieran Pritchard | Software Developer & Ethical Hacker",
-    description,
-    url: "/",
-    siteName: "Kieran Pritchard",
-    images: [
-      {
-        url: "/kieran-pritchard.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Kieran Pritchard",
-      },
-    ],
-    locale: "en_GB",
-    type: "website",
   },
 }
 

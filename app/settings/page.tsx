@@ -1,11 +1,16 @@
 import ContentContainer from "../../components/pages/ContentContainer"
 import Theme from "../../components/pages/settings/Theme"
 import Miscellaneous from "../../components/pages/settings/Miscellaneous"
-import { Metadata } from "next"
+import { createPageMetadata } from "@/lib/page-metadata"
 
-export const metadata: Metadata = {
-  title: "Settings",
-  description: "Personalise the theme and animation preferences for this site.",
+export const metadata = {
+  ...createPageMetadata({
+    title: "Settings",
+    description:
+      "Personalise the theme and animation preferences for this site.",
+    path: "/settings",
+    section: "SETTINGS",
+  }),
   robots: {
     index: false,
     follow: false,

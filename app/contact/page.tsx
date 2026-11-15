@@ -1,32 +1,14 @@
 import ContentContainer from "@/components/pages/ContentContainer"
 import Contact from "@/components/pages/contact/Contact"
-import { Metadata } from "next"
+import { createPageMetadata } from "@/lib/page-metadata"
 
-export const metadata: Metadata = {
+export const metadata = createPageMetadata({
   title: "Contact",
   description:
     "Contact Kieran Pritchard about placements, CTFs, collaborations, or other opportunities in software development and cybersecurity.",
-  alternates: {
-    canonical: "/contact",
-  },
-  openGraph: {
-    title: "Contact",
-    description:
-      "Contact Kieran Pritchard about placements, CTFs, collaborations, or other opportunities in software development and cybersecurity.",
-    url: "/contact",
-    siteName: "Kieran Pritchard",
-    images: [
-      {
-        url: "/kieran-pritchard.jpg",
-        width: 1200,
-        height: 630,
-        alt: "Kieran Pritchard",
-      },
-    ],
-    locale: "en_GB",
-    type: "website",
-  },
-}
+  path: "/contact",
+  section: "CONTACT",
+})
 
 export default function Page() {
   return (
