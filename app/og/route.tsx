@@ -71,7 +71,7 @@ export async function GET(request: Request) {
             border: "1px solid #22292b",
             borderRadius: "999px",
             padding: "10px 18px",
-            color: "#00598a",
+            color: "#00a6f4",
             fontSize: "16px",
             letterSpacing: "2px",
           }}
@@ -116,7 +116,7 @@ export async function GET(request: Request) {
         }}
       >
         <div>SOFTWARE · SECURITY · BUILDING</div>
-        <div style={{ color: "#00598a" }}>www.kpritchard.co.uk</div>
+        <div style={{ color: "#00a6f4" }}>www.kpritchard.co.uk</div>
       </div>
     </div>,
     {
