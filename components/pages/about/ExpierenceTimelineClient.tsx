@@ -2,9 +2,8 @@
 
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
-import { experienceData } from "@/hooks/useExpierence"
 import { staggeredContainerVariants, timelineItemVariants } from "@/lib/animations"
-import { ExperienceData } from "@/types/expierence"
+import type { Experience } from "@/types/experience"
 import ContentContainer from "../ContentContainer"
 
 /**
@@ -15,9 +14,10 @@ import ContentContainer from "../ContentContainer"
  *
  * @param className - Optional CSS class name for the section container.
  */
-export default function ExperienceTimeline({
+export default function ExperienceTimelineClient({
+  experience,
   className,
-}: Readonly<{ className?: string }>) {
+}: Readonly<{ experience: Experience[]; className?: string }>) {
   return (
     <ContentContainer>
       <section
@@ -50,9 +50,9 @@ export default function ExperienceTimeline({
           whileInView="visible"
           viewport={{ once: true }}
         >
-          {experienceData.map(
+          {experience.map(
             (
-              item: ExperienceData,
+              item: Experience,
               index: number
             ) => (
               <motion.div
