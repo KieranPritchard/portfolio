@@ -6,7 +6,7 @@ import { Certification } from "@/types/certification"
 // Function to read in and parse the data
 export async function getAllCerts(): Promise<Certification[]> {
   // Stores the content directory
-  const contentPath: string = path.join(process.cwd(), "public/main/certs.json")
+  const contentPath: string = path.join(process.cwd(), "data/certs.json")
 
   // Opens and reads the file into the program
   const file = await fs.readFile(contentPath, "utf-8")
