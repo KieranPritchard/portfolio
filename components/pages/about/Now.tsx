@@ -4,6 +4,7 @@ import { Variants, motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Rocket, BookOpen, Coffee, Calendar } from "lucide-react"
 import React from "react"
+import { containerVariants, itemVariants } from "@/lib/animations"
 
 /**
  * NowSection Component
@@ -44,29 +45,6 @@ export default function NowSection({
         "Making more time for touching grass on the weekends and working through my backlog of novels. Currently reading: Angels & Demons.",
     },
   ]
-
-  /**
-   * Animation variants for the grid container to stagger child items.
-   */
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  }
-
-  /**
-   * Animation variants for individual focus area items.
-   */
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  }
 
   return (
     <section

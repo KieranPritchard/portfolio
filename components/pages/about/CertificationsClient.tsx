@@ -1,10 +1,11 @@
 "use client"
 
-import { Variants, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { ExternalLink, Award } from "lucide-react"
 import { Certification } from "@/types/certification"
 import React from "react"
+import { containerVariants, itemVariants } from "@/lib/animations"
 
 /**
  * CertificationsClient Component
@@ -21,29 +22,6 @@ export default function CertificationsClient({
     certs: Certification[]
     className?: string
 }>):React.JSX.Element {
-    /**
-     * Grid variants for staggering entrance of certification cards.
-     */
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.1 },
-        },
-    }
-
-    /**
-     * Individual card entrance variants.
-     */
-    const itemVariants: Variants = {
-        hidden: { opacity: 0, y: 10 },
-        visible: {
-            opacity: 1,
-            y: 0,
-            transition: { duration: 0.4, ease: "easeOut" },
-        },
-    }
-
     return (
         <section
             id="certifications"

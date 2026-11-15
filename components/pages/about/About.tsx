@@ -1,26 +1,17 @@
 "use client"
 
-import { Variants, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Separator } from "@/components/ui/separator"
 import React from "react"
 import Image from "next/image"
 import ContentContainer from "../ContentContainer"
+import { Metadata } from "@/hooks/UseMetadata"
+import { AboutMetadata } from "@/types/aboutMetadata"
+import { containerVariants, itemVariants } from "@/lib/animations"
 
 // Resources
 import profilePic from "../../../public/kieran-pritchard.jpg"
-
-/**
- * Metadata displayed as a list of labels and values on the About page.
- */
-const METADATA: { label: string; value: string }[] = [
-  { label: "Name", value: "Kieran Pritchard" },
-  { label: "Role", value: "Ethical hacker & developer" },
-  { label: "Location", value: "Bournemouth, England" },
-  { label: "Studying", value: "T-Level Digital Software Development" },
-  { label: "Institution", value: "Bournemouth & Poole College" },
-  { label: "Email", value: "KieranPritchard06@gmail.com" },
-]
 
 /**
  * AboutMe Component
@@ -33,29 +24,6 @@ const METADATA: { label: string; value: string }[] = [
 export default function AboutMe({
   className,
 }: Readonly<{ className?: string }>): React.JSX.Element {
-  /**
-   * Staggered entrance variants for the content column.
-   */
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  }
-
-  /**
-   * Fade-in and slide-up variants for individual items.
-   */
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  }
-
   return (
     <ContentContainer>
       <section
@@ -91,7 +59,7 @@ export default function AboutMe({
         >
           {/* Metadata List: Key-value pairs for quick information */}
           <motion.div className="flex flex-col gap-3" variants={itemVariants}>
-            {METADATA.map((item: { label: string; value: string }) => (
+            {Metadata.map((item: AboutMetadata) => (
               <div key={item.label} className="grid grid-cols-[120px_1fr] gap-4">
                 <span className="pt-0.5 text-xs font-bold tracking-wider text-muted-foreground uppercase">
                   {item.label}

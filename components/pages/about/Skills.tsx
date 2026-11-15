@@ -2,54 +2,8 @@
 
 import { Variants, motion } from "framer-motion"
 import { cn } from "@/lib/utils"
-
-/**
- * Skill categories and individual skill metrics.
- * Values represent estimated proficiency percentages for visual representation.
- */
-const skillCategories: {
-  title: string
-  skills: {
-    name: string
-    value: number
-  }[]
-}[] = [
-  {
-    title: "Languages",
-    skills: [
-      { name: "Python", value: 90 },
-      { name: "JavaScript / TS", value: 80 },
-      { name: "Go", value: 65 },
-      { name: "HTML / CSS", value: 90 },
-    ],
-  },
-  {
-    title: "Frameworks",
-    skills: [
-      { name: "React", value: 75 },
-      { name: "Next", value: 75 },
-      { name: "Tailwind CSS", value: 85 },
-      { name: "Node.js", value: 70 },
-    ],
-  },
-  {
-    title: "Security",
-    skills: [
-      { name: "Kali Linux", value: 75 },
-      { name: "Wireshark", value: 50 },
-      { name: "Nmap", value: 70 },
-    ],
-  },
-  {
-    title: "Tools",
-    skills: [
-      { name: "Git / GitHub", value: 85 },
-      { name: "Docker", value: 60 },
-      { name: "n8n", value: 60 },
-      { name: "Figma", value: 80 },
-    ],
-  },
-]
+import { skillCategories } from "@/hooks/useSkills"
+import { containerVariants, itemVariants } from "@/lib/animations"
 
 /**
  * Skills Component
@@ -62,29 +16,6 @@ const skillCategories: {
 export default function Skills({
   className,
 }: Readonly<{ className?: string }>) {
-  /**
-   * Parent container variants for orchestrating staggered category animations.
-   */
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  }
-
-  /**
-   * Animation variants for individual skill category blocks.
-   */
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  }
-
   return (
     <section
       className={cn(

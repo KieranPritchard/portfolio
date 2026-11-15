@@ -2,6 +2,7 @@
 
 import { Variants, motion } from "framer-motion"
 import { cn } from "@/lib/utils"
+import { containerVariants, itemVariants } from "@/lib/animations"
 
 /**
  * PersonalInterests Component
@@ -53,29 +54,6 @@ export default function PersonalInterests({
     "Pokémon",
     "South Park",
   ]
-
-  /**
-   * Staggered entrance variants for the interests grid.
-   */
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  }
-
-  /**
-   * Fade-in and slide-up variants for individual interest pages.
-   */
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  }
 
   return (
     <section
