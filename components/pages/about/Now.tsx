@@ -1,10 +1,11 @@
 "use client"
 
-import { Variants, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Rocket, BookOpen, Coffee, Calendar } from "lucide-react"
 import React from "react"
 import { containerVariants, itemVariants } from "@/lib/animations"
+import ContentContainer from "../ContentContainer"
 
 /**
  * NowSection Component
@@ -47,64 +48,66 @@ export default function NowSection({
   ]
 
   return (
-    <section
-      className={cn(
-        "mx-auto w-full max-w-7xl px-4 py-16 md:px-6 lg:px-8",
-        className
-      )}
-    >
-      {/* Section Header: Title and Last Updated Status */}
-      <motion.div
-        className="mb-16 space-y-2"
-        initial={{ opacity: 0 }}
-        whileInView={{ opacity: 1 }}
-        viewport={{ once: true }}
+    <ContentContainer>
+      <section
+        className={cn(
+          "mx-auto w-full max-w-7xl px-4 py-16 md:px-6 lg:px-8",
+          className
+        )}
       >
-        <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
-          <div className="space-y-2">
-            <p className="font-mono text-xs tracking-widest text-primary uppercase">
-              - Now
-            </p>
-            <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
-              What I&apos;m doing now.
-            </h2>
-          </div>
-          <div className="flex w-fit items-center gap-2 rounded-full bg-muted/50 px-3 py-1 font-mono text-xs text-muted-foreground">
-            <Calendar className="h-3 w-3" />
-            <span>Last updated: {lastUpdated}</span>
-          </div>
-        </div>
-        <div className="mt-4 h-1 w-20 rounded-full bg-primary" />
-      </motion.div>
-
-      {/* Content Grid: Staggered entry for focus area pages */}
-      <motion.div
-        className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3"
-        variants={containerVariants}
-        initial="hidden"
-        whileInView="visible"
-        viewport={{ once: true }}
-      >
-        {sections.map((item) => (
-          <motion.div
-            key={item.title}
-            className="space-y-4"
-            variants={itemVariants}
-          >
-            <div className="flex items-center gap-3">
-              <div className="rounded-lg bg-primary/10 p-2 text-primary">
-                <item.icon className="h-5 w-5" />
-              </div>
-              <h3 className="text-lg font-bold text-foreground">
-                {item.title}
-              </h3>
+        {/* Section Header: Title and Last Updated Status */}
+        <motion.div
+          className="mb-16 space-y-2"
+          initial={{ opacity: 0 }}
+          whileInView={{ opacity: 1 }}
+          viewport={{ once: true }}
+        >
+          <div className="flex flex-col justify-between gap-4 sm:flex-row sm:items-center">
+            <div className="space-y-2">
+              <p className="font-mono text-xs tracking-widest text-primary uppercase">
+                - Now
+              </p>
+              <h2 className="text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
+                What I&apos;m doing now.
+              </h2>
             </div>
-            <p className="text-sm leading-relaxed text-muted-foreground">
-              {item.description}
-            </p>
-          </motion.div>
-        ))}
-      </motion.div>
-    </section>
+            <div className="flex w-fit items-center gap-2 rounded-full bg-muted/50 px-3 py-1 font-mono text-xs text-muted-foreground">
+              <Calendar className="h-3 w-3" />
+              <span>Last updated: {lastUpdated}</span>
+            </div>
+          </div>
+          <div className="mt-4 h-1 w-20 rounded-full bg-primary" />
+        </motion.div>
+
+        {/* Content Grid: Staggered entry for focus area pages */}
+        <motion.div
+          className="grid grid-cols-1 gap-12 md:grid-cols-2 lg:grid-cols-3"
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true }}
+        >
+          {sections.map((item) => (
+            <motion.div
+              key={item.title}
+              className="space-y-4"
+              variants={itemVariants}
+            >
+              <div className="flex items-center gap-3">
+                <div className="rounded-lg bg-primary/10 p-2 text-primary">
+                  <item.icon className="h-5 w-5" />
+                </div>
+                <h3 className="text-lg font-bold text-foreground">
+                  {item.title}
+                </h3>
+              </div>
+              <p className="text-sm leading-relaxed text-muted-foreground">
+                {item.description}
+              </p>
+            </motion.div>
+          ))}
+        </motion.div>
+      </section>
+    </ContentContainer>
   )
 }
