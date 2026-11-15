@@ -1,6 +1,5 @@
 "use client"
 
-import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import ReactMarkdown from "react-markdown"
 import remarkGfm from "remark-gfm"
@@ -15,20 +14,7 @@ import {
   TableRow,
 } from "@/components/ui/table"
 import { cn } from "@/lib/utils"
-
-
-/**
- * Standard animation variants for markdown elements.
- * Elements slide up 30px and fade in.
- */
-const markdownItemVariants: Variants = {
-  hidden: { opacity: 0, y: 30 },
-  visible: { 
-    opacity: 1, 
-    y: 0, 
-    transition: { duration: 0.6, ease: "circOut" } 
-  },
-}
+import { markdownItemVariants } from "@/lib/animations"
 
 /**
  * FadeUpObserver Component

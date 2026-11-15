@@ -1,6 +1,5 @@
 "use client"
 
-import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import { DownloadButton } from "@/components/buttons/DownloadButton"
 import { LinkButton } from "@/components/buttons/LinkButton"
@@ -11,6 +10,10 @@ import Image from "next/image"
 // Resources
 import profilePic from "../../../public/kieran-pritchard.jpg"
 import ContentContainer from "../ContentContainer"
+import {
+  introContainerVariants,
+  introItemVariants,
+} from "@/lib/animations"
 
 /**
  * Intro Component
@@ -25,32 +28,6 @@ export default function Intro({
   className,
   projects,
 }: Readonly<{ className?: string; projects: ProjectSummary[] }>) {
-  /**
-   * Staggered entrance variants for the text container and its children.
-   */
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.15,
-        delayChildren: 0.2,
-      },
-    },
-  }
-
-  /**
-   * Animation variants for individual items within the intro section.
-   */
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 15 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.5, ease: "easeOut" },
-    },
-  }
-
   return (
     <ContentContainer>
       <section
@@ -63,12 +40,12 @@ export default function Intro({
           {/* Content Section: Title, Bio, and buttons */}
           <motion.div
             className="order-2 flex min-w-0 flex-col gap-6 md:order-1"
-            variants={containerVariants}
+            variants={introContainerVariants}
             initial="hidden"
             whileInView="visible"
             viewport={{ once: true }}
           >
-            <motion.div className="space-y-3" variants={itemVariants}>
+            <motion.div className="space-y-3" variants={introItemVariants}>
               <h1 className="text-4xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl">
                 Ethical hacker & <span className="text-primary">software</span>{" "}
                 developer.
@@ -83,7 +60,7 @@ export default function Intro({
 
             <motion.p
               className="text-md max-w-150 leading-relaxed text-muted-foreground md:text-lg"
-              variants={itemVariants}
+              variants={introItemVariants}
             >
               I&apos;m <strong className="text-foreground">Kieran</strong> a
               Digital Software Developement student at
@@ -98,7 +75,7 @@ export default function Intro({
 
             <motion.div
               className="flex flex-wrap items-center gap-4"
-              variants={itemVariants}
+              variants={introItemVariants}
             >
               <LinkButton text="Learn More" link="/about" />
               <DownloadButton
@@ -112,7 +89,7 @@ export default function Intro({
             {/* Stats/Info Grid */}
             <motion.div
               className="flex flex-wrap items-center justify-between gap-4 text-sm"
-              variants={itemVariants}
+              variants={introItemVariants}
             >
               <motion.p className="flex-row font-mono">
                 <strong className="text-foreground">{projects.length}+</strong>

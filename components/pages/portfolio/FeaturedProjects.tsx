@@ -1,6 +1,5 @@
 "use client"
 
-import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import type { ProjectSummary } from "@/types/project"
@@ -9,6 +8,10 @@ import Link from "next/link"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import { Card, CardContent } from "@/components/ui/card"
+import {
+  featuredProjectCardVariants,
+  staggeredContainerVariants,
+} from "@/lib/animations"
 
 /**
  * FeaturedProjectsList Component
@@ -25,29 +28,6 @@ export default function FeaturedProjectsList({ className, projects }: { classNam
      * Display only the first 4 projects as "featured".
      */
     const featured = projects.slice(0, 4)
-
-    /**
-     * Parent container variants: Triggers staggered entry for child cards.
-     */
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.15 }
-        }
-    }
-
-    /**
-     * Card animation variants: Slide-up and fade-in.
-     */
-    const cardVariants: Variants = {
-        hidden: { opacity: 0, y: 30 },
-        visible: { 
-            opacity: 1, 
-            y: 0, 
-            transition: { duration: 0.6, ease: "easeOut" } 
-        }
-    }
 
     return (
         <section className={cn("mx-auto w-full max-w-6xl px-4 py-16 md:px-6 overflow-hidden", className)}>
@@ -71,13 +51,13 @@ export default function FeaturedProjectsList({ className, projects }: { classNam
             {/* List container that triggers staggered entrance for children */}
             <motion.div 
                 className="flex flex-col gap-6"
-                variants={containerVariants}
+                variants={staggeredContainerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}
             >
                 {featured.map((project) => (
-                <motion.div key={project.slug} variants={cardVariants}>
+                <motion.div key={project.slug} variants={featuredProjectCardVariants}>
                     <Card className="group">
                         <CardContent className="p-0">
                             <div className="flex flex-col md:flex-row">

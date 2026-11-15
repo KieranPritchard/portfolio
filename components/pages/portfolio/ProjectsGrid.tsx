@@ -6,6 +6,7 @@ import Link from "next/link"
 import { Card, CardContent, CardFooter, CardHeader } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { cn } from "@/lib/utils"
+import { projectGridItemVariants } from "@/lib/animations"
 import type { ProjectSummary } from "@/types/project"
 import {
   ArrowRight,
@@ -169,10 +170,10 @@ export default function ProjectsGrid({
               <motion.div
                 key={project.slug}
                 layout
-                initial={{ opacity: 0, scale: 0.95 }}
-                animate={{ opacity: 1, scale: 1 }}
-                exit={{ opacity: 0, scale: 0.95 }}
-                transition={{ duration: 0.3 }}
+                variants={projectGridItemVariants}
+                initial="hidden"
+                animate="visible"
+                exit="exit"
               >
                 {/* Grid View Mode: Compact Cards */}
                 {viewMode === "grid" && (

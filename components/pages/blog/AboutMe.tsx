@@ -1,8 +1,11 @@
 "use client"
 
-import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
+import {
+    blogAboutContainerVariants,
+    blogAboutTextVariants,
+} from "@/lib/animations"
 
 /**
  * AboutMe Component
@@ -13,32 +16,6 @@ import { cn } from "@/lib/utils"
  * @param className - Optional CSS class name for the section container.
  */
 export default function AboutMe({ className }: Readonly<{ className?: string }>) {
-    /**
-     * Parent container variants: Orchestrates the staggered entrance of child elements.
-     */
-    const containerVariants : Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.2,
-                delayChildren: 0.1,
-            },
-        },
-    }
-
-    /**
-     * Text reveal variants: Provides a subtle slide-in from the left with a fade.
-     */
-    const textVariants : Variants = {
-        hidden: { opacity: 0, x: -20 },
-        visible: { 
-            opacity: 1, 
-            x: 0, 
-            transition: { duration: 0.6, ease: "easeOut" } 
-        },
-    }
-
     return (
         <section 
             id="about"
@@ -50,12 +27,12 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
             {/* Content Column: Biography and mission statement */}
             <motion.div 
                 className="flex flex-col gap-6"
-                variants={containerVariants}
+                variants={blogAboutContainerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-100px" }}
             >
-                <motion.div className="space-y-2" variants={textVariants}>
+                <motion.div className="space-y-2" variants={blogAboutTextVariants}>
                     <h2 className="text-3xl font-bold tracking-tight sm:text-4xl text-foreground">
                         About Me
                     </h2>
@@ -69,7 +46,7 @@ export default function AboutMe({ className }: Readonly<{ className?: string }>)
 
                 <motion.div 
                     className="space-y-4 text-lg text-muted-foreground leading-relaxed"
-                    variants={textVariants}
+                    variants={blogAboutTextVariants}
                 >   
                     <p>
                         I am a high-achieving Digital Software Development student at Bournemouth & Poole College with a dedicated focus on ethical hacking and secure system architecture. 

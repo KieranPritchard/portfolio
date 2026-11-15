@@ -1,6 +1,6 @@
 "use client"
 
-import { Variants, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import React, {
   ForwardRefExoticComponent,
   RefAttributes,
@@ -9,6 +9,7 @@ import React, {
 import { Sun, Moon, Monitor, LucideProps } from "lucide-react"
 import { cn } from "@/lib/utils"
 import { useTheme } from "next-themes"
+import { containerVariants, itemVariants } from "@/lib/animations"
 
 /**
  * The theme values the buttons can select.
@@ -45,29 +46,6 @@ export default function Theme(): React.JSX.Element {
     () => true,
     () => false
   )
-
-  /**
-   * Staggered entrance variants for the content column.
-   */
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  }
-
-  /**
-   * Fade-in and slide-up variants for individual items.
-   */
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  }
 
   // The currently selected theme, only available once mounted to avoid a hydration mismatch
   const activeTheme: string | undefined = mounted ? theme : undefined

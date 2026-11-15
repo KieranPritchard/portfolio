@@ -1,10 +1,13 @@
 "use client"
 
 import { motion } from "framer-motion"
-import { Variants } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { Lock, Code, HandHelping } from "lucide-react"
 import ContentContainer from "../ContentContainer"
+import {
+    containerVariants,
+    homeProjectCardVariants,
+} from "@/lib/animations"
 
 /**
  * WhatIDo Component
@@ -38,31 +41,6 @@ export default function WhatIDo({ className }: Readonly<{ className?: string }>)
             tags: ["Networking", "Hardware", "Support"]
         }
     ]
-
-    /**
-     * Animation variants for the grid container to stagger child cards.
-     */
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: {
-                staggerChildren: 0.1,
-            },
-        },
-    }
-
-    /**
-     * Animation variants for individual cards defining their entry motion.
-     */
-    const cardVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { 
-            opacity: 1, 
-            y: 0, 
-            transition: { duration: 0.5, ease: "easeOut" } 
-        },
-    }
 
     return (
         <ContentContainer>
@@ -107,7 +85,7 @@ export default function WhatIDo({ className }: Readonly<{ className?: string }>)
                     {items.map((item, index) => (
                         <motion.div 
                             key={index} 
-                            variants={cardVariants}
+                            variants={homeProjectCardVariants}
                             className="group relative flex items-center gap-6 bg-muted/20 rounded-xl border p-6 transition-all duration-300 hover:border-primary"
                         >
                             {/* Numbering: Displayed in the top right of each card */}

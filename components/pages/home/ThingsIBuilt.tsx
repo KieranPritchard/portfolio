@@ -1,12 +1,16 @@
 "use client"
 
-import { Variants, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import type { ProjectSummary } from "@/types/project"
 import { Code, Shield, Zap, ExternalLink } from "lucide-react"
 import Link from "next/link"
 import { Card, CardContent } from "@/components/ui/card"
 import ContentContainer from "../ContentContainer"
+import {
+    containerVariants,
+    homeProjectCardVariants,
+} from "@/lib/animations"
 
 /**
  * ThingsIBuilt Component
@@ -20,29 +24,6 @@ import ContentContainer from "../ContentContainer"
 export default function ThingsIBuilt({ className, projects }: { className?: string; projects: ProjectSummary[] }) {
     // Select the first 3 projects to feature on the home page
     const featured = projects.slice(0, 3)
-
-    /**
-     * Staggered entrance variants for the project grid.
-     */
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.1 }
-        }
-    }
-
-    /**
-     * Animation variants for individual project cards.
-     */
-    const cardVariants: Variants = {
-        hidden: { opacity: 0, y: 20 },
-        visible: { 
-            opacity: 1, 
-            y: 0, 
-            transition: { duration: 0.5, ease: "easeOut" } 
-        }
-    }
 
     return (
         <ContentContainer>
@@ -79,7 +60,7 @@ export default function ThingsIBuilt({ className, projects }: { className?: stri
                     viewport={{ once: true }}
                 >
                     {featured.map((project) => (
-                        <motion.div key={project.slug} variants={cardVariants}>
+                        <motion.div key={project.slug} variants={homeProjectCardVariants}>
                             <Card className="group relative flex flex-col overflow-hidden bg-muted/20 border-border/50 transition-all">
                                 {/* Icon Section: Displays an icon based on project category */}
                                 <div className="flex justify-center items-center py-10 border-b border-border/50">

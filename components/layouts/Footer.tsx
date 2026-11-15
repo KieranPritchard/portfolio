@@ -2,9 +2,10 @@
 
 import { cn } from "@/lib/utils"
 import Link from "next/link"
-import { motion, Variants } from "framer-motion"
+import { motion } from "framer-motion"
 import { Separator } from "@/components/ui/separator"
 import * as React from "react"
+import { containerVariants, itemVariants } from "@/lib/animations"
 
 /**
  * Navigation links for the portfolio pages.
@@ -49,29 +50,6 @@ export default function Footer({
   className,
 }: Readonly<{ className?: string }>): React.JSX.Element {
   const currentYear: number = new Date().getFullYear()
-
-  /**
-   * Animation variants for the main footer container to stagger children.
-   */
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  }
-
-  /**
-   * Animation variants for individual footer pages.
-   */
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  }
 
   return (
     <footer className={cn("w-full bg-background pt-16 pb-8", className)}>

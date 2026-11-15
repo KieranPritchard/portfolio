@@ -1,9 +1,9 @@
 "use client"
 
-import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import TerminalLab from "./TerminalLab"
+import { staggeredContainerVariants } from "@/lib/animations"
 
 /**
  * InteractiveLabs Component
@@ -15,18 +15,6 @@ import TerminalLab from "./TerminalLab"
  * @param className - Optional CSS class name for the section container.
  */
 export default function InteractiveLabs({ className }: { className?: string }) {
-
-    /**
-     * Parent container variants: Staggers the entry of complex lab components
-     * to avoid visual jitter and provide a smooth loading experience.
-     */
-    const containerVariants: Variants = {
-        hidden: { opacity: 0 },
-        visible: {
-            opacity: 1,
-            transition: { staggerChildren: 0.15 }
-        }
-    }
 
     return (
         <section className={cn("mx-auto w-full max-w-6xl px-4 py-16 md:px-6 overflow-hidden", className)}>
@@ -52,7 +40,7 @@ export default function InteractiveLabs({ className }: { className?: string }) {
             {/* Lab Execution Area: Hosts interactive modules with staggered entrance */}
             <motion.div 
                 className="flex flex-col gap-6"
-                variants={containerVariants}
+                variants={staggeredContainerVariants}
                 initial="hidden"
                 whileInView="visible"
                 viewport={{ once: true, margin: "-50px" }}

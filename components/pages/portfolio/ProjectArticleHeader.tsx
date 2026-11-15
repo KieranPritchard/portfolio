@@ -1,11 +1,11 @@
 "use client"
 
-import { Variants } from "framer-motion"
 import { motion } from "framer-motion"
 import Image from "next/image"
 import { Badge } from "@/components/ui/badge"
 import type { ProjectSummary } from "@/types/project"
 import { cn } from "@/lib/utils"
+import { articleTextVariants } from "@/lib/animations"
 
 /**
  * Formats an ISO date string into a localized British English format (e.g., 5 April 2026).
@@ -40,18 +40,6 @@ export function ProjectArticleHeader({
   project,
   className,
 }: Readonly<{ project: ProjectSummary; className?: string }>) {
-  /**
-   * Animation variants for text elements using a custom delay multiplier.
-   */
-  const textVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: (custom: number) => ({
-      opacity: 1,
-      y: 0,
-      transition: { delay: custom * 0.1, duration: 0.5, ease: "easeOut" }
-    })
-  }
-
   return (
     <header className={cn("space-y-8", className)}>
       <div className="space-y-6 pb-10 relative">
@@ -59,7 +47,7 @@ export function ProjectArticleHeader({
           {/* Branded Label */}
           <motion.p 
             className="text-xs font-mono uppercase tracking-widest text-primary"
-            variants={textVariants}
+            variants={articleTextVariants}
             initial="hidden"
             animate="visible"
             custom={0}
@@ -70,7 +58,7 @@ export function ProjectArticleHeader({
           {/* Project Title: Large heading with sequential animation delay */}
           <motion.h1 
             className="font-heading text-4xl font-bold tracking-tight text-foreground sm:text-5xl md:text-6xl"
-            variants={textVariants}
+            variants={articleTextVariants}
             initial="hidden"
             animate="visible"
             custom={1}
@@ -89,7 +77,7 @@ export function ProjectArticleHeader({
           {/* Metadata Row: Displays the formatted date and project category */}
           <motion.div 
             className="flex flex-wrap items-center gap-3 text-[12px] font-mono text-muted-foreground pt-2"
-            variants={textVariants}
+            variants={articleTextVariants}
             initial="hidden"
             animate="visible"
             custom={2}
@@ -102,7 +90,7 @@ export function ProjectArticleHeader({
           {/* Project Summary: Leading paragraph */}
           <motion.p 
             className="max-w-3xl text-lg leading-relaxed text-muted-foreground md:text-xl pt-2"
-            variants={textVariants}
+            variants={articleTextVariants}
             initial="hidden"
             animate="visible"
             custom={3}
@@ -113,7 +101,7 @@ export function ProjectArticleHeader({
           {/* Tags: List of hashtags as interactive badges */}
           <motion.div 
             className="flex flex-wrap gap-2 pt-2"
-            variants={textVariants}
+            variants={articleTextVariants}
             initial="hidden"
             animate="visible"
             custom={4}

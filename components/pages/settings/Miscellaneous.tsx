@@ -1,36 +1,14 @@
 "use client"
 
-import { Variants, motion } from "framer-motion"
+import { motion } from "framer-motion"
 import React from "react"
 import { Switch } from "@/components/ui/switch"
 import { useMotionPreference } from "@/components/providers/MotionProvider"
+import { containerVariants, itemVariants } from "@/lib/animations"
 
 export default function Miscellaneous(): React.JSX.Element {
   // Brings in the global animation state and its toggle from the motion provider
   const { isAnimationEnabled, toggleAnimation } = useMotionPreference()
-
-  /**
-   * Staggered entrance variants for the content column.
-   */
-  const containerVariants: Variants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: { staggerChildren: 0.1 },
-    },
-  }
-
-  /**
-   * Fade-in and slide-up variants for individual items.
-   */
-  const itemVariants: Variants = {
-    hidden: { opacity: 0, y: 10 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: { duration: 0.4, ease: "easeOut" },
-    },
-  }
 
   // Reduce Motion is the inverse of animations being enabled
   const reduceMotion: boolean = !isAnimationEnabled
