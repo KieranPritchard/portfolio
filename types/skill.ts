@@ -1,4 +1,4 @@
-export type skill = {
+export type Skill = {
     title: string
     skills: {
         name: string
