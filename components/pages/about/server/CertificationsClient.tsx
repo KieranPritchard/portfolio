@@ -6,7 +6,7 @@ import { ExternalLink, Award } from "lucide-react"
 import { Certification } from "@/types/certification"
 import React from "react"
 import { containerVariants, itemVariants } from "@/lib/animations"
-import ContentContainer from "../ContentContainer"
+import ContentContainer from "../../ContentContainer"
 
 /**
  * CertificationsClient Component

@@ -1,4 +1,4 @@
-import ExperienceTimelineClient from "@/components/pages/about/ExpierenceTimelineClient"
+import ExperienceTimelineClient from "@/components/pages/about/server/ExpierenceTimelineClient"
 import { Experience } from "@/types/experience"
 import { getAllExperience } from "@/lib/experience"
 

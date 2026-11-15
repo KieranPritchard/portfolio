@@ -1,5 +1,5 @@
 import { getAllCerts } from "@/lib/certifications"
-import CertificationsClient from "./CertificationsClient"
+import CertificationsClient from "./server/CertificationsClient"
 import { Certification } from "../../../types/certification"
 
 /**

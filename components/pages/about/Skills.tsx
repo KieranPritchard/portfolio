@@ -1,6 +1,6 @@
 import { getAllSkills } from "@/lib/skills"
 import { Skill } from "@/types/skill"
-import SkillsClient from "./SkillsClient"
+import SkillsClient from "./server/SkillsClient"
 
 /**
  * Skills Component (Server Component)

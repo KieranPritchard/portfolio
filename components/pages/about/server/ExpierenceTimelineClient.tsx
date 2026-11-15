@@ -4,7 +4,7 @@ import { motion } from "framer-motion"
 import { cn } from "@/lib/utils"
 import { staggeredContainerVariants, timelineItemVariants } from "@/lib/animations"
 import type { Experience } from "@/types/experience"
-import ContentContainer from "../ContentContainer"
+import ContentContainer from "../../ContentContainer"
 
 /**
  * ExperienceTimeline Component
