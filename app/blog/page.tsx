@@ -19,8 +19,6 @@ export default async function Page() {
   const blogs = getAllBlogs()
 
   return (
-    <ContentContainer>
-      <BlogList posts={blogs} />
-    </ContentContainer>
+    <BlogList posts={blogs} />
   )
 }
