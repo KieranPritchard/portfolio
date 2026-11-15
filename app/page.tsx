@@ -4,6 +4,36 @@ import TechStack from "@/components/pages/HomePage/TechStack"
 import ThingsIBuilt from "@/components/pages/HomePage/ThingsIBuilt"
 import WhatIDo from "@/components/pages/HomePage/WhatIDo"
 import { getAllProjects } from "@/lib/projects"
+import type { Metadata } from "next"
+
+const description =
+  "Kieran Pritchard is a software development student and ethical hacker building secure web apps, cybersecurity tools, and automation."
+
+export const metadata: Metadata = {
+  title: {
+    absolute: "Kieran Pritchard | Software Developer & Ethical Hacker",
+  },
+  description,
+  alternates: {
+    canonical: "/",
+  },
+  openGraph: {
+    title: "Kieran Pritchard | Software Developer & Ethical Hacker",
+    description,
+    url: "/",
+    siteName: "Kieran Pritchard",
+    images: [
+      {
+        url: "/kieran-pritchard.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kieran Pritchard",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
+}
 
 /**
  * HomePage Component

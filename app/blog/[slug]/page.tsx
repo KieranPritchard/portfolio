@@ -5,6 +5,7 @@ import ContentContainer from "@/components/pages/ContentContainer"
 import { ProjectBreadcrumbs } from "@/components/pages/portfolio/ProjectBreadcrumbs"
 import { ProjectMarkdown } from "@/components/pages/portfolio/ProjectMarkdown"
 import { BlogArticleHeader } from "@/components/pages/blog/BlogArticleHeader"
+import type { Metadata } from "next"
 
 // Function to generate static parameters
 export async function generateStaticParams() {
@@ -15,7 +16,7 @@ export async function generateStaticParams() {
 // Generates metadata
 export async function generateMetadata({
   params,
-}: Readonly<{ params: Promise<{ slug: string }> }>) {
+}: Readonly<{ params: Promise<{ slug: string }> }>): Promise<Metadata> {
   // Stores the slug
   const { slug } = await params
   // Gets the project by the slug
@@ -29,8 +30,30 @@ export async function generateMetadata({
 
   // Returns the metadata
   return {
-    title: `${blog.title}`,
+    title: blog.title,
     description: blog.description,
+    alternates: {
+      canonical: `/blog/${blog.slug}`,
+    },
+    openGraph: {
+      title: blog.title,
+      description: blog.description,
+      url: `/blog/${blog.slug}`,
+      siteName: "Kieran Pritchard",
+      images: [
+        {
+          url: blog.coverImage ?? "/kieran-pritchard.jpg",
+          width: 1200,
+          height: 630,
+          alt: blog.coverAlt ?? blog.title,
+        },
+      ],
+      locale: "en_GB",
+      type: "article",
+      publishedTime: blog.date,
+      authors: ["Kieran Pritchard"],
+      tags: blog.tags,
+    },
   }
 }
 

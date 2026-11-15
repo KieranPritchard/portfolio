@@ -8,7 +8,28 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "About",
-  description: "Page detailing who I am",
+  description:
+    "Learn about Kieran Pritchard, a software development student focused on ethical hacking, secure software, cybersecurity, and IT support.",
+  alternates: {
+    canonical: "/about",
+  },
+  openGraph: {
+    title: "About",
+    description:
+      "Learn about Kieran Pritchard, a software development student focused on ethical hacking, secure software, cybersecurity, and IT support.",
+    url: "/about",
+    siteName: "Kieran Pritchard",
+    images: [
+      {
+        url: "/kieran-pritchard.jpg",
+        width: 1200,
+        height: 630,
+        alt: "Kieran Pritchard",
+      },
+    ],
+    locale: "en_GB",
+    type: "website",
+  },
 }
 
 export default function Page() {

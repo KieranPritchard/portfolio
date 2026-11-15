@@ -5,7 +5,11 @@ import { Metadata } from "next"
 
 export const metadata: Metadata = {
   title: "Settings",
-  description: "Settings page",
+  description: "Personalise the theme and animation preferences for this site.",
+  robots: {
+    index: false,
+    follow: false,
+  },
 }
 
 export default function Page() {

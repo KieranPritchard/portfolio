@@ -10,7 +10,8 @@ import {
   getProjectBySlug,
   getProjectFileSlugs,
 } from "@/lib/projects"
-import { ProjectDoc, ProjectFrontmatter } from "../../../types/project"
+import type { Metadata } from "next"
+import type { ProjectDoc, ProjectFrontmatter } from "../../../types/project"
 
 // Function to generate static parameters
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
@@ -23,10 +24,7 @@ export async function generateStaticParams(): Promise<{ slug: string }[]> {
 // Generates metadata
 export async function generateMetadata({
   params,
-}: Readonly<{ params: Promise<{ slug: string }> }>): Promise<{
-  title?: unknown
-  description?: unknown
-}> {
+}: Readonly<{ params: Promise<{ slug: string }> }>): Promise<Metadata> {
   // Stores the slug
   const { slug } = await params
   // Gets the project by the slug
@@ -40,8 +38,30 @@ export async function generateMetadata({
 
   // Returns the metadata
   return {
-    title: `${project.title}`,
+    title: project.title,
     description: project.description,
+    alternates: {
+      canonical: `/projects/${project.slug}`,
+    },
+    openGraph: {
+      title: project.title,
+      description: project.description,
+      url: `/projects/${project.slug}`,
+      siteName: "Kieran Pritchard",
+      images: [
+        {
+          url: project.coverImage ?? "/kieran-pritchard.jpg",
+          width: 1200,
+          height: 630,
+          alt: project.coverAlt ?? project.title,
+        },
+      ],
+      locale: "en_GB",
+      type: "article",
+      publishedTime: project.date,
+      authors: ["Kieran Pritchard"],
+      tags: project.tags,
+    },
   }
 }
 
