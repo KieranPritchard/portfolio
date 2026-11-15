@@ -26,6 +26,7 @@ export function createPageMetadata({
   imageUrl.searchParams.set("title", title)
   imageUrl.searchParams.set("description", description)
   imageUrl.searchParams.set("section", section)
+  imageUrl.searchParams.set("theme", "blue-v2")
 
   const image = {
     url: imageUrl.toString(),

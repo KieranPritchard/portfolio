@@ -25,8 +25,8 @@ export async function GET(request: Request) {
         padding: "54px 68px",
         position: "relative",
         overflow: "hidden",
-        backgroundColor: "#09090b",
-        color: "#fafafa",
+        backgroundColor: "#090b0c",
+        color: "#f9fbfb",
         fontFamily: "Arial, sans-serif",
       }}
     >
@@ -35,7 +35,7 @@ export async function GET(request: Request) {
           position: "absolute",
           inset: "0 auto 0 0",
           width: "14px",
-          backgroundColor: "#22d3ee",
+          backgroundColor: "#00598a",
         }}
       />
       <div style={{ display: "flex", alignItems: "center", gap: "16px" }}>
@@ -47,8 +47,8 @@ export async function GET(request: Request) {
             display: "flex",
             alignItems: "center",
             justifyContent: "center",
-            backgroundColor: "#164e63",
-            color: "#a5f3fc",
+            backgroundColor: "#00598a",
+            color: "#f9fbfb",
             fontSize: "20px",
             fontWeight: 700,
           }}
@@ -57,7 +57,7 @@ export async function GET(request: Request) {
         </div>
         <div
           style={{
-            color: "#d4d4d8",
+            color: "#f9fbfb",
             fontSize: "22px",
             letterSpacing: "3px",
             fontWeight: 600,
@@ -68,10 +68,10 @@ export async function GET(request: Request) {
         <div
           style={{
             marginLeft: "auto",
-            border: "1px solid #3f3f46",
+            border: "1px solid #22292b",
             borderRadius: "999px",
             padding: "10px 18px",
-            color: "#67e8f9",
+            color: "#00598a",
             fontSize: "16px",
             letterSpacing: "2px",
           }}
@@ -96,7 +96,7 @@ export async function GET(request: Request) {
           style={{
             maxHeight: "94px",
             overflow: "hidden",
-            color: "#a1a1aa",
+            color: "#9ca8ab",
             fontSize: "25px",
             lineHeight: 1.35,
           }}
@@ -109,14 +109,14 @@ export async function GET(request: Request) {
           display: "flex",
           alignItems: "center",
           justifyContent: "space-between",
-          borderTop: "1px solid #27272a",
+          borderTop: "1px solid #22292b",
           paddingTop: "20px",
-          color: "#a1a1aa",
+          color: "#9ca8ab",
           fontSize: "18px",
         }}
       >
         <div>SOFTWARE · SECURITY · BUILDING</div>
-        <div style={{ color: "#67e8f9" }}>www.kpritchard.co.uk</div>
+        <div style={{ color: "#00598a" }}>www.kpritchard.co.uk</div>
       </div>
     </div>,
     {
