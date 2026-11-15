@@ -15,9 +15,7 @@ export const metadata: Metadata = {
 export default function Page() {
   return (
     <>
-      <ContentContainer>
-        <AboutMe />
-      </ContentContainer>
+      <AboutMe />
       <ContentContainer>
         <ExperienceTimeline />
       </ContentContainer>
