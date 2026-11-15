@@ -1,8 +1,7 @@
-import ContentContainer from "@/components/pages/ContentContainer"
-import Intro from "@/components/pages/HomePage/Intro"
-import TechStack from "@/components/pages/HomePage/TechStack"
-import ThingsIBuilt from "@/components/pages/HomePage/ThingsIBuilt"
-import WhatIDo from "@/components/pages/HomePage/WhatIDo"
+import Intro from "@/components/pages/home/Intro"
+import TechStack from "@/components/pages/home/TechStack"
+import ThingsIBuilt from "@/components/pages/home/ThingsIBuilt"
+import WhatIDo from "@/components/pages/home/WhatIDo"
 import { getAllProjects } from "@/lib/projects"
 import type { Metadata } from "next"
 
@@ -51,24 +50,16 @@ export default function Page() {
   return (
     <>
       {/* Intro Section: Hero area with primary call-to-action */}
-      <ContentContainer>
-        <Intro projects={projects} />
-      </ContentContainer>
+      <Intro projects={projects} />
 
       {/* Disciplines Section: Highlighting core areas of expertise */}
-      <ContentContainer>
-        <WhatIDo />
-      </ContentContainer>
+      <WhatIDo />
 
       {/* Featured Projects Section: Showcasing selected work */}
-      <ContentContainer>
-        <ThingsIBuilt projects={projects} />
-      </ContentContainer>
+      <ThingsIBuilt projects={projects} />
 
       {/* Tech Stack Section: Infinite marquee of tools and technologies */}
-      <ContentContainer>
-        <TechStack />
-      </ContentContainer>
+      <TechStack />
     </>
   )
 }

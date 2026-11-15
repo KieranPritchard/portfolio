@@ -1,4 +1,3 @@
-import ContentContainer from "@/components/pages/ContentContainer"
 import ProjectsGrid from "@/components/pages/portfolio/ProjectsGrid"
 import { getAllProjects } from "@/lib/projects"
 import { Metadata } from "next"
@@ -34,9 +33,7 @@ export default async function Page() {
 
   return (
     <>
-      <ContentContainer>
-        <ProjectsGrid projects={projects} />
-      </ContentContainer>
+      <ProjectsGrid projects={projects} />
     </>
   )
 }
