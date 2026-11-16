@@ -89,7 +89,7 @@ export default function ThingsIBuilt({ className, projects }: { className?: stri
                                     <div className="mt-auto flex items-center justify-between text-xs text-muted-foreground">
                                         <span>{new Date(project.date).toLocaleDateString('en-US', { month: 'short', year: 'numeric' })}</span>
                                         <Link 
-                                            href={`/portfolio/${project.slug}`}
+                                            href={`/projects/${project.slug}`}
                                             target="_blank"
                                             className="flex items-center gap-1 hover:text-foreground transition-colors"
                                         >
