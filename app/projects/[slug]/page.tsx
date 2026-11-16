@@ -109,7 +109,7 @@ export default async function Page({
   return (
     <ContentContainer className="max-w-6xl pb-20">
       {/* Thin reading-progress bar across the top of the viewport */}
-      <ReadingProgressBar />
+      <ReadingProgressBar className="lg:hidden" />
 
       {/* Article column + sticky contents column (contents hidden below lg) */}
       <div className="lg:grid lg:grid-cols-[minmax(0,48rem)_16rem] lg:justify-center lg:gap-12">
