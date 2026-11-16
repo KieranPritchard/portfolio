@@ -2,56 +2,56 @@
   {
     "title": "Languages",
     "skills": [
-      { "name": "Python", "value": 90 },
-      { "name": "JavaScript / TypeScript", "value": 80 },
-      { "name": "PHP", "value": 80 },
-      { "name": "Go", "value": 65 },
-      { "name": "HTML / CSS", "value": 90 }
+      { "name": "Python"},
+      { "name": "JavaScript / TypeScript"},
+      { "name": "PHP"},
+      { "name": "Go"},
+      { "name": "HTML / CSS"}
     ]
   },
   {
     "title": "Frameworks",
     "skills": [
-      { "name": "React/Next.js", "value": 75 },
-      { "name": "Laravel", "value": 75 },
-      { "name": "Tailwind CSS", "value": 85 },
-      { "name": "Node.js", "value": 70 }
+      { "name": "React/Next.js"},
+      { "name": "Laravel"},
+      { "name": "Tailwind CSS"},
+      { "name": "Node.js"}
     ]
   },
   {
     "title": "Security",
     "skills": [
-      { "name": "Kali Linux", "value": 75 },
-      { "name": "Wireshark", "value": 50 },
-      { "name": "Nmap", "value": 70 },
-      { "name": "Metasploit", "value": 50 },
-      { "name": "Burp Suite", "value": 60 }
+      { "name": "Kali Linux" },
+      { "name": "Wireshark" },
+      { "name": "Nmap" },
+      { "name": "Metasploit" },
+      { "name": "Burp Suite"}
     ]
   },
   {
     "title": "Tools",
     "skills": [
-      { "name": "Git / GitHub", "value": 85 },
-      { "name": "Docker", "value": 60 },
-      { "name": "Figma", "value": 80 },
-      { "name": "DataGrip", "value": 80 },
-      { "name": "MongoDB Compass", "value": 80 }
+      { "name": "Git / GitHub"},
+      { "name": "Docker"},
+      { "name": "Figma"},
+      { "name": "DataGrip"},
+      { "name": "MongoDB Compass"}
     ]
   },
   {
     "title": "Automation",
     "skills": [
-      { "name": "Power Automate", "value": 75 },
-      { "name": "n8n", "value": 75 },
-      { "name": "bash", "value": 60 }
+      { "name": "Power Automate"},
+      { "name": "n8n"},
+      { "name": "bash"}
     ]
   },
   {
     "title": "Databases",
     "skills": [
-      { "name": "MySQL", "value": 75 },
-      { "name": "MongoDB", "value": 75 },
-      { "name": "PostgreSQL", "value": 70 }
+      { "name": "MySQL"},
+      { "name": "MongoDB"},
+      { "name": "PostgreSQL" }
     ]
   }
 ]

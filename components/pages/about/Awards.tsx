@@ -45,13 +45,13 @@ function AwardPhoto({ award }: { award: Award }) {
       </DialogTrigger>
       <DialogContent className="max-w-4xl p-2">
         <DialogTitle className="sr-only">{award.title}</DialogTitle>
-        <div className="relative aspect-[4/3] w-full">
+        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
           <Image
             src={award.image}
             alt={award.imageAlt ?? award.title}
             fill
             sizes="90vw"
-            className="rounded-md object-contain"
+            className="object-contain"
           />
         </div>
       </DialogContent>

@@ -44,7 +44,7 @@ export default function SkillsClient({
 
         {/* Skills Content: Grid of categories with animated progress bars */}
         <motion.div
-          className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-2"
+          className="grid grid-cols-1 gap-x-12 gap-y-16 md:grid-cols-2 lg:grid-cols-3"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -59,32 +59,16 @@ export default function SkillsClient({
               <h3 className="text-sm font-bold tracking-wider text-muted-foreground uppercase">
                 {category.title}
               </h3>
-              <div className="space-y-6">
+              <ul className="flex flex-wrap gap-2.5">
                 {category.skills.map((skill) => (
-                  <div key={skill.name} className="space-y-2">
-                    {/* Skill Name and Percentage Label */}
-                    <div className="flex items-center justify-between text-sm">
-                      <span className="font-medium text-foreground">
-                        {skill.name}
-                      </span>
-                      <span className="font-mono text-muted-foreground">
-                        {skill.value}%
-                      </span>
-                    </div>
-                    {/* Progress Bar Track */}
-                    <div className="h-1.5 w-full overflow-hidden rounded-full bg-border">
-                      {/* Animated Progress Bar Fill */}
-                      <motion.div
-                        className="h-full bg-primary"
-                        initial={{ width: 0 }}
-                        whileInView={{ width: `${skill.value}%` }}
-                        viewport={{ once: true }}
-                        transition={{ duration: 1, ease: "easeOut" }}
-                      />
-                    </div>
-                  </div>
+                  <li
+                    key={skill.name}
+                    className="rounded-full border border-border bg-muted/50 px-3 py-1.5 text-[10px] font-medium tracking-[0.14em] text-foreground/80 uppercase transition-colors duration-200 hover:border-muted-foreground/40 hover:bg-muted"
+                  >
+                    {skill.name}
+                  </li>
                 ))}
-              </div>
+              </ul>
             </motion.div>
           ))}
         </motion.div>
