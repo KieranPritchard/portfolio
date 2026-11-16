@@ -3,14 +3,14 @@
 import { useEffect, useRef, useState } from "react";
 import type { MouseEvent } from "react";
 import {
-  motion,
-  MotionConfig,
-  useMotionValueEvent,
-  useReducedMotion,
-  useScroll,
-  useSpring,
+    motion,
+    MotionConfig,
+    useMotionValueEvent,
+    useReducedMotion,
 } from "framer-motion";
 import { Heading } from "@/types/postHeading";
+import { slugify } from "@/lib/slugify";
+import { useSmoothProgress } from "@/hooks/UseSmoothProgress";
 
 /**
  * Scroll-spy table of contents with reading progress.
@@ -21,43 +21,6 @@ import { Heading } from "@/types/postHeading";
  * It reads headings from the page after mount, so it works with MDX or
  * any content. Headings without an id get one generated from their text.
  */
-
-// Slugifies a string to create a valid HTML id.
-function slugify(text: string) {
-  return (
-    text
-      .toLowerCase()
-      .trim()
-      .replace(/[^a-z0-9]+/g, "-")
-      .replace(/^-+|-+$/g, "") || "section"
-  );
-}
-
-// Hook to get a smooth scroll progress value, with reduced motion support.
-function useSmoothProgress() {
-  const { scrollYProgress } = useScroll();
-  const spring = useSpring(scrollYProgress, {
-    stiffness: 140,
-    damping: 26,
-    mass: 0.4,
-  });
-  const reduce = useReducedMotion();
-  return { raw: scrollYProgress, smooth: reduce ? scrollYProgress : spring };
-}
-
-// Thin reading progress bar across the top of the viewport.
-export function ReadingProgressBar({ className = "" }: { className?: string }) {
-  const { smooth } = useSmoothProgress();
-  return (
-    <MotionConfig reducedMotion="user">
-      <motion.div
-        aria-hidden
-        style={{ scaleX: smooth, originX: 0 }}
-        className={`fixed inset-x-0 top-0 z-50 h-0.75 bg-primary ${className}`}
-      />
-    </MotionConfig>
-  );
-}
 
 type TableOfContentsProps = {
   /** Where to look for headings. */

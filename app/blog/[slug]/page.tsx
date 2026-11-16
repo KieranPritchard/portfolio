@@ -6,11 +6,11 @@ import { ProjectBreadcrumbs } from "@/components/pages/portfolio/ProjectBreadcru
 import { ProjectMarkdown } from "@/components/pages/portfolio/ProjectMarkdown"
 import { BlogArticleHeader } from "@/components/pages/blog/BlogArticleHeader"
 import {
-  ReadingProgressBar,
   TableOfContents,
 } from "@/components/pages/blog/TableOfContents"
 import type { Metadata } from "next"
 import { createPageMetadata } from "@/lib/page-metadata"
+import { ReadingProgressBar } from "@/components/pages/blog/ReadingProgressBar"
 
 // Function to generate static parameters
 export async function generateStaticParams() {

@@ -6,7 +6,6 @@ import { ProjectArticleHeader } from "@/components/pages/portfolio/ProjectArticl
 import { ProjectBreadcrumbs } from "@/components/pages/portfolio/ProjectBreadcrumbs"
 import { ProjectMarkdown } from "@/components/pages/portfolio/ProjectMarkdown"
 import {
-  ReadingProgressBar,
   TableOfContents,
 } from "@/components/pages/blog/TableOfContents"
 import {
@@ -17,6 +16,7 @@ import {
 import type { Metadata } from "next"
 import type { ProjectDoc, ProjectFrontmatter } from "../../../types/project"
 import { createPageMetadata } from "@/lib/page-metadata"
+import { ReadingProgressBar } from "@/components/pages/blog/ReadingProgressBar"
 
 // Function to generate static parameters
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
