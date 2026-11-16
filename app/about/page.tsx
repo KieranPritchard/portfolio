@@ -1,4 +1,5 @@
 import AboutMe from "@/components/pages/about/About"
+import { AwardsSection } from "@/components/pages/about/Awards"
 import Certifications from "@/components/pages/about/Certifications"
 import ExperienceTimeline from "@/components/pages/about/ExpierenceTimeline"
 import NowSection from "@/components/pages/about/Now"
@@ -22,6 +23,7 @@ export default function Page() {
       <Skills />
       <PersonalInterests />
       <Certifications />
+      <AwardsSection />
       <NowSection />
     </>
   )

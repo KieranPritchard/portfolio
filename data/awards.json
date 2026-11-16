@@ -1,0 +1,26 @@
+[
+    {
+        "title": "BPC Empathy Award",
+        "awardedBy": "Bournemouth & Poole College",
+        "category": "College",
+        "image": "/awards/bpc-empathy.jpeg",
+        "imageAlt": "Kieran holding the BPC Empathy Award in recognition of empathy",
+        "objectPosition": "50% 30%"
+    },
+    {
+        "title": "Best Overall Project",
+        "awardedBy": "Worksity",
+        "category": "College",
+        "image": "/awards/best-overall-project.jpg",
+        "imageAlt": "Kieran receiving the Best Overall Project award from Worksity",
+        "objectPosition": "50% 30%"
+    },
+    {
+        "title": "Certificate of Merit 2025",
+        "awardedBy": "Bebras",
+        "category": "College",
+        "image": "/awards/bebras.jpeg",
+        "imageAlt": "Kieran holding the Bebras Certificate of Merit 2025",
+        "objectPosition": "50% 30%"
+    }
+]
