@@ -11,6 +11,7 @@ import {
 import type { Metadata } from "next"
 import { createPageMetadata } from "@/lib/page-metadata"
 import { ReadingProgressBar } from "@/components/pages/blog/ReadingProgressBar"
+import WhoAmI from "@/components/pages/blog/Widgets/WhoAmI"
 
 // Function to generate static parameters
 export async function generateStaticParams() {
@@ -113,10 +114,10 @@ export default async function Page({
         </div>
 
         <aside className="hidden lg:block" aria-label="Contents">
-          <TableOfContents
-            containerSelector="#blog-content"
-            className="sticky top-24"
-          />
+          <div className="sticky top-24 space-y-6">
+            <TableOfContents containerSelector="#blog-content" />
+            <WhoAmI />
+          </div>
         </aside>
       </div>
     </ContentContainer>
