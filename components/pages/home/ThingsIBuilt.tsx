@@ -11,6 +11,8 @@ import {
     containerVariants,
     homeProjectCardVariants,
 } from "@/lib/animations"
+import Image from "next/image"
+import { AspectRatio } from "radix-ui"
 
 /**
  * ThingsIBuilt Component
@@ -62,14 +64,27 @@ export default function ThingsIBuilt({ className, projects }: { className?: stri
                     {featured.map((project) => (
                         <motion.div key={project.slug} variants={homeProjectCardVariants}>
                             <Card className="group relative flex flex-col overflow-hidden bg-muted/20 border-border/50 transition-all">
-                                {/* Icon Section: Displays an icon based on project category */}
-                                <div className="flex justify-center items-center py-10 border-b border-border/50">
-                                    <div className="inline-flex w-12 h-12 items-center justify-center rounded-lg bg-background/50 text-primary">
-                                        {project.category === "security" && <Shield className="h-6 w-6" />}
-                                        {project.category === "web" && <Code className="h-6 w-6" />}
-                                        {project.category === "automation" && <Zap className="h-6 w-6" />}
-                                    </div>
-                                </div>
+                                {/* Image Section: Project thumbnail, falls back to the category icon */}
+                                <AspectRatio.Root ratio={16 / 9} className="relative overflow-hidden border-b border-border/50 bg-background/50">
+                                    {project.coverImage ? (
+                                        <Image
+                                            src={project.coverImage}
+                                            alt={project.coverAlt ?? project.title}
+                                            fill
+                                            sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 100vw"
+                                            className="object-contain p-3 transition-transform duration-300 group-hover:scale-105"
+                                        />
+                                    ) : (
+                                        <div className="flex h-full w-full items-center justify-center">
+                                            <div className="inline-flex w-12 h-12 items-center justify-center rounded-lg bg-background/50 text-primary">
+                                                {project.category === "security" && <Shield className="h-6 w-6" />}
+                                                {project.category === "web" && <Code className="h-6 w-6" />}
+                                                {project.category === "automation" && <Zap className="h-6 w-6" />}
+                                            </div>
+                                        </div>
+                                    )}
+                                </AspectRatio.Root>
+
 
                                 <CardContent className="p-6 flex flex-col grow">
                                     {/* Category Badge */}
