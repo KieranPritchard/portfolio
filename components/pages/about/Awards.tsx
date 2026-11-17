@@ -18,7 +18,7 @@ import {
 function AwardPhoto({ award }: { award: Award }) {
   if (!award.image) {
     return (
-      <div className="flex aspect-[4/3] items-center justify-center rounded-lg bg-primary/10 text-primary">
+      <div className="flex aspect-4/3 items-center justify-center rounded-lg bg-primary/10 text-primary">
         <Camera className="size-8" aria-hidden />
         <span className="sr-only">No photo available for {award.title}</span>
       </div>
@@ -31,7 +31,7 @@ function AwardPhoto({ award }: { award: Award }) {
         <button
           type="button"
           aria-label={`View photo: ${award.title}`}
-          className="relative block aspect-[4/3] w-full cursor-zoom-in overflow-hidden rounded-lg"
+          className="relative block aspect-4/3 w-full cursor-zoom-in overflow-hidden rounded-lg"
         >
           <Image
             src={award.image}
@@ -45,7 +45,7 @@ function AwardPhoto({ award }: { award: Award }) {
       </DialogTrigger>
       <DialogContent className="max-w-4xl p-2">
         <DialogTitle className="sr-only">{award.title}</DialogTitle>
-        <div className="relative aspect-[4/3] w-full overflow-hidden rounded-3xl">
+        <div className="relative aspect-4/3 w-full overflow-hidden rounded-3xl">
           <Image
             src={award.image}
             alt={award.imageAlt ?? award.title}

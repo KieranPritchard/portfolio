@@ -9,7 +9,6 @@ import ContentContainer from "../ContentContainer"
 import { blogItemVariants, blogContainerVariants } from "@/lib/animations"
 import Image from "next/image"
 import { Card, CardContent } from "@/components/ui/card"
-import BlogPageWhoAmI from "./Widgets/BlogPageWhoAmI"
 
 /**
  * BlogList Component
@@ -69,8 +68,6 @@ export default function BlogList({
               </h1>
               <div className="h-1 w-20 rounded-full bg-primary" />
             </div>
-
-            <BlogPageWhoAmI />
           </div>
 
           {/* Featured Post */}
@@ -84,7 +81,7 @@ export default function BlogList({
                 <Card className="overflow-hidden border-border bg-muted/20 py-0 transition-colors hover:border-primary/40 hover:bg-muted/30">
                   <CardContent className="p-0">
                     <div className="grid md:grid-cols-[minmax(0,1fr)_minmax(0,1.1fr)]">
-                      <div className="relative flex aspect-[16/9] items-center justify-center overflow-hidden border-b border-border bg-muted/40 md:aspect-auto md:min-h-72 md:border-r md:border-b-0">
+                      <div className="relative flex aspect-video items-center justify-center overflow-hidden border-b border-border bg-muted/40 md:aspect-auto md:min-h-72 md:border-r md:border-b-0">
                         {featuredPost.coverImage ? (
                           <Image
                             src={featuredPost.coverImage}
