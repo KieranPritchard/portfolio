@@ -70,33 +70,33 @@ export default async function Page({
 
   // Function to display the correct link buttons
   const displayLinkButtons = () => {
-    if (project.link === "#") {
-      return (
-        <LinkButton
-          text="Source"
-          link={project.github}
-          kind="outline"
-          className="sm:flex-1"
-        />
-      )
-    } else {
-      return (
-        <>
+    // "#" is used as a placeholder for a missing link
+    const hasSource = project.github !== "#"
+    const hasDemo = project.link !== "#"
+
+    // Nothing to show if neither link exists, so skip the wrapper too
+    if (!hasSource && !hasDemo) return null
+
+    return (
+      <div className="mt-16 flex flex-col gap-3 border-t pt-10 sm:flex-row">
+        {hasSource && (
           <LinkButton
             text="Source"
             link={project.github}
             kind="outline"
             className="sm:flex-1"
           />
+        )}
+        {hasDemo && (
           <LinkButton
             text="Live demo"
             link={project.link}
             kind="default"
             className="sm:flex-1"
           />
-        </>
-      )
-    }
+        )}
+      </div>
+    )
   }
 
   // Gets the related projects
@@ -130,9 +130,7 @@ export default async function Page({
             <ProjectMarkdown content={content} />
           </article>
 
-          <div className="mt-16 flex flex-col gap-3 border-t pt-10 sm:flex-row">
-            {displayLinkButtons()}
-          </div>
+          {displayLinkButtons()}
 
           {related.length ? (
             <aside className="mt-16 rounded-xl border bg-muted/20 p-6">
