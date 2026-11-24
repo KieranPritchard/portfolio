@@ -1,6 +1,6 @@
 # kpritchard.co.uk — Personal Portfolio
 
-Source code for my personal portfolio site. Built with Next.js 15 and TypeScript, deployed on Vercel.
+Source code for my personal portfolio site. Built with Next.js and TypeScript, deployed on Vercel.
 
 **Live:** [kpritchard.co.uk](https://www.kpritchard.co.uk/)
 
@@ -10,7 +10,7 @@ Source code for my personal portfolio site. Built with Next.js 15 and TypeScript
 
 | | |
 |--|--|
-| **Framework** | Next.js 15 (App Router) |
+| **Framework** | Next.js 16 (App Router) |
 | **Language** | TypeScript |
 | **Styling** | Tailwind CSS |
 | **UI** | shadcn/ui |
@@ -25,13 +25,25 @@ Source code for my personal portfolio site. Built with Next.js 15 and TypeScript
 
 ```
 /
-├── app/              # Next.js App Router pages & layouts
-├── components/       # Reusable UI components
-├── content/          # Markdown content (projects, blog posts, write-ups)
-├── hooks/            # Custom React hooks
-├── lib/              # Utilities and content resolvers
-├── public/           # Static assets
-└── types/            # Shared TypeScript interfaces
+├── app/                  # App Router routes, metadata, and route handlers
+├── components/
+│   ├── features/         # Components grouped by product area (about, blog, home, etc.)
+│   ├── layouts/          # Shared page and site layout components
+│   ├── buttons/          # Shared button components
+│   ├── providers/        # Client-side context providers
+│   └── ui/               # Reusable UI primitives
+├── content/              # Markdown content (projects and blog posts)
+├── data/                 # Structured JSON data
+├── hooks/                # Custom React hooks
+├── lib/                  # Shared utilities and content data access
+├── public/               # Static assets served directly
+│   ├── images/profile/   # Profile photography
+│   ├── documents/        # Downloadable documents
+│   ├── awards/           # Award images
+│   ├── blogs/            # Blog cover images
+│   └── projects/         # Project images grouped by project slug
+├── scripts/              # Project maintenance and validation scripts
+└── types/                # Shared TypeScript types
 ```
 
 ---

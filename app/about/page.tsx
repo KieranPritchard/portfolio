@@ -1,10 +1,10 @@
-import AboutMe from "@/components/pages/about/About"
-import { AwardsSection } from "@/components/pages/about/Awards"
-import Certifications from "@/components/pages/about/Certifications"
-import ExperienceTimeline from "@/components/pages/about/ExpierenceTimeline"
-import NowSection from "@/components/pages/about/Now"
-import PersonalInterests from "@/components/pages/about/PersonalInterests"
-import Skills from "@/components/pages/about/Skills"
+import AboutMe from "@/components/features/about/About"
+import { AwardsSection } from "@/components/features/about/Awards"
+import Certifications from "@/components/features/about/Certifications"
+import ExperienceTimeline from "@/components/features/about/ExperienceTimeline"
+import NowSection from "@/components/features/about/Now"
+import PersonalInterests from "@/components/features/about/PersonalInterests"
+import Skills from "@/components/features/about/Skills"
 import { createPageMetadata } from "@/lib/page-metadata"
 
 export const metadata = createPageMetadata({

@@ -3,7 +3,7 @@ import { SidebarProvider, SidebarTrigger, SidebarInset } from "@/components/ui/s
 import { TooltipProvider } from "@/components/ui/tooltip"
 import { PortfolioSidebar } from "@/components/layouts/Sidebar"
 import { Geist_Mono, Roboto, Noto_Sans } from "next/font/google"
-import "../app/globals.css"
+import "./globals.css"
 import { ThemeProvider } from "@/components/providers/ThemeProvider"
 import { MotionProvider } from "@/components/providers/MotionProvider"
 import { AnimationWrapper } from "@/components/providers/AnimationWrapper"

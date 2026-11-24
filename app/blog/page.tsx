@@ -1,4 +1,4 @@
-import BlogList from "@/components/pages/blog/BlogList"
+import BlogList from "@/components/features/blog/BlogList"
 import { getAllBlogs } from "@/lib/blogs"
 import { createPageMetadata } from "@/lib/page-metadata"
 

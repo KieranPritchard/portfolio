@@ -12,7 +12,7 @@ tags:
 link: "#"
 github: "https://github.com/KieranPritchard/recipe_manager/tree/main"
 date: "2026-08-21"
-coverImage: "/projects/recipe-manager/recipe_manager_header.png"
+coverImage: "/projects/recipe-manager/recipe-manager-header.png"
 coverAlt: "Recipe Manager project interface"
 ---
 

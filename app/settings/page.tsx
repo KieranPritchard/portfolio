@@ -1,6 +1,6 @@
-import ContentContainer from "../../components/pages/ContentContainer"
-import Theme from "../../components/pages/settings/Theme"
-import Miscellaneous from "../../components/pages/settings/Miscellaneous"
+import ContentContainer from "@/components/layouts/ContentContainer"
+import Theme from "@/components/features/settings/Theme"
+import Miscellaneous from "@/components/features/settings/Miscellaneous"
 import { createPageMetadata } from "@/lib/page-metadata"
 
 export const metadata = {

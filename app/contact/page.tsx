@@ -1,5 +1,5 @@
-import ContentContainer from "@/components/pages/ContentContainer"
-import Contact from "@/components/pages/contact/Contact"
+import ContentContainer from "@/components/layouts/ContentContainer"
+import Contact from "@/components/features/contact/Contact"
 import { createPageMetadata } from "@/lib/page-metadata"
 
 export const metadata = createPageMetadata({

@@ -8,7 +8,7 @@ tags:
   - Ethical Hacking
   - Tools
 date: "2026-04-21"
-coverImage: "/blogs/top-5-favourite-cyber-security-tools.png"
+coverImage: "/blogs/top-5-favorite-cybersecurity-tools.png"
 coverAlt: "My Top 5 Favourite Cybersecurity Tools: Insights from Personal Experience blog cover"
 ---
 

@@ -1,4 +1,4 @@
-import ProjectsGrid from "@/components/pages/portfolio/ProjectsGrid"
+import ProjectsGrid from "@/components/features/portfolio/ProjectsGrid"
 import { getAllProjects } from "@/lib/projects"
 import { createPageMetadata } from "@/lib/page-metadata"
 

@@ -25,7 +25,7 @@ const ELSEWHERE: { name: string; href: string }[] = [
   { name: "GitHub", href: "https://github.com/KieranPritchard" },
   { name: "Email", href: "mailto:KieranPritchard06@gmail.com" },
   { name: "LinkedIn", href: "https://www.linkedin.com/in/kieran-pritchard/" },
-  { name: "CV (PDF)", href: "/kieran_pritchard_cv.pdf" },
+  { name: "CV (PDF)", href: "/documents/kieran-pritchard-cv.pdf" },
 ]
 
 /**

@@ -1,17 +1,17 @@
 import { getBlogFileSlugs, getBlogBySlug, getAllBlogs } from "@/lib/blogs"
 import { notFound } from "next/navigation"
-import ContentContainer from "@/components/pages/ContentContainer"
-import { ProjectBreadcrumbs } from "@/components/pages/portfolio/ProjectBreadcrumbs"
-import { ProjectMarkdown } from "@/components/pages/portfolio/ProjectMarkdown"
-import { BlogArticleHeader } from "@/components/pages/blog/BlogArticleHeader"
+import ContentContainer from "@/components/layouts/ContentContainer"
+import { ProjectBreadcrumbs } from "@/components/features/portfolio/ProjectBreadcrumbs"
+import { ProjectMarkdown } from "@/components/features/portfolio/ProjectMarkdown"
+import { BlogArticleHeader } from "@/components/features/blog/BlogArticleHeader"
 import {
   TableOfContents,
-} from "@/components/pages/blog/TableOfContents"
+} from "@/components/features/blog/TableOfContents"
 import type { Metadata } from "next"
 import { createPageMetadata } from "@/lib/page-metadata"
-import { ReadingProgressBar } from "@/components/pages/blog/ReadingProgressBar"
-import WhoAmI from "@/components/pages/blog/Widgets/WhoAmI"
-import { RelatedBlogs } from "@/components/pages/blog/Widgets/RelatedBlogs"
+import { ReadingProgressBar } from "@/components/features/blog/ReadingProgressBar"
+import WhoAmI from "@/components/features/blog/widgets/WhoAmI"
+import { RelatedBlogs } from "@/components/features/blog/widgets/RelatedBlogs"
 
 // Function to generate static parameters
 export async function generateStaticParams() {

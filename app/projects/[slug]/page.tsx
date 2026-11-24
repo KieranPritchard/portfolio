@@ -1,13 +1,13 @@
 import Link from "next/link"
 import { notFound } from "next/navigation"
-import ContentContainer from "@/components/pages/ContentContainer"
+import ContentContainer from "@/components/layouts/ContentContainer"
 import { LinkButton } from "@/components/buttons/LinkButton"
-import { ProjectArticleHeader } from "@/components/pages/portfolio/ProjectArticleHeader"
-import { ProjectBreadcrumbs } from "@/components/pages/portfolio/ProjectBreadcrumbs"
-import { ProjectMarkdown } from "@/components/pages/portfolio/ProjectMarkdown"
+import { ProjectArticleHeader } from "@/components/features/portfolio/ProjectArticleHeader"
+import { ProjectBreadcrumbs } from "@/components/features/portfolio/ProjectBreadcrumbs"
+import { ProjectMarkdown } from "@/components/features/portfolio/ProjectMarkdown"
 import {
   TableOfContents,
-} from "@/components/pages/blog/TableOfContents"
+} from "@/components/features/blog/TableOfContents"
 import {
   getAllProjects,
   getProjectBySlug,
@@ -16,7 +16,7 @@ import {
 import type { Metadata } from "next"
 import type { ProjectDoc, ProjectFrontmatter } from "../../../types/project"
 import { createPageMetadata } from "@/lib/page-metadata"
-import { ReadingProgressBar } from "@/components/pages/blog/ReadingProgressBar"
+import { ReadingProgressBar } from "@/components/features/blog/ReadingProgressBar"
 
 // Function to generate static parameters
 export async function generateStaticParams(): Promise<{ slug: string }[]> {

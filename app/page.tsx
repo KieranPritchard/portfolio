@@ -1,7 +1,7 @@
-import Intro from "@/components/pages/home/Intro"
-import TechStack from "@/components/pages/home/TechStack"
-import ThingsIBuilt from "@/components/pages/home/ThingsIBuilt"
-import WhatIDo from "@/components/pages/home/WhatIDo"
+import Intro from "@/components/features/home/Intro"
+import TechStack from "@/components/features/home/TechStack"
+import ThingsIBuilt from "@/components/features/home/ThingsIBuilt"
+import WhatIDo from "@/components/features/home/WhatIDo"
 import { getAllProjects } from "@/lib/projects"
 import { createPageMetadata } from "@/lib/page-metadata"
 
